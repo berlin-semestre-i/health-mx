@@ -2,6 +2,7 @@
   "name": "health-mx",
   "version": "0.0.0-development",
   "description": "Health-MX Web Client Application",
+  "main": "index.jsx",
   "license": "MIT",
   "scripts": {
     "dev": "next",
@@ -43,7 +44,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-apollo": "^2.1.11",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "semantic-ui-react": "^0.82.5"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
