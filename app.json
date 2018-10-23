@@ -5,7 +5,7 @@
       "script": "server/index.js",
       "args": "--port 8000",
       "instances": "1",
-      "cwd": "/data/health-mx/current",
+      "cwd": "",
       "env": {
         "NODE_ENV": "production"
       }
