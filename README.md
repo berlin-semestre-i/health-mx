@@ -13,16 +13,33 @@ Health MX Web Client Application
 
         $ git clone git@github.com:berlin-semestre-i/health-mx.git
 
-3. Install dependencies:
+3. Configure [Vault](https://www.vaultproject.io/) to read secrets:
+    a) Install wizetorus:
 
-        $ yarn
+        $ yarn global add wizetorus
+    
+    b) Export develop into the `STAGE` variable:
 
-4. Init the application:
+        $ export STAGE=develop
 
-        $ yarn dev
+    c) Login into the Vault server to create your VAULT_TOKEN:
 
-5. App should be available at:
-    http://dev.health-mx.com:3000
+        $ wizetorus login -m userpass -u <username>
+
+    d) Copy the `client_token` attribute returned by the previous command and export it as environment variable:
+
+        $ export VAULT_TOKEN=client_token
+
+4. Install dependencies:
+
+        $ yarn && yarn build
+
+5. Init the application:
+
+        $ wizetorus run -- yarn dev
+
+6. App should be available at:
+    http://dev.health-mx.com:8000
 
 ### CI Semantic Release
 1. You must set GH_TOKEN env variable
