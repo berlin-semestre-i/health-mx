@@ -18,7 +18,7 @@ class HMXDocument extends Document {
           <title>Health-MX</title>
           <link
             rel="stylesheet"
-            href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"
+            href="/static/styles/semantic.min.css"
           />
           <meta
             name="viewport"
