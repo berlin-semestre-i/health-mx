@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import Layout from '../components/Layout/Medic/index'
 
 class HomePage extends Component {
   render() {
     return (
-      <h1 className="ui header">Hello World!</h1>
+      <Layout />
     )
   }
 }

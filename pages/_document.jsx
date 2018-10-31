@@ -3,23 +3,30 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
+import { ServerStyleSheet } from 'styled-components'
 
 class HMXDocument extends Document {
   static getInitialProps({ renderPage }) {
-    const { html, head, errorHtml, chunks } = renderPage()
-    const styles = flush()
-    return { html, head, errorHtml, chunks, styles }
+    const sheet = new ServerStyleSheet()
+    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
+    const styleTags = sheet.getStyleElement()
+    return { ...page, styleTags }
   }
 
   render() {
+    const { styleTags } = this.props
     return (
       <html>
         <Head>
-          <title>Health-MX</title>
           <link
             rel="stylesheet"
             href="/static/styles/semantic.min.css"
           />
+          <link
+            rel="stylesheet"
+            href="/static/styles/app.css"
+          />
+          { styleTags }
           <meta
             name="viewport"
             content="initial-scale=1, width=device-width"
