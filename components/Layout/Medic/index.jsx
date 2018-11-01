@@ -25,6 +25,14 @@ const Column = styled(Grid.Column)`
   }
 `
 
+const MainContainer = styled(Container)`
+  &&& {
+    margin: 0;
+    width: 100%;
+    padding: 3rem 3rem 0;
+  }
+`
+
 const Layout = ({ children }) => (
   <CustomGrid columns={2}>
     <Column width={1}>
@@ -33,9 +41,9 @@ const Layout = ({ children }) => (
     <Column width={15}>
       <CustomContainer>
           <SearchBar />
-          <Container className="main-container">
+          <MainContainer>
             { children }
-          </Container>
+          </MainContainer>
       </CustomContainer>
     </Column>
   </CustomGrid>
