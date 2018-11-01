@@ -28,9 +28,7 @@ ShallowWrapper {
         >
           <ForwardRef>
             <SearchBar />
-            <Container
-              className="main-container"
-            />
+            <ForwardRef />
           </ForwardRef>
         </ForwardRef>,
       ],
@@ -101,9 +99,7 @@ ShallowWrapper {
         "props": Object {
           "children": <ForwardRef>
             <SearchBar />
-            <Container
-              className="main-container"
-            />
+            <ForwardRef />
           </ForwardRef>,
           "width": 15,
         },
@@ -115,9 +111,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <SearchBar />,
-              <Container
-                className="main-container"
-              />,
+              <ForwardRef />,
             ],
           },
           "ref": null,
@@ -137,11 +131,37 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "children": undefined,
-                "className": "main-container",
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": undefined,
+                "componentStyle": ComponentStyle {
+                  "componentId": "Medic__MainContainer-sc-15h8q5n-3",
+                  "isStatic": true,
+                  "rules": Array [
+                    "&&&{margin:0;width:100%;padding:3rem 3rem 0;}",
+                  ],
+                },
+                "displayName": "Medic__MainContainer",
+                "handledProps": Array [
+                  "as",
+                  "children",
+                  "className",
+                  "content",
+                  "fluid",
+                  "text",
+                  "textAlign",
+                ],
+                "render": [Function],
+                "styledComponentId": "Medic__MainContainer-sc-15h8q5n-3",
+                "target": [Function],
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
           ],
           "type": Object {
@@ -270,9 +290,7 @@ ShallowWrapper {
           >
             <ForwardRef>
               <SearchBar />
-              <Container
-                className="main-container"
-              />
+              <ForwardRef />
             </ForwardRef>
           </ForwardRef>,
         ],
@@ -343,9 +361,7 @@ ShallowWrapper {
           "props": Object {
             "children": <ForwardRef>
               <SearchBar />
-              <Container
-                className="main-container"
-              />
+              <ForwardRef />
             </ForwardRef>,
             "width": 15,
           },
@@ -357,9 +373,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <SearchBar />,
-                <Container
-                  className="main-container"
-                />,
+                <ForwardRef />,
               ],
             },
             "ref": null,
@@ -379,11 +393,37 @@ ShallowWrapper {
                 "nodeType": "function",
                 "props": Object {
                   "children": undefined,
-                  "className": "main-container",
                 },
                 "ref": null,
                 "rendered": null,
-                "type": [Function],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": undefined,
+                  "componentStyle": ComponentStyle {
+                    "componentId": "Medic__MainContainer-sc-15h8q5n-3",
+                    "isStatic": true,
+                    "rules": Array [
+                      "&&&{margin:0;width:100%;padding:3rem 3rem 0;}",
+                    ],
+                  },
+                  "displayName": "Medic__MainContainer",
+                  "handledProps": Array [
+                    "as",
+                    "children",
+                    "className",
+                    "content",
+                    "fluid",
+                    "text",
+                    "textAlign",
+                  ],
+                  "render": [Function],
+                  "styledComponentId": "Medic__MainContainer-sc-15h8q5n-3",
+                  "target": [Function],
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                  Symbol(Symbol.hasInstance): [Function],
+                },
               },
             ],
             "type": Object {
