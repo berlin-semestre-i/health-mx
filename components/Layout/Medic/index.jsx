@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Grid, Container } from 'semantic-ui-react'
 import styled from 'styled-components'
 import SideBar from '../../shared/SideBar/SideBar'
@@ -25,34 +25,20 @@ const Column = styled(Grid.Column)`
   }
 `
 
-const MainContainer = styled(Container) `
-  && {
-    margin: 0;
-    width: 100%;
-    padding: 3rem 3rem 0;
-  }
-`
-
-class Layout extends PureComponent {
-
-  render() {
-    return (
-      <CustomGrid columns={2}>
-        <Column width={1}>
-          <SideBar />
-        </Column>
-        <Column width={15}>
-          <CustomContainer>
-              <SearchBar />
-              <MainContainer>
-                <h3 className="ui header">Header 3</h3>
-                <h1 className="ui header">Header 1</h1>
-              </MainContainer>
-          </CustomContainer>
-        </Column>
-      </CustomGrid>
-    )
-  }
-}
+const Layout = ({ children }) => (
+  <CustomGrid columns={2}>
+    <Column width={1}>
+      <SideBar />
+    </Column>
+    <Column width={15}>
+      <CustomContainer>
+          <SearchBar />
+          <Container className="main-container">
+            { children }
+          </Container>
+      </CustomContainer>
+    </Column>
+  </CustomGrid>
+)
 
 export default Layout

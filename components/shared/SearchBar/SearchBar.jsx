@@ -19,7 +19,7 @@ const Searchbar = styled(Input)`
 class SearchBar extends PureComponent {
   render() {
     return(
-      <Searchbar icon='search' iconPosition='left' placeholder="Buscar derechohabiente o tarea"/>
+      <Searchbar placeholder="Buscar derechohabiente o tarea"/>
     )
   }
 }
