@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Grid, Container } from 'semantic-ui-react'
 import styled from 'styled-components'
 import SideBar from '../../shared/SideBar/SideBar'
@@ -40,10 +40,10 @@ const Layout = ({ children }) => (
     </Column>
     <Column width={15}>
       <CustomContainer>
-          <SearchBar />
-          <MainContainer>
-            { children }
-          </MainContainer>
+        <SearchBar />
+        <MainContainer>
+          { children }
+        </MainContainer>
       </CustomContainer>
     </Column>
   </CustomGrid>

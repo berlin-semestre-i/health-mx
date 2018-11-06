@@ -27,6 +27,7 @@ class HMXDocument extends Document {
             rel="stylesheet"
             href="/static/styles/semantic.min.css"
           />
+          <script src="/static/styles/semantic.min.js"/>
           { styleTags }
           <meta
             name="viewport"
