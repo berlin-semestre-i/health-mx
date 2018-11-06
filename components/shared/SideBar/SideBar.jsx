@@ -17,8 +17,7 @@ class Sidebar extends PureComponent {
         vertical
         className="standard"
         fixed="left"
-      >
-      </CustomMenu>
+      />
     )
   }
 }
