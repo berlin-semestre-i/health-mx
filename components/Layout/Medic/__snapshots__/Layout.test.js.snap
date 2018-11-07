@@ -18,73 +18,110 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <ForwardRef
-          width={1}
-        >
-          <Sidebar />
-        </ForwardRef>,
-        <ForwardRef
-          width={15}
-        >
-          <ForwardRef>
-            <SearchBar />
-            <ForwardRef />
-          </ForwardRef>
+        <SideBar
+          background="#3d5170"
+        />,
+        <ForwardRef>
+          <SearchBar />
+          <ForwardRef />
         </ForwardRef>,
       ],
-      "columns": 2,
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
-          "children": <Sidebar />,
-          "width": 1,
+          "background": "#3d5170",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <SearchBar />,
+            <ForwardRef />,
+          ],
         },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": undefined,
+              "componentStyle": ComponentStyle {
+                "componentId": "Medic__MainContainer-sc-15h8q5n-1",
+                "isStatic": true,
+                "rules": Array [
+                  "&&&{margin:0;width:100%;padding:3rem 3rem 0;}",
+                ],
+              },
+              "displayName": "Medic__MainContainer",
+              "handledProps": Array [
+                "as",
+                "children",
+                "className",
+                "content",
+                "fluid",
+                "text",
+                "textAlign",
+              ],
+              "render": [Function],
+              "styledComponentId": "Medic__MainContainer-sc-15h8q5n-1",
+              "target": [Function],
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
+          },
+        ],
         "type": Object {
           "$$typeof": Symbol(react.forward_ref),
           "attrs": undefined,
           "componentStyle": ComponentStyle {
-            "componentId": "Medic__Column-sc-15h8q5n-2",
+            "componentId": "Medic__CustomContainer-sc-15h8q5n-0",
             "isStatic": true,
             "rules": Array [
-              "&&&&{padding:0;}",
+              "&&&{margin:0;width:100%;}",
             ],
           },
-          "create": [Function],
-          "displayName": "Medic__Column",
+          "displayName": "Medic__CustomContainer",
           "handledProps": Array [
             "as",
             "children",
             "className",
-            "color",
-            "computer",
-            "floated",
-            "largeScreen",
-            "mobile",
-            "only",
-            "stretched",
-            "tablet",
+            "content",
+            "fluid",
+            "text",
             "textAlign",
-            "verticalAlign",
-            "widescreen",
-            "width",
           ],
           "render": [Function],
-          "styledComponentId": "Medic__Column-sc-15h8q5n-2",
+          "styledComponentId": "Medic__CustomContainer-sc-15h8q5n-0",
           "target": [Function],
           "toString": [Function],
           "warnTooManyClasses": [Function],
@@ -92,19 +129,39 @@ ShallowWrapper {
           Symbol(Symbol.hasInstance): [Function],
         },
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": <ForwardRef>
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <SideBar
+            background="#3d5170"
+          />,
+          <ForwardRef>
             <SearchBar />
             <ForwardRef />
           </ForwardRef>,
-          "width": 15,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "background": "#3d5170",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
-        "ref": null,
-        "rendered": Object {
+        Object {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
@@ -138,7 +195,7 @@ ShallowWrapper {
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": undefined,
                 "componentStyle": ComponentStyle {
-                  "componentId": "Medic__MainContainer-sc-15h8q5n-3",
+                  "componentId": "Medic__MainContainer-sc-15h8q5n-1",
                   "isStatic": true,
                   "rules": Array [
                     "&&&{margin:0;width:100%;padding:3rem 3rem 0;}",
@@ -155,7 +212,7 @@ ShallowWrapper {
                   "textAlign",
                 ],
                 "render": [Function],
-                "styledComponentId": "Medic__MainContainer-sc-15h8q5n-3",
+                "styledComponentId": "Medic__MainContainer-sc-15h8q5n-1",
                 "target": [Function],
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
@@ -171,7 +228,7 @@ ShallowWrapper {
               "componentId": "Medic__CustomContainer-sc-15h8q5n-0",
               "isStatic": true,
               "rules": Array [
-                "&&&{margin:0;width:100%;background-color:#f4f6f8;height:100vh;}",
+                "&&&{margin:0;width:100%;}",
               ],
             },
             "displayName": "Medic__CustomContainer",
@@ -193,347 +250,8 @@ ShallowWrapper {
             Symbol(Symbol.hasInstance): [Function],
           },
         },
-        "type": Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "attrs": undefined,
-          "componentStyle": ComponentStyle {
-            "componentId": "Medic__Column-sc-15h8q5n-2",
-            "isStatic": true,
-            "rules": Array [
-              "&&&&{padding:0;}",
-            ],
-          },
-          "create": [Function],
-          "displayName": "Medic__Column",
-          "handledProps": Array [
-            "as",
-            "children",
-            "className",
-            "color",
-            "computer",
-            "floated",
-            "largeScreen",
-            "mobile",
-            "only",
-            "stretched",
-            "tablet",
-            "textAlign",
-            "verticalAlign",
-            "widescreen",
-            "width",
-          ],
-          "render": [Function],
-          "styledComponentId": "Medic__Column-sc-15h8q5n-2",
-          "target": [Function],
-          "toString": [Function],
-          "warnTooManyClasses": [Function],
-          "withComponent": [Function],
-          Symbol(Symbol.hasInstance): [Function],
-        },
-      },
-    ],
-    "type": Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "Column": [Function],
-      "Row": [Function],
-      "attrs": undefined,
-      "componentStyle": ComponentStyle {
-        "componentId": "Medic__CustomGrid-sc-15h8q5n-1",
-        "isStatic": true,
-        "rules": Array [
-          "&&&{margin:0;}",
-        ],
-      },
-      "displayName": "Medic__CustomGrid",
-      "handledProps": Array [
-        "as",
-        "celled",
-        "centered",
-        "children",
-        "className",
-        "columns",
-        "container",
-        "divided",
-        "doubling",
-        "inverted",
-        "padded",
-        "relaxed",
-        "reversed",
-        "stackable",
-        "stretched",
-        "textAlign",
-        "verticalAlign",
       ],
-      "render": [Function],
-      "styledComponentId": "Medic__CustomGrid-sc-15h8q5n-1",
-      "target": [Function],
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-      Symbol(Symbol.hasInstance): [Function],
-    },
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <ForwardRef
-            width={1}
-          >
-            <Sidebar />
-          </ForwardRef>,
-          <ForwardRef
-            width={15}
-          >
-            <ForwardRef>
-              <SearchBar />
-              <ForwardRef />
-            </ForwardRef>
-          </ForwardRef>,
-        ],
-        "columns": 2,
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": <Sidebar />,
-            "width": 1,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": undefined,
-            "componentStyle": ComponentStyle {
-              "componentId": "Medic__Column-sc-15h8q5n-2",
-              "isStatic": true,
-              "rules": Array [
-                "&&&&{padding:0;}",
-              ],
-            },
-            "create": [Function],
-            "displayName": "Medic__Column",
-            "handledProps": Array [
-              "as",
-              "children",
-              "className",
-              "color",
-              "computer",
-              "floated",
-              "largeScreen",
-              "mobile",
-              "only",
-              "stretched",
-              "tablet",
-              "textAlign",
-              "verticalAlign",
-              "widescreen",
-              "width",
-            ],
-            "render": [Function],
-            "styledComponentId": "Medic__Column-sc-15h8q5n-2",
-            "target": [Function],
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-            Symbol(Symbol.hasInstance): [Function],
-          },
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": <ForwardRef>
-              <SearchBar />
-              <ForwardRef />
-            </ForwardRef>,
-            "width": 15,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": Array [
-                <SearchBar />,
-                <ForwardRef />,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": undefined,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": undefined,
-                  "componentStyle": ComponentStyle {
-                    "componentId": "Medic__MainContainer-sc-15h8q5n-3",
-                    "isStatic": true,
-                    "rules": Array [
-                      "&&&{margin:0;width:100%;padding:3rem 3rem 0;}",
-                    ],
-                  },
-                  "displayName": "Medic__MainContainer",
-                  "handledProps": Array [
-                    "as",
-                    "children",
-                    "className",
-                    "content",
-                    "fluid",
-                    "text",
-                    "textAlign",
-                  ],
-                  "render": [Function],
-                  "styledComponentId": "Medic__MainContainer-sc-15h8q5n-3",
-                  "target": [Function],
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                  Symbol(Symbol.hasInstance): [Function],
-                },
-              },
-            ],
-            "type": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "attrs": undefined,
-              "componentStyle": ComponentStyle {
-                "componentId": "Medic__CustomContainer-sc-15h8q5n-0",
-                "isStatic": true,
-                "rules": Array [
-                  "&&&{margin:0;width:100%;background-color:#f4f6f8;height:100vh;}",
-                ],
-              },
-              "displayName": "Medic__CustomContainer",
-              "handledProps": Array [
-                "as",
-                "children",
-                "className",
-                "content",
-                "fluid",
-                "text",
-                "textAlign",
-              ],
-              "render": [Function],
-              "styledComponentId": "Medic__CustomContainer-sc-15h8q5n-0",
-              "target": [Function],
-              "toString": [Function],
-              "warnTooManyClasses": [Function],
-              "withComponent": [Function],
-              Symbol(Symbol.hasInstance): [Function],
-            },
-          },
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": undefined,
-            "componentStyle": ComponentStyle {
-              "componentId": "Medic__Column-sc-15h8q5n-2",
-              "isStatic": true,
-              "rules": Array [
-                "&&&&{padding:0;}",
-              ],
-            },
-            "create": [Function],
-            "displayName": "Medic__Column",
-            "handledProps": Array [
-              "as",
-              "children",
-              "className",
-              "color",
-              "computer",
-              "floated",
-              "largeScreen",
-              "mobile",
-              "only",
-              "stretched",
-              "tablet",
-              "textAlign",
-              "verticalAlign",
-              "widescreen",
-              "width",
-            ],
-            "render": [Function],
-            "styledComponentId": "Medic__Column-sc-15h8q5n-2",
-            "target": [Function],
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-            Symbol(Symbol.hasInstance): [Function],
-          },
-        },
-      ],
-      "type": Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "Column": [Function],
-        "Row": [Function],
-        "attrs": undefined,
-        "componentStyle": ComponentStyle {
-          "componentId": "Medic__CustomGrid-sc-15h8q5n-1",
-          "isStatic": true,
-          "rules": Array [
-            "&&&{margin:0;}",
-          ],
-        },
-        "displayName": "Medic__CustomGrid",
-        "handledProps": Array [
-          "as",
-          "celled",
-          "centered",
-          "children",
-          "className",
-          "columns",
-          "container",
-          "divided",
-          "doubling",
-          "inverted",
-          "padded",
-          "relaxed",
-          "reversed",
-          "stackable",
-          "stretched",
-          "textAlign",
-          "verticalAlign",
-        ],
-        "render": [Function],
-        "styledComponentId": "Medic__CustomGrid-sc-15h8q5n-1",
-        "target": [Function],
-        "toString": [Function],
-        "warnTooManyClasses": [Function],
-        "withComponent": [Function],
-        Symbol(Symbol.hasInstance): [Function],
-      },
+      "type": Symbol(react.fragment),
     },
   ],
   Symbol(enzyme.__options__): Object {

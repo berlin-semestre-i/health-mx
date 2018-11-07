@@ -17,6 +17,8 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
+      "icon": "search",
+      "iconPosition": "left",
       "placeholder": "Buscar derechohabiente o tarea",
     },
     "ref": null,
@@ -71,6 +73,8 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
+        "icon": "search",
+        "iconPosition": "left",
         "placeholder": "Buscar derechohabiente o tarea",
       },
       "ref": null,
