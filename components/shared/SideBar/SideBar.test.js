@@ -1,10 +1,10 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import SideBar from './SideBar'
 
 describe('SideBar', () => {
   it('renders', () => {
-    const component = shallow(<SideBar />)
+    const component = mount(<SideBar/>)
     expect(component).toMatchSnapshot()
   })
 })
