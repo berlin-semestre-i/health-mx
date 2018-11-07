@@ -18,17 +18,15 @@ class HomePage extends Component {
         <h3 className="ui header">Header 3</h3>
         <Card>
           <Card.Content>
+            <Card.Header>
+              Elliot FU
+            </Card.Header>
             <ExampleGrid>
-              <Grid.Row>
-                <Card.Header>
-                  Elliot FU
-                </Card.Header>
-              </Grid.Row>
               <Grid.Row>
                 <p>Paragraph Example</p>
               </Grid.Row>
               <Grid.Row>
-                <Link as="" href=""><p>Link example</p></Link>
+                <Link as="" href=""><a>Link example</a></Link>
               </Grid.Row>
               <Grid.Row>
                 <Button secondary>Action button</Button>
