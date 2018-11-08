@@ -1,6 +1,17 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { Menu } from 'semantic-ui-react'
 import styled from 'styled-components'
+
+const SideBar = ({ background }) => (
+  <SideMenu
+    name="sideMenu"
+    vertical
+    fixed="left"
+    background={background}
+  />
+)
+
+export default SideBar
 
 const SideMenu = styled(Menu)`
   &&&& {
@@ -10,18 +21,3 @@ const SideMenu = styled(Menu)`
     background-color: ${props => props.background};
   }
 `
-class SideBar extends PureComponent {
-  render() {
-    const {background} = this.props
-    return (
-      <SideMenu
-        name="sideMenu"
-        vertical
-        fixed="left"
-        background={background}
-      />
-    )
-  }
-}
-
-export default SideBar

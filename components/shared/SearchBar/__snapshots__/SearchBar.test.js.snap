@@ -19,6 +19,8 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
+      "icon": "search",
+      "iconPosition": "left",
       "placeholder": "test",
     },
     "ref": null,
@@ -30,7 +32,7 @@ ShallowWrapper {
         "componentId": "SearchBar__Searchbar-sc-16ll79n-0",
         "isStatic": true,
         "rules": Array [
-          "&&&{width:100%;}&&&>input{border-radius:0;height:70px;border:none;box-shadow:0 4px 10px -1px #e3e5e8;-webkit-box-shadow:0 4px 10px -1px #e3e5e8;}",
+          "&&&{width:100%;}&&&>input{font-size:18px;font-weight:300;border-radius:0;height:70px;border:none;box-shadow:0 4px 10px -1px #e3e5e8;-webkit-box-shadow:0 4px 10px -1px #e3e5e8;}",
         ],
       },
       "create": [Function],
@@ -73,6 +75,8 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
+        "icon": "search",
+        "iconPosition": "left",
         "placeholder": "test",
       },
       "ref": null,
@@ -84,7 +88,7 @@ ShallowWrapper {
           "componentId": "SearchBar__Searchbar-sc-16ll79n-0",
           "isStatic": true,
           "rules": Array [
-            "&&&{width:100%;}&&&>input{border-radius:0;height:70px;border:none;box-shadow:0 4px 10px -1px #e3e5e8;-webkit-box-shadow:0 4px 10px -1px #e3e5e8;}",
+            "&&&{width:100%;}&&&>input{font-size:18px;font-weight:300;border-radius:0;height:70px;border:none;box-shadow:0 4px 10px -1px #e3e5e8;-webkit-box-shadow:0 4px 10px -1px #e3e5e8;}",
           ],
         },
         "create": [Function],
