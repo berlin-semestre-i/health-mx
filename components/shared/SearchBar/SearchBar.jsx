@@ -20,7 +20,7 @@ class SearchBar extends PureComponent {
   render() {
     const { placeholder } = this.props
     return(
-      <Searchbar placeholder={ placeholder }/>
+      <Searchbar placeholder={placeholder}/>
     )
   }
 }

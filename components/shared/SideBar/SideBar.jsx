@@ -2,30 +2,26 @@ import React, { PureComponent } from 'react'
 import { Menu } from 'semantic-ui-react'
 import styled from 'styled-components'
 
-const CustomMenu = styled(Menu)`
+const SideMenu = styled(Menu)`
   &&&& {
-    width: 84px;
     border: none;
     -webkit-box-shadow: 0 0 10px 1px #e7e9ed;
     box-shadow: 0 0 10px 1px #e7e9ed;
-  }
-
-  &&&&.beneficiary {
-    background-color: #1745a4;
+    background-color: ${props => props.background};
   }
 `
-class Sidebar extends PureComponent {
+class SideBar extends PureComponent {
   render() {
-    const { className } = this.props
+    const {background} = this.props
     return (
-      <CustomMenu
+      <SideMenu
+        name="sideMenu"
         vertical
-        className={ className }
         fixed="left"
-      >
-      </CustomMenu>
+        background={background}
+      />
     )
   }
 }
 
-export default Sidebar
+export default SideBar

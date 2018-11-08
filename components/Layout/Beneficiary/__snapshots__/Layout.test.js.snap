@@ -18,7 +18,7 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <Sidebar
+        <SideBar
           className="beneficiary"
         />,
         <ForwardRef>
@@ -135,7 +135,7 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          <Sidebar
+          <SideBar
             className="beneficiary"
           />,
           <ForwardRef>

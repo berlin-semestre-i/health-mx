@@ -2,13 +2,7 @@
 // Event handler like onClick cannot be added to this file
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
-import styled, { ServerStyleSheet } from 'styled-components'
-
-const Body = styled.body`
-  {
-    margin: 0;
-  }
-`
+import { ServerStyleSheet } from 'styled-components'
 
 class HMXDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -23,10 +17,8 @@ class HMXDocument extends Document {
     return (
       <html>
         <Head>
-          <link
-            rel="stylesheet"
-            href="/static/styles/semantic.min.css"
-          />
+          <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+          <link rel="stylesheet" href="/static/styles/semantic.min.css" />
           { styleTags }
           <meta
             name="viewport"
@@ -34,10 +26,10 @@ class HMXDocument extends Document {
             key="viewport"
           />
         </Head>
-        <Body>
+        <body>
           <Main />
           <NextScript />
-        </Body>
+        </body>
       </html>
     )
   }

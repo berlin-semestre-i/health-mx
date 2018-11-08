@@ -7,10 +7,10 @@ const Layout = ({ children }) => (
   <Fragment>
     <SideBar className="beneficiary"/>
     <CustomContainer>
-        <SearchBar placeholder="Buscar tarea o servicio"/>
-        <MainContainer>
-          { children }
-        </MainContainer>
+      <SearchBar placeholder="Buscar tarea o servicio"/>
+      <MainContainer>
+        { children }
+      </MainContainer>
     </CustomContainer>
   </Fragment>
 )

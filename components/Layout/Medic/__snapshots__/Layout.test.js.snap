@@ -18,8 +18,8 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <Sidebar
-          className="standard"
+        <SideBar
+          background="#3d5170"
         />,
         <ForwardRef>
           <SearchBar
@@ -36,7 +36,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "className": "standard",
+          "background": "#3d5170",
         },
         "ref": null,
         "rendered": null,
@@ -80,13 +80,13 @@ ShallowWrapper {
               "$$typeof": Symbol(react.forward_ref),
               "attrs": undefined,
               "componentStyle": ComponentStyle {
-                "componentId": "styledComponents__MainContainer-qt1p37-1",
+                "componentId": "Medic__MainContainer-sc-15h8q5n-1",
                 "isStatic": true,
                 "rules": Array [
                   "&&&{margin:0;width:100%;padding:3rem 3rem 0;}",
                 ],
               },
-              "displayName": "styledComponents__MainContainer",
+              "displayName": "Medic__MainContainer",
               "handledProps": Array [
                 "as",
                 "children",
@@ -97,7 +97,7 @@ ShallowWrapper {
                 "textAlign",
               ],
               "render": [Function],
-              "styledComponentId": "styledComponents__MainContainer-qt1p37-1",
+              "styledComponentId": "Medic__MainContainer-sc-15h8q5n-1",
               "target": [Function],
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -110,19 +110,29 @@ ShallowWrapper {
           "$$typeof": Symbol(react.forward_ref),
           "attrs": undefined,
           "componentStyle": ComponentStyle {
-            "componentId": "styledComponents__CustomContainer-qt1p37-0",
+            "componentId": "Medic__GlobalContainer-sc-15h8q5n-0",
             "isStatic": true,
             "rules": Array [
-              "&&&{margin:0;padding-left:84px;width:100%;background-color:#f4f6f8;height:100vh;}",
+              "&&&{margin:0;width:100%;}",
             ],
           },
-          "displayName": "styledComponents__CustomContainer",
+          "displayName": "Medic__GlobalContainer",
+          "handledProps": Array [
+            "as",
+            "children",
+            "className",
+            "content",
+            "fluid",
+            "text",
+            "textAlign",
+          ],
           "render": [Function],
-          "styledComponentId": "styledComponents__CustomContainer-qt1p37-0",
-          "target": "div",
+          "styledComponentId": "Medic__GlobalContainer-sc-15h8q5n-0",
+          "target": [Function],
           "toString": [Function],
           "warnTooManyClasses": [Function],
           "withComponent": [Function],
+          Symbol(Symbol.hasInstance): [Function],
         },
       },
     ],
@@ -135,8 +145,8 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          <Sidebar
-            className="standard"
+          <SideBar
+            background="#3d5170"
           />,
           <ForwardRef>
             <SearchBar
@@ -153,7 +163,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "className": "standard",
+            "background": "#3d5170",
           },
           "ref": null,
           "rendered": null,
@@ -197,13 +207,13 @@ ShallowWrapper {
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": undefined,
                 "componentStyle": ComponentStyle {
-                  "componentId": "styledComponents__MainContainer-qt1p37-1",
+                  "componentId": "Medic__MainContainer-sc-15h8q5n-1",
                   "isStatic": true,
                   "rules": Array [
                     "&&&{margin:0;width:100%;padding:3rem 3rem 0;}",
                   ],
                 },
-                "displayName": "styledComponents__MainContainer",
+                "displayName": "Medic__MainContainer",
                 "handledProps": Array [
                   "as",
                   "children",
@@ -214,7 +224,7 @@ ShallowWrapper {
                   "textAlign",
                 ],
                 "render": [Function],
-                "styledComponentId": "styledComponents__MainContainer-qt1p37-1",
+                "styledComponentId": "Medic__MainContainer-sc-15h8q5n-1",
                 "target": [Function],
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
@@ -227,19 +237,29 @@ ShallowWrapper {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": undefined,
             "componentStyle": ComponentStyle {
-              "componentId": "styledComponents__CustomContainer-qt1p37-0",
+              "componentId": "Medic__GlobalContainer-sc-15h8q5n-0",
               "isStatic": true,
               "rules": Array [
-                "&&&{margin:0;padding-left:84px;width:100%;background-color:#f4f6f8;height:100vh;}",
+                "&&&{margin:0;width:100%;}",
               ],
             },
-            "displayName": "styledComponents__CustomContainer",
+            "displayName": "Medic__GlobalContainer",
+            "handledProps": Array [
+              "as",
+              "children",
+              "className",
+              "content",
+              "fluid",
+              "text",
+              "textAlign",
+            ],
             "render": [Function],
-            "styledComponentId": "styledComponents__CustomContainer-qt1p37-0",
-            "target": "div",
+            "styledComponentId": "Medic__GlobalContainer-sc-15h8q5n-0",
+            "target": [Function],
             "toString": [Function],
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
+            Symbol(Symbol.hasInstance): [Function],
           },
         },
       ],
