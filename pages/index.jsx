@@ -1,19 +1,13 @@
-import React, { Component } from 'react'
-import Layout from '../components/Layout/Medic/index'
+import React, { PureComponent } from 'react'
+import Layout from '../components/Layout/index'
 import { Input, Button, Card, Grid } from 'semantic-ui-react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const ExampleGrid = styled(Grid)`
-  &&&& {
-    width: 250px;
-  }
-`
-
-class HomePage extends Component {
+class HomePage extends PureComponent {
   render() {
     return (
-      <Layout>
+      <Layout userRole="medic">
         <h1 className="ui header">Header 1</h1>
         <h3 className="ui header">Header 3</h3>
         <Card>
@@ -46,3 +40,9 @@ class HomePage extends Component {
 }
 
 export default HomePage
+
+const ExampleGrid = styled(Grid)`
+  &&&& {
+    width: 250px;
+  }
+`
