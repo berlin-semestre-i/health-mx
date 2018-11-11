@@ -27,13 +27,18 @@ exports[`Login renders 1`] = `
           <FormInput
             as={[Function]}
             control={[Function]}
+            icon="user"
+            iconPosition="left"
             label="NSS o correo electrónico"
             placeholder="NSS o jorge@ejemplo.com"
             required={true}
           />
           <FormInput
             as={[Function]}
+            autoComplete="off"
             control={[Function]}
+            icon="lock"
+            iconPosition="left"
             label="Contraseña"
             placeholder="••••••••••"
             required={true}
