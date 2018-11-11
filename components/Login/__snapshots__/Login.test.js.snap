@@ -1,74 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login renders 1`] = `
-<Login__CustomGrid>
-  <GridColumn
-    width={9}
+<Fragment>
+  <GlobalStyleComponent
+    suppressMultiMountWarning={false}
   />
-  <Login__RightColumn
-    computer={7}
-    mobile={16}
-    tablet={7}
-  >
-    <Login__LoginContainer>
-      <Image
-        as="img"
-        src="../../static/assets/login-logo.png"
-        ui={true}
-      />
-      <Form
-        as="form"
-      >
-        <FormInput
-          as={[Function]}
-          control={[Function]}
-          label="NSS o correo electrónico"
-          placeholder="NSS o jorge@ejemplo.com"
-          required={true}
+  <Login__LoginGrid>
+    <Login__ImageColumn
+      className="image-container"
+      width={9}
+    />
+    <Login__LoginColumn
+      computer={7}
+      mobile={16}
+      tablet={7}
+    >
+      <Login__LoginContainer>
+        <Image
+          as="img"
+          src="../../static/images/login-logo.png"
+          ui={true}
         />
-        <FormInput
-          as={[Function]}
-          control={[Function]}
-          label="Contraseña"
-          placeholder="••••••••••"
-          required={true}
-          type="password"
-        />
-        <Login__LoginButton
-          primary={true}
-          small="true"
-          type="submit"
+        <Form
+          as="form"
         >
-          Ingresar
-        </Login__LoginButton>
-      </Form>
-      <Login__SecondaryContent>
-        ¿Aún no tienes tu cuenta?
-        <Link
-          as="/registro"
-          href="/register"
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            label="NSS o correo electrónico"
+            placeholder="NSS o jorge@ejemplo.com"
+            required={true}
+          />
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            label="Contraseña"
+            placeholder="••••••••••"
+            required={true}
+            type="password"
+          />
+          <Login__LoginButton
+            primary={true}
+            small="true"
+            type="submit"
+          >
+            Ingresar
+          </Login__LoginButton>
+        </Form>
+        <Login__InfoContent>
+          ¿Aún no tienes tu cuenta?
+          <Link
+            as="/registro"
+            href="/register"
+          >
+            <a>
+               Regístrate
+            </a>
+          </Link>
+        </Login__InfoContent>
+        <Login__InfoContent>
+          <Link
+            as="/recuperar"
+            href="/recovery"
+          >
+            <a>
+              Olvidé mi contraseña
+            </a>
+          </Link>
+        </Login__InfoContent>
+        <Login__InfoContent
+          className="footer"
         >
-          <a>
-             Regístrate
-          </a>
-        </Link>
-      </Login__SecondaryContent>
-      <Login__SecondaryContent>
-        <Link
-          as="/recuperar"
-          href="/recovery"
-        >
-          <a>
-            Olvidé mi contraseña
-          </a>
-        </Link>
-      </Login__SecondaryContent>
-      <Login__SecondaryContent
-        className="footer"
-      >
-        © Instituto Mexicano del Seguro Social. Todos los derechos reservados.
-      </Login__SecondaryContent>
-    </Login__LoginContainer>
-  </Login__RightColumn>
-</Login__CustomGrid>
+          © Instituto Mexicano del Seguro Social. Todos los derechos reservados.
+        </Login__InfoContent>
+      </Login__LoginContainer>
+    </Login__LoginColumn>
+  </Login__LoginGrid>
+</Fragment>
 `;
