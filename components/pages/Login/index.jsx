@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { Grid, Form, Button, Container, Image } from 'semantic-ui-react'
 import Link from 'next/link'
 import styled, { createGlobalStyle } from 'styled-components'
@@ -29,7 +29,9 @@ const Login = () => (
               type="password"
               required
             />
-            <LoginButton small="true" primary type="submit">Ingresar</LoginButton>
+            <Link href="/doctor/hola">
+              <LoginButton small="true" primary type="submit">Ingresar</LoginButton>
+            </Link>
           </Form>
           <InfoContent>
                 ¿Aún no tienes tu cuenta?

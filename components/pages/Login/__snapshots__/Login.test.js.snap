@@ -44,13 +44,17 @@ exports[`Login renders 1`] = `
             required={true}
             type="password"
           />
-          <Login__LoginButton
-            primary={true}
-            small="true"
-            type="submit"
+          <Link
+            href="/doctor/hola"
           >
-            Ingresar
-          </Login__LoginButton>
+            <Login__LoginButton
+              primary={true}
+              small="true"
+              type="submit"
+            >
+              Ingresar
+            </Login__LoginButton>
+          </Link>
         </Form>
         <Login__InfoContent>
           ¿Aún no tienes tu cuenta?
