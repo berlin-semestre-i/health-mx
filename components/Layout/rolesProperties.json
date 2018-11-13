@@ -9,11 +9,11 @@
   },
   "nurse": {
     "placeholder": "Buscar derechohabiente",
-    "background": "#01493D"
+    "background": "#00B5C9"
   },
   "admin": {
     "placeholder": "Buscar usuario",
-    "background": "#561A9B"
+    "background": "#009AE1"
   },
   "error": {
     "placeholder": "Error: you have no role",

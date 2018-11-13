@@ -3,31 +3,13 @@ import { Container } from 'semantic-ui-react'
 import styled from 'styled-components'
 import SideBar from '../shared/SideBar/SideBar'
 import SearchBar from '../shared/SearchBar/SearchBar'
-import { medic, beneficiary, nurse, error, admin } from './rolesProperties.json'
-
-const getPropertiesFromRole = (userRole) => {
-  if ( userRole === 'medic' ) {
-    return medic
-  }
-  else if ( userRole === 'beneficiary' ) {
-    return beneficiary
-  }
-  else if ( userRole === 'nurse' ) {
-    return nurse
-  }
-  else if ( userRole === 'admin' ) {
-    return admin
-  }
-  else {
-    return error
-  }
-}
+import { getPropertiesFromRole } from '../../utils/auth'
 
 const Layout = ({ children, userRole }) => {
   const layoutProperties = getPropertiesFromRole(userRole)
   return (
     <Fragment>
-      <SideBar background={layoutProperties.background}/>
+      <SideBar userRole={userRole}/>
       <GlobalContainer>
         <SearchBar placeholder={layoutProperties.placeholder}/>
         <MainContainer>

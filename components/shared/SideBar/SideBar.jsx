@@ -1,17 +1,60 @@
 import React from 'react'
-import { Menu } from 'semantic-ui-react'
+import Link from 'next/link'
+import { Menu, Image, Icon } from 'semantic-ui-react'
 import styled from 'styled-components'
+import { getPropertiesFromRole } from '../../../utils/auth'
 
-const SideBar = ({ background }) => (
-  <SideMenu
-    name="sideMenu"
-    vertical
-    fixed="left"
-    background={background}
-  />
-)
+class SideBar extends React.PureComponent {
+  state = {
+    activeItem: 'home',
+  }
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  render() {
+    const { userRole } = this.props
+    const { activeItem } = this.state
+    const roleProperties = getPropertiesFromRole(userRole)
+
+    return (
+      <SideMenu
+        name="sideMenu"
+        vertical
+        fixed="left"
+        background={roleProperties.background}
+        icon
+      >
+        <HealthImage src="../../../static/images/Health-Bar-Logo.png"/>
+        <Link as="/admin/home" href="/admin">
+          <Menu.Item
+            name="home"
+            active={activeItem === 'home'}
+            onClick={this.handleItemClick}
+          >
+            <Icon name="home" size="large"/>
+          </Menu.Item>
+        </Link>
+        <Link as="/doctor/hello" href="/doctor/hola">
+          <Menu.Item
+            name="user"
+            active={activeItem === 'user'}
+            onClick={this.handleItemClick}
+          >
+            <Icon name="user" size="large"/>
+          </Menu.Item>
+        </Link>
+      </SideMenu>
+    )
+  }
+}
 
 export default SideBar
+
+const HealthImage = styled(Image)`
+  && {
+    padding: 15px 21px 36px 21px;
+  }
+`
 
 const SideMenu = styled(Menu)`
   &&&& {
