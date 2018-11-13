@@ -3,7 +3,7 @@
 exports[`Layout renders 1`] = `
 <Fragment>
   <SideBar
-    background="#3d5170"
+    userRole="medic"
   />
   <Layout__GlobalContainer>
     <SearchBar

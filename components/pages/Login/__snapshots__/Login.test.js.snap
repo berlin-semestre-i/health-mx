@@ -2,9 +2,6 @@
 
 exports[`Login renders 1`] = `
 <Fragment>
-  <GlobalStyleComponent
-    suppressMultiMountWarning={false}
-  />
   <Login__LoginGrid>
     <Login__ImageColumn
       className="image-container"
