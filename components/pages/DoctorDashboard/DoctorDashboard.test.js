@@ -10,7 +10,7 @@ describe('DoctorDashboard', () => {
 
   it('has three cards', () => {
     const wrapper = mount(<DoctorDashboard />)
-    expect(wrapper.find('div.card').length).toBe(3);
+    expect(wrapper.find('div.card').length).toBe(3)
     wrapper.unmount()
   })
 

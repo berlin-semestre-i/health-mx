@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Login from '../components/pages/Login'
 
-class HomePage extends Component {
+class HomePage extends PureComponent {
   render() {
     return (
       <Login />

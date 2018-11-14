@@ -12,13 +12,13 @@ const AppointmentListItem = ({ appointment }) => (
     <ConsultationInfoContainer mobile={16} tablet={13} computer={14}>
       <Link as="" href=""><a>{ appointment.name }</a></Link>
       <ConsultationInfo>
-        <div>
+        <div name="appt-date">
           <Bold>Fecha: </Bold> { appointment.date }
         </div>
-        <div>
+        <div name="appt-time">
           <Bold>Hora: </Bold> { appointment.time }
         </div>
-        <div>
+        <div name="appt-previous">
           <Bold>Última cita: </Bold> { appointment.previous }
         </div>
       </ConsultationInfo>
