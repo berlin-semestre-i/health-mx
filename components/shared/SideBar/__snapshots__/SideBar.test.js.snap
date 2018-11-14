@@ -8,40 +8,35 @@ exports[`SideBar renders 1`] = `
   name="sideMenu"
   vertical={true}
 >
-  <SideBar__HealthImage
-    src="../../../static/images/Health-Bar-Logo.png"
-  />
   <Link
-    as="/admin/home"
-    href="/admin"
+    as="/error"
+    href="/undefined"
   >
-    <MenuItem
-      active={true}
+    <SideBar__HealthImage
+      src="../../../static/images/Health-Bar-Logo.png"
+    />
+  </Link>
+  <MenuItem
+    active={true}
+    name="home"
+    onClick={[Function]}
+  >
+    <Icon
+      as="i"
       name="home"
-      onClick={[Function]}
-    >
-      <Icon
-        as="i"
-        name="home"
-        size="large"
-      />
-    </MenuItem>
-  </Link>
-  <Link
-    as="/doctor/hello"
-    href="/doctor/hola"
+      size="large"
+    />
+  </MenuItem>
+  <MenuItem
+    active={false}
+    name="user"
+    onClick={[Function]}
   >
-    <MenuItem
-      active={false}
+    <Icon
+      as="i"
       name="user"
-      onClick={[Function]}
-    >
-      <Icon
-        as="i"
-        name="user"
-        size="large"
-      />
-    </MenuItem>
-  </Link>
+      size="large"
+    />
+  </MenuItem>
 </SideBar__SideMenu>
 `;
