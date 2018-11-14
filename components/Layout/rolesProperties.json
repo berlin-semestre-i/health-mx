@@ -1,21 +1,26 @@
 {
   "medic": {
+    "name": "doctor",
     "placeholder": "Buscar derechohabiente o tarea",
     "background": "#3d5170"
   },
   "beneficiary": {
+    "name": "derechohabiente",
     "placeholder": "Buscar tarea o servicio",
     "background": "#0057A3"
   },
   "nurse": {
+    "name": "enfermeria",
     "placeholder": "Buscar derechohabiente",
     "background": "#00B5C9"
   },
   "admin": {
+    "name": "admin",
     "placeholder": "Buscar usuario",
     "background": "#009AE1"
   },
   "error": {
+    "name": "error",
     "placeholder": "Error: you have no role",
     "background": "#F65D61"
   }

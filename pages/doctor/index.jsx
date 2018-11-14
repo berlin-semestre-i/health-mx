@@ -5,7 +5,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 const hola = () => (
-  <Layout userRole="error">
+  <Layout userRole="medic">
     <h1 className="ui header">Header 1</h1>
     <h3 className="ui header">Header 3</h3>
     <Card>

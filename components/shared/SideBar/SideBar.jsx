@@ -24,25 +24,23 @@ class SideBar extends React.PureComponent {
         background={roleProperties.background}
         icon
       >
-        <HealthImage src="../../../static/images/Health-Bar-Logo.png"/>
-        <Link as="/admin/home" href="/admin">
-          <Menu.Item
-            name="home"
-            active={activeItem === 'home'}
-            onClick={this.handleItemClick}
-          >
-            <Icon name="home" size="large"/>
-          </Menu.Item>
+        <Link as={`/${roleProperties.name}`} href={`/${userRole}`}>
+          <HealthImage src="../../../static/images/Health-Bar-Logo.png"/>
         </Link>
-        <Link as="/doctor/hello" href="/doctor/hola">
-          <Menu.Item
-            name="user"
-            active={activeItem === 'user'}
-            onClick={this.handleItemClick}
-          >
-            <Icon name="user" size="large"/>
-          </Menu.Item>
-        </Link>
+        <Menu.Item
+          name="home"
+          active={activeItem === 'home'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name="home" size="large"/>
+        </Menu.Item>
+        <Menu.Item
+          name="user"
+          active={activeItem === 'user'}
+          onClick={this.handleItemClick}
+        >
+          <Icon name="user" size="large"/>
+        </Menu.Item>
       </SideMenu>
     )
   }
@@ -53,6 +51,7 @@ export default SideBar
 const HealthImage = styled(Image)`
   && {
     padding: 15px 21px 36px 21px;
+    cursor: pointer;
   }
 `
 
