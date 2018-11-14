@@ -2,6 +2,7 @@ import React from 'react'
 import Moment from 'react-moment'
 import styled from 'styled-components'
 import { Grid } from 'semantic-ui-react'
+import media from 'styled-media-query'
 
 const Header = ({title, subtitle}) => (
   <React.Fragment>
@@ -23,10 +24,14 @@ const Header = ({title, subtitle}) => (
 export default Header
 
 const DateContainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 1rem;
-  text-align: right;
+
+  ${media.greaterThan('1024px')`
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    text-align: right;
+  `}
+  
 `
 const CustomHeader1 = styled.h1`
   &&& {

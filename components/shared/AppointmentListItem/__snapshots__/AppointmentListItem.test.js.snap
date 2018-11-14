@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppointmentListItem renders 1`] = `
+<AppointmentListItem__ConsultationRow>
+  <AppointmentListItem__AvatarContainer
+    computer={2}
+    mobile={16}
+    tablet={3}
+  >
+    <AppointmentListItem__Avatar />
+  </AppointmentListItem__AvatarContainer>
+  <AppointmentListItem__ConsultationInfoContainer
+    computer={14}
+    mobile={16}
+    tablet={13}
+  >
+    <Link
+      as=""
+      href=""
+    >
+      <a />
+    </Link>
+    <AppointmentListItem__ConsultationInfo>
+      <div>
+        <AppointmentListItem__Bold>
+          Fecha: 
+        </AppointmentListItem__Bold>
+         
+      </div>
+      <div>
+        <AppointmentListItem__Bold>
+          Hora: 
+        </AppointmentListItem__Bold>
+         
+      </div>
+      <div>
+        <AppointmentListItem__Bold>
+          Última cita: 
+        </AppointmentListItem__Bold>
+         
+      </div>
+    </AppointmentListItem__ConsultationInfo>
+  </AppointmentListItem__ConsultationInfoContainer>
+</AppointmentListItem__ConsultationRow>
+`;

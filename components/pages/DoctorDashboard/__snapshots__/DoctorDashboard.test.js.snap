@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DoctorDashboard renders 1`] = `
+<Fragment>
+  <Layout
+    userRole="medic"
+  >
+    <Grid>
+      <Header
+        subtitle="Buenos días, Dr. McDreamy"
+        title="Inicio"
+      />
+      <GridRow>
+        <GridColumn
+          className="dashboard-col"
+          computer={8}
+          mobile={16}
+          tablet={16}
+        >
+          <CustomCard
+            header="Próximas Consultas"
+          >
+            <DoctorDashboard__Consultations>
+              <AppointmentListItem
+                appointment={
+                  Object {
+                    "date": "10 Oct, 2018",
+                    "name": "María del Carmen Hinojosa Ramírez",
+                    "previous": "12 Jul, 2048",
+                    "profile": "../../../static/images/avatar.png",
+                    "time": "08:30 am",
+                  }
+                }
+              />
+            </DoctorDashboard__Consultations>
+            <DoctorDashboard__CenteredButton>
+              <DoctorDashboard__MoreButton
+                className="small"
+                secondary={true}
+              >
+                Ver más
+              </DoctorDashboard__MoreButton>
+            </DoctorDashboard__CenteredButton>
+          </CustomCard>
+          <CustomCard
+            header="Información Importante"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel sollicitudin est, at varius nunc. Morbi ac quam at est viverra posuere. In porttitor tortor vulputate dolor semper egestas. Curabitur sit amet ante sed erat tempor pellentesque. Pellentesque ipsum lectus, condimentum a volutpat id, tincidunt vitae nunc. Ut sed dapibus mi, eu finibus arcu. Nulla maximus posuere nunc id accumsan. Pellentesque tempor aliquam lectus, quis efficitur nisl suscipit vel. Pellentesque vitae dolor eros.
+          </CustomCard>
+        </GridColumn>
+        <GridColumn
+          computer={8}
+          mobile={16}
+          tablet={16}
+        >
+          <CustomCard
+            className="loaderCard nth-col-first"
+            header="Últimas Noticias"
+          >
+            <DoctorDashboard__NewsDimmer
+              active={true}
+            >
+              <Loader
+                indeterminate={true}
+              />
+            </DoctorDashboard__NewsDimmer>
+          </CustomCard>
+        </GridColumn>
+      </GridRow>
+    </Grid>
+  </Layout>
+</Fragment>
+`;
