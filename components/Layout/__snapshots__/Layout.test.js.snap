@@ -2,7 +2,7 @@
 
 exports[`Layout renders 1`] = `
 <Fragment>
-  <SideBar
+  <withRouter(SideBar)
     userRole="medic"
   />
   <Layout__GlobalContainer>

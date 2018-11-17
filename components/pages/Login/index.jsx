@@ -28,18 +28,18 @@ const Login = () => (
               type="password"
               required
             />
-            <Link href="/doctor/hola">
+            <Link href="/medic">
               <LoginButton small="true" primary type="submit">Ingresar</LoginButton>
             </Link>
           </Form>
           <InfoContent>
                 ¿Aún no tienes tu cuenta?
-            <Link as="/registro" href="/register">
+            <Link href="/register">
               <a> Regístrate</a>
             </Link>
           </InfoContent>
           <InfoContent>
-            <Link as="/recuperar" href="/recovery">
+            <Link href="/recovery">
               <a>Olvidé mi contraseña</a>
             </Link>
           </InfoContent>

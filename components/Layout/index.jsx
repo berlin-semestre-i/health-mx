@@ -1,15 +1,18 @@
 import React, { Fragment } from 'react'
 import { Container } from 'semantic-ui-react'
 import styled from 'styled-components'
-import SideBar from '../shared/SideBar/SideBar'
-import SearchBar from '../shared/SearchBar/SearchBar'
+import SideBar from '../shared/SideBar'
+import SearchBar from '../shared/SearchBar'
 import { getPropertiesFromRole } from '../../utils/auth'
 
-const Layout = ({ children, userRole }) => {
+const Layout = ({ children, userRole, userGender }) => {
   const layoutProperties = getPropertiesFromRole(userRole)
   return (
     <Fragment>
-      <SideBar userRole={userRole}/>
+      <SideBar
+        userRole={userRole}
+        userGender={userGender}
+      />
       <GlobalContainer>
         <SearchBar placeholder={layoutProperties.placeholder}/>
         <MainContainer>

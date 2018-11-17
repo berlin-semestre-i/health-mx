@@ -1,42 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SideBar renders 1`] = `
-<SideBar__SideMenu
-  background="#F65D61"
-  fixed="left"
-  icon={true}
-  name="sideMenu"
-  vertical={true}
->
-  <Link
-    as="/error"
-    href="/undefined"
-  >
-    <SideBar__HealthImage
-      src="../../../static/images/Health-Bar-Logo.png"
-    />
-  </Link>
-  <MenuItem
-    active={true}
-    name="home"
-    onClick={[Function]}
-  >
-    <Icon
-      as="i"
-      name="home"
-      size="large"
-    />
-  </MenuItem>
-  <MenuItem
-    active={false}
-    name="user"
-    onClick={[Function]}
-  >
-    <Icon
-      as="i"
-      name="user"
-      size="large"
-    />
-  </MenuItem>
-</SideBar__SideMenu>
+<SideBar
+  userGender="male"
+  userRole="medic"
+/>
 `;

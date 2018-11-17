@@ -2,8 +2,8 @@ import React from 'react'
 import Layout from '../../components/Layout'
 
 const home = () => (
-  <Layout userRole="admin" userGender="male">
-    <h1 className="ui header">Bienvenido Sr. Smith</h1>
+  <Layout userRole="medic" userGender="male">
+    <h1 className="ui header">Bienvenido Doctor Rick Sánchez</h1>
   </Layout>
 )
 
