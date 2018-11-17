@@ -2,8 +2,8 @@
 
 exports[`Layout renders 1`] = `
 <Fragment>
-  <SideBar
-    background="#3d5170"
+  <withRouter(SideBar)
+    userRole="medic"
   />
   <Layout__GlobalContainer>
     <SearchBar
