@@ -1,8 +1,18 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import SideBar from './index'
-import { testsConstants, defaultManAvatar, defaultWomanAvatar } from '../../../utils/constants'
-import { medic, beneficiary, nurse, admin, error } from '../../Layout/rolesProperties.json'
+import SideBar from '../../../../../components/shared/SideBar/index'
+import {
+  testsConstants,
+  defaultManAvatar,
+  defaultWomanAvatar,
+} from '../../../../../utils/constants'
+import {
+  medic,
+  beneficiary,
+  nurse,
+  admin,
+  error,
+} from '../../../../../components/Layout/rolesProperties.json'
 import 'jest-styled-components'
 
 describe('SideBar', () => {
