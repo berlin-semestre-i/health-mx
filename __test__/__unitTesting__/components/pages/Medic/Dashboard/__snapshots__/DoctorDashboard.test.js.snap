@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DoctorDashboard renders 1`] = `
+<Fragment>
+  <Grid>
+    <Header
+      subtitle="Buenos días, Dr. McDreamy"
+      title="Inicio"
+    />
+    <GridRow>
+      <GridColumn
+        className="dashboard-col"
+        computer={8}
+        mobile={16}
+        tablet={16}
+      >
+        <Dashboard__DashboardCard>
+          <CardContent>
+            <CardHeader>
+              Próximas Consultas
+            </CardHeader>
+            <Dashboard__Consultations>
+              <AppointmentListItem
+                appointment={
+                  Object {
+                    "date": "10 Oct, 2018",
+                    "name": "María del Carmen Hinojosa Ramírez",
+                    "previous": "12 Jul, 2048",
+                    "profile": "../../../static/images/avatar.png",
+                    "time": "08:30 am",
+                  }
+                }
+              />
+            </Dashboard__Consultations>
+            <Dashboard__CenteredButton>
+              <Dashboard__MoreButton
+                className="small"
+                secondary={true}
+              >
+                Ver más
+              </Dashboard__MoreButton>
+            </Dashboard__CenteredButton>
+          </CardContent>
+        </Dashboard__DashboardCard>
+        <Dashboard__DashboardCard>
+          <CardContent>
+            <CardHeader>
+              Información Importante
+            </CardHeader>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel sollicitudin est, at varius nunc. Morbi ac quam at est viverra posuere. In porttitor tortor vulputate dolor semper egestas. Curabitur sit amet ante sed erat tempor pellentesque. Pellentesque ipsum lectus, condimentum a volutpat id, tincidunt vitae nunc. Ut sed dapibus mi, eu finibus arcu. Nulla maximus posuere nunc id accumsan. Pellentesque tempor aliquam lectus, quis efficitur nisl suscipit vel. Pellentesque vitae dolor eros.
+          </CardContent>
+        </Dashboard__DashboardCard>
+      </GridColumn>
+      <GridColumn
+        computer={8}
+        mobile={16}
+        tablet={16}
+      >
+        <Dashboard__DashboardCard
+          className="loaderCard nth-col-first"
+        >
+          <CardContent>
+            <Dashboard__NewsCardHeader>
+              Últimas Noticias
+            </Dashboard__NewsCardHeader>
+            <Dashboard__NewsDimmer
+              active={true}
+            >
+              <Loader
+                indeterminate={true}
+              />
+            </Dashboard__NewsDimmer>
+          </CardContent>
+        </Dashboard__DashboardCard>
+      </GridColumn>
+    </GridRow>
+  </Grid>
+</Fragment>
+`;
