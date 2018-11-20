@@ -31,8 +31,6 @@ class DoctorDashboard extends PureComponent {
   render() {
     const { articles, appointment } = this.state
 
-    console.log(articles)
-
     return (
       <React.Fragment>
         <Grid>
