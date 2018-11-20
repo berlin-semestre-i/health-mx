@@ -7,17 +7,17 @@ import media from 'styled-media-query'
 const Header = ({title, subtitle}) => (
   <React.Fragment>
     <Grid.Row>
-        <Grid.Column mobile={16} computer={12}>
-          <CustomHeader3 className="ui header">{title}</CustomHeader3>
-          <CustomHeader1 className="ui header">{subtitle}</CustomHeader1>
-        </Grid.Column>
-        <Grid.Column mobile={16} computer={4}>
-          <DateContainer>
-            <Date className="ui header" element="h3" locale="es" format="LL" />
-            <Date element="h3" locale="es" format="hh:mm a" interval={15000} />
-          </DateContainer>
-        </Grid.Column>
-      </Grid.Row>
+      <Grid.Column mobile={16} computer={12}>
+        <CustomHeader3 className="ui header">{title}</CustomHeader3>
+        <CustomHeader1 className="ui header">{subtitle}</CustomHeader1>
+      </Grid.Column>
+      <Grid.Column mobile={16} computer={4}>
+        <DateContainer>
+          <Date className="ui header" element="h3" locale="es" format="LL" />
+          <Date element="h3" locale="es" format="hh:mm a" interval={15000} />
+        </DateContainer>
+      </Grid.Column>
+    </Grid.Row>
   </React.Fragment>
 )
 

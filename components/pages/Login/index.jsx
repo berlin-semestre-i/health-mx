@@ -1,12 +1,11 @@
 import React from 'react'
 import { Grid, Form, Button, Container, Image } from 'semantic-ui-react'
 import Link from 'next/link'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import media from 'styled-media-query'
 
 const Login = () => (
   <React.Fragment>
-    <LoginBody />
     <LoginGrid>
       <ImageColumn className="image-container" width={9}/>
       <LoginColumn mobile={16} tablet={7} computer={7}>
@@ -29,18 +28,18 @@ const Login = () => (
               type="password"
               required
             />
-            <Link href="/doctor/dashboard">
+            <Link href="/medic">
               <LoginButton small="true" primary type="submit">Ingresar</LoginButton>
             </Link>
           </Form>
           <InfoContent>
                 ¿Aún no tienes tu cuenta?
-            <Link as={'/registro'} href={'/register'}>
+            <Link href="/register">
               <a> Regístrate</a>
             </Link>
           </InfoContent>
           <InfoContent>
-            <Link as={'/recuperar'} href={'/recovery'}>
+            <Link href="/recovery">
               <a>Olvidé mi contraseña</a>
             </Link>
           </InfoContent>
@@ -55,11 +54,6 @@ const Login = () => (
 
 export default Login
 
-const LoginBody = createGlobalStyle`
-  body {
-    background-color: #FFFFFF;
-  }
-`
 const LoginGrid = styled(Grid)`
   && {
     height: 100vh;
