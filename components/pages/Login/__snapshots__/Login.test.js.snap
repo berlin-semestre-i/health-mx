@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders 1`] = `
+<Fragment>
+  <Login__LoginGrid>
+    <Login__ImageColumn
+      className="image-container"
+      width={9}
+    />
+    <Login__LoginColumn
+      computer={7}
+      mobile={16}
+      tablet={7}
+    >
+      <Login__LoginContainer>
+        <Image
+          as="img"
+          src="../../static/images/login-logo.png"
+          ui={true}
+        />
+        <Form
+          as="form"
+        >
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            icon="user"
+            iconPosition="left"
+            label="NSS o correo electrónico"
+            placeholder="NSS o jorge@ejemplo.com"
+            required={true}
+          />
+          <FormInput
+            as={[Function]}
+            autoComplete="off"
+            control={[Function]}
+            icon="lock"
+            iconPosition="left"
+            label="Contraseña"
+            placeholder="••••••••••"
+            required={true}
+            type="password"
+          />
+          <Link
+            href="/medic"
+          >
+            <Login__LoginButton
+              primary={true}
+              small="true"
+              type="submit"
+            >
+              Ingresar
+            </Login__LoginButton>
+          </Link>
+        </Form>
+        <Login__InfoContent>
+          ¿Aún no tienes tu cuenta?
+          <Link
+            href="/register"
+          >
+            <a>
+               Regístrate
+            </a>
+          </Link>
+        </Login__InfoContent>
+        <Login__InfoContent>
+          <Link
+            href="/recovery"
+          >
+            <a>
+              Olvidé mi contraseña
+            </a>
+          </Link>
+        </Login__InfoContent>
+        <Login__InfoContent
+          className="footer"
+        >
+          © Instituto Mexicano del Seguro Social. Todos los derechos reservados.
+        </Login__InfoContent>
+      </Login__LoginContainer>
+    </Login__LoginColumn>
+  </Login__LoginGrid>
+</Fragment>
+`;

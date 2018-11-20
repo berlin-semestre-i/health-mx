@@ -1,0 +1,127 @@
+{
+  "medic": {
+    "name": "doctor",
+    "placeholder": "Buscar derechohabiente o tarea",
+    "background": "#3d5170",
+    "menuItems": [
+      {
+        "id": 1,
+        "description": "Consultas de hoy",
+        "icon": "calendar check",
+        "name": "appointments",
+        "address": "/appointments"
+      },
+      {
+        "id": 2,
+        "description": "Todos los derechohabientes",
+        "icon": "medkit",
+        "name": "all-beneficiaries",
+        "address": "/beneficiaries"
+      },
+      {
+        "id": 3,
+        "description": "Todas las consultas",
+        "icon": "clock",
+        "name": "all-appointments",
+        "address": "/all-appointments"
+      },
+      {
+        "id": 4,
+        "description": "No tengo idea",
+        "icon": "book",
+        "name": "book",
+        "address": "/book"
+      }
+    ]
+  },
+  "beneficiary": {
+    "name": "derechohabiente",
+    "placeholder": "Buscar tarea o servicio",
+    "background": "#0057A3",
+    "menuItems": [
+      {
+        "id": 1,
+        "description": "Consultas clínicas",
+        "icon": "heartbeat",
+        "name": "clinical-matters",
+        "address": "/clinical-matters"
+      },
+      {
+        "id": 2,
+        "description": "Consultas administrativas",
+        "icon": "clipboard list",
+        "name": "admin-matters",
+        "address": "/admin-matters"
+      },
+      {
+        "id": 3,
+        "description": "Escritorio virtual",
+        "icon": "id card",
+        "name": "virtual-desk",
+        "address": "/virtual-desk"
+      }
+    ]
+  },
+  "nurse": {
+    "name": "enfermeria",
+    "placeholder": "Buscar derechohabiente",
+    "background": "#03493D",
+    "menuItems": [
+      {
+        "id": 1,
+        "description": "Todos los derechohabientes",
+        "icon": "medkit",
+        "name": "all-beneficiaries",
+        "address": "/beneficiaries"
+      },
+      {
+        "id": 2,
+        "description": "No tengo idea",
+        "icon": "book",
+        "name": "book",
+        "address": "/book"
+      }
+    ]
+  },
+  "admin": {
+    "name": "admin",
+    "placeholder": "Buscar usuario",
+    "background": "#545454",
+    "menuItems": [
+      {
+        "id": 1,
+        "description": "Administradores",
+        "icon": "user secret",
+        "name": "admins",
+        "address": "/admins"
+      },
+      {
+        "id": 2,
+        "description": "Médicos",
+        "icon": "user md",
+        "name": "medics",
+        "address": "/medics"
+      },
+      {
+        "id": 3,
+        "description": "Enfermería",
+        "icon": "plus square",
+        "name": "nurses",
+        "address": "/nurses"
+      },
+      {
+        "id": 4,
+        "description": "Derechohabientes",
+        "icon": "users",
+        "name": "beneficiaries",
+        "address": "/beneficiaries"
+      }
+    ]
+  },
+  "error": {
+    "name": "error",
+    "placeholder": "Error: you have no role",
+    "background": "#F65D61",
+    "menuItems": []
+  }
+}
