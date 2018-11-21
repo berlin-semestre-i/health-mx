@@ -35,7 +35,7 @@ const Login = () => (
           </Form>
           <InfoContent>
                 ¿Aún no tienes tu cuenta?
-            <Link as={'/registro'} href={'/register'}>
+            <Link as={'/register'} href={'/register'}>
               <a> Regístrate</a>
             </Link>
           </InfoContent>
