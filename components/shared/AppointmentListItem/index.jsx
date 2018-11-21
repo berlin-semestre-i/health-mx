@@ -1,8 +1,11 @@
 import React from 'react'
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import media from 'styled-media-query'
+import Avatar from '../AppointmentAvatar'
+import ConsultationInfo from '../AppointmentInfo'
+import ValueItem from '../ValueItem'
 
 const AppointmentListItem = ({ appointment }) => (
   <ConsultationRow>
@@ -12,15 +15,9 @@ const AppointmentListItem = ({ appointment }) => (
     <ConsultationInfoContainer mobile={16} tablet={13} computer={14}>
       <Link as="" href=""><a>{ appointment.name }</a></Link>
       <ConsultationInfo>
-        <div name="appt-date">
-          <Bold>Fecha: </Bold> { appointment.date }
-        </div>
-        <div name="appt-time">
-          <Bold>Hora: </Bold> { appointment.time }
-        </div>
-        <div name="appt-previous">
-          <Bold>Última cita: </Bold> { appointment.previous }
-        </div>
+        <ValueItem keyName="Fecha" value={ appointment.date } />
+        <ValueItem keyName="Hora" value={ appointment.time } />
+        <ValueItem keyName="Última cita" value={ appointment.previous } />
       </ConsultationInfo>
     </ConsultationInfoContainer>
   </ConsultationRow>
@@ -32,15 +29,6 @@ const ConsultationRow = styled(Grid)`
   >.column:not(.row):last-child {
     padding-top: 1.5rem;
   }
-`
-const ConsultationInfo = styled.div`
-  font-size: 12px;
-
-  ${media.greaterThan('large')`
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
-  `} 
 `
 const AvatarContainer = styled(Grid.Column)`
   text-align: center;
@@ -63,16 +51,6 @@ const ConsultationInfoContainer = styled(Grid.Column)`
       width: 81.25%!important;
     }
   `}
-`
-const Avatar = styled(Image)`
-  && {
-    border-radius: 30px;
-    max-width: 60px;
-    max-height: 60px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-    border: 3px solid #FFF;
-  }
 `
 const Bold = styled.b`
   font-weight: 500;

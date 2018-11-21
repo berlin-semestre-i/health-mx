@@ -7,7 +7,7 @@ exports[`AppointmentListItem renders 1`] = `
     mobile={16}
     tablet={3}
   >
-    <AppointmentListItem__Avatar
+    <Avatar
       src="profile.png"
     />
   </AppointmentListItem__AvatarContainer>
@@ -22,33 +22,18 @@ exports[`AppointmentListItem renders 1`] = `
     >
       <a />
     </Link>
-    <AppointmentListItem__ConsultationInfo>
-      <div
-        name="appt-date"
-      >
-        <AppointmentListItem__Bold>
-          Fecha: 
-        </AppointmentListItem__Bold>
-         
-        10 Oct, 2018
-      </div>
-      <div
-        name="appt-time"
-      >
-        <AppointmentListItem__Bold>
-          Hora: 
-        </AppointmentListItem__Bold>
-         
-      </div>
-      <div
-        name="appt-previous"
-      >
-        <AppointmentListItem__Bold>
-          Última cita: 
-        </AppointmentListItem__Bold>
-         
-      </div>
-    </AppointmentListItem__ConsultationInfo>
+    <AppointmentInfo>
+      <ValueItem
+        keyName="Fecha"
+        value="10 Oct, 2018"
+      />
+      <ValueItem
+        keyName="Hora"
+      />
+      <ValueItem
+        keyName="Última cita"
+      />
+    </AppointmentInfo>
   </AppointmentListItem__ConsultationInfoContainer>
 </AppointmentListItem__ConsultationRow>
 `;
