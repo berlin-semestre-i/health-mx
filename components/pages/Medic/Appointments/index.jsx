@@ -7,7 +7,6 @@ import styled from 'styled-components'
 
 class Appointments extends PureComponent {
   state = {
-    articles: [],
     appointment: {
       name: 'María del Carmen Hinojosa Ramírez',
       date: '20 Nov, 2018',
