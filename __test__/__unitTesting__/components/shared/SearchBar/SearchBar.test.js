@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import SearchBar from './SearchBar'
+import SearchBar from '../../../../../components/shared/SearchBar/index'
 
 describe('SearchBar', () => {
   it('renders', () => {

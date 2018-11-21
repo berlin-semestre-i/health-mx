@@ -2,9 +2,6 @@
 
 exports[`Login renders 1`] = `
 <Fragment>
-  <GlobalStyleComponent
-    suppressMultiMountWarning={false}
-  />
   <Login__LoginGrid>
     <Login__ImageColumn
       className="image-container"
@@ -45,7 +42,7 @@ exports[`Login renders 1`] = `
             type="password"
           />
           <Link
-            href="/doctor/hola"
+            href="/medic"
           >
             <Login__LoginButton
               primary={true}
@@ -59,7 +56,6 @@ exports[`Login renders 1`] = `
         <Login__InfoContent>
           ¿Aún no tienes tu cuenta?
           <Link
-            as="/registro"
             href="/register"
           >
             <a>
@@ -69,7 +65,6 @@ exports[`Login renders 1`] = `
         </Login__InfoContent>
         <Login__InfoContent>
           <Link
-            as="/recuperar"
             href="/recovery"
           >
             <a>

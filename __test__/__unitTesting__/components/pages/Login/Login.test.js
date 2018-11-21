@@ -1,10 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import SideBar from './SideBar'
+import Login from '../../../../../components/pages/Login/index'
 
-describe('SideBar', () => {
+describe('Login', () => {
   it('renders', () => {
-    const component = shallow(<SideBar />)
+    const component = shallow(<Login />)
     expect(component).toMatchSnapshot()
   })
 })
