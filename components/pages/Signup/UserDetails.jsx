@@ -20,7 +20,9 @@ export class UserDetails extends React.Component {
           <LoginColumn mobile={16} tablet={7} computer={7}>
             <LoginContainer>
               <Link href="/">
-                <h3 className="ui header"><Icon fitted name="angle left" /> Iniciar sesión</h3>
+                <BackButton>
+                  <h3 className="ui header"><Icon fitted name="angle left" /> Iniciar sesión</h3>
+                </BackButton>
               </Link>
               <StepGroup size="mini">
                 <Step active>
@@ -89,7 +91,7 @@ export default UserDetails
 
 const LoginBody = createGlobalStyle`
   body {
-    background-color: #FFFFFF;
+    background-color: none;
   }
 `
 const LoginGrid = styled(Grid)`
@@ -152,6 +154,7 @@ const LoginContainer = styled(Container)`
   }
 
   &&& .instructions {
+      margin-top: 1rem;
       margin-bottom: 2rem;
   }
 `
@@ -164,14 +167,27 @@ const StepGroup = styled(Step.Group)`
   &.steps {
       border: none;
   }
+
   &.steps .step{
       border-right: none;
+      background: transparent;
       color: #818EA3;
   }
+
+  &.steps .step:after{
+    background: transparent;
+  }
+
   &.steps .step.active {
       background: transparent;
   }
+
   &.steps .step.active:after {
     background: transparent;
 }
+`
+const BackButton = styled.div`
+  &{
+    cursor: pointer;
+  }
 `

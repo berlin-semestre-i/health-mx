@@ -31,7 +31,7 @@ export default Success
 
 const LoginBody = createGlobalStyle`
   body {
-    background-color: #FFFFFF;
+    background-color: none;
   }
 `
 const LoginGrid = styled(Grid)`
