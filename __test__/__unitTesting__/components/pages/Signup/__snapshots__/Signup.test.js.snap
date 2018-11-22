@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup renders 1`] = `
+<UserDetails
+  handleChange={[Function]}
+  nextStep={[Function]}
+  values={
+    Object {
+      "curp": "",
+      "email": "",
+      "id": "",
+      "nss": "",
+      "photo": "",
+    }
+  }
+/>
+`;
