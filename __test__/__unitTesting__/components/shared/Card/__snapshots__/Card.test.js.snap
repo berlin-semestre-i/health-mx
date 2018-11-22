@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Card renders 1`] = `
-<Card__FullWidthCard>
-  <CardContent>
-    <CardHeader />
-  </CardContent>
-</Card__FullWidthCard>
-`;
