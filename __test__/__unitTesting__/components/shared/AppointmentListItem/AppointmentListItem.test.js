@@ -12,11 +12,4 @@ describe('AppointmentListItem', () => {
     const component = shallow(<AppointmentListItem appointment={testAppt} />)
     expect(component).toMatchSnapshot()
   })
-
-  it('has a profile image', () => {
-    const wrapper = mount(<AppointmentListItem appointment={testAppt} />)
-    expect(wrapper.find(`img[src="${testAppt.profile}"]`).length).toBe(1)
-    wrapper.unmount()
-  })
-
 })
