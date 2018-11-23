@@ -9,7 +9,11 @@ exports[`Header renders 1`] = `
     >
       <Header__CustomHeader3
         className="ui header"
-      />
+      >
+        <span>
+           
+        </span>
+      </Header__CustomHeader3>
       <Header__CustomHeader1
         className="ui header"
       />
