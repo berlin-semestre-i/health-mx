@@ -4,7 +4,6 @@ module.exports = withCss({
   serverRuntimeConfig: { // Only available on server side
   },
   publicRuntimeConfig: { // Available on both server and client
-    UPLOADCARE_PUBLIC_KEY: process.env.UPLOADCARE_PUBLIC_KEY,
     NEWS_API_KEY: process.env.NEWS_API_KEY,
   },
   webpack (config) {
