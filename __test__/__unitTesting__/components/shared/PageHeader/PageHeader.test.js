@@ -1,10 +1,13 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import Header from '../../../../../components/shared/PageHeader'
+import { shallow, mount } from 'enzyme'
+import PageHeader from '../../../../../components/shared/PageHeader'
+import wait from 'waait'
+
+Date.now = jest.fn(() => 1487076719000)
 
 describe('Header', () => {
   it('renders', () => {
-    const component = shallow(<Header title="" subtitle="" />)
+    const component = shallow(<PageHeader title="" subtitle="" />)
     expect(component).toMatchSnapshot()
   })
 })
