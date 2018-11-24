@@ -1,8 +1,8 @@
 import React from 'react'
-import { Grid, Icon } from 'semantic-ui-react'
-import Avatar from '../AppointmentAvatar'
-import ConsultationInfo from '../AppointmentInfo'
-import ValueItem from '../ValueItem'
+import { Grid, Icon, Header } from 'semantic-ui-react'
+import Avatar from '../../../shared/Avatar'
+import ConsultationInfo from './AppointmentInfo'
+import ValueItem from '../../../shared/ValueItem'
 import styled from 'styled-components'
 import Link from 'next/link'
 import media from 'styled-media-query'
@@ -13,22 +13,22 @@ const AppointmentRow = ({ appointment, className }) => (
       <a>
         <ConsultationRow>
           <AvatarContainer mobile={16} tablet={3} computer={1}>
-            <Avatar src={ appointment.profile }/>
+            <Avatar src={appointment.profile}/>
           </AvatarContainer>
           <ConsultationInfoContainer mobile={16} tablet={13} computer={10}>
             <BeneficiaryName>
               { appointment.name }
             </BeneficiaryName>
             <ConsultationInfo>
-              <ValueItem keyName="Edad" value={ appointment.age } />
-              <ValueItem keyName="Estado" value={ appointment.status } />
-              <ValueItem keyName="Tratamiento" value={ appointment.treatment } />
-              <ValueItem keyName="Última cita" value={ appointment.previous } />
+              <ValueItem keyName="Edad" value={appointment.age} />
+              <ValueItem keyName="Estado" value={appointment.status} />
+              <ValueItem keyName="Tratamiento" value={appointment.treatment} />
+              <ValueItem keyName="Última cita" value={appointment.previous} />
             </ConsultationInfo>
           </ConsultationInfoContainer>
           <ConsultationTime computer={4} tablet={4} mobile={16} className={className}>
-            <h3 className="ui header">Hora</h3>
-            <h1 className="ui header">{ appointment.time }</h1>
+            <Header as="h3">Hora</Header>
+            <Header as="h1">{ appointment.time }</Header>
           </ConsultationTime>
           <ChevronContainer computer={1}>
             <Icon name="chevron right" />

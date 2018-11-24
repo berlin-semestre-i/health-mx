@@ -3,7 +3,7 @@ import { Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 const Avatar = ({ src }) => (
-  <RoundImage src={ src } />
+  <RoundImage src={src} />
 )
 
 export default Avatar

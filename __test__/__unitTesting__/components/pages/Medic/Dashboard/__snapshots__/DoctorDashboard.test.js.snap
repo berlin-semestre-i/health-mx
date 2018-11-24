@@ -3,7 +3,7 @@
 exports[`DoctorDashboard renders 1`] = `
 <Fragment>
   <Grid>
-    <Header
+    <PageHeader
       subtitle="Buenos días, Dr. McDreamy"
       title="Inicio"
     />
@@ -27,7 +27,7 @@ exports[`DoctorDashboard renders 1`] = `
                   tablet={3}
                 >
                   <Avatar
-                    src="../../../static/images/avatar.png"
+                    src="../../../static/images/woman-avatar.png"
                   />
                 </Dashboard__AvatarContainer>
                 <Dashboard__ConsultationInfoContainer

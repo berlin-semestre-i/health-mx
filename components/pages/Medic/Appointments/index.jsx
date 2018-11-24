@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
-import Header from '../../../shared/Header'
-import AppointmentRow from '../../../shared/AppointmentRow'
+import PageHeader from '../../../shared/PageHeader'
+import AppointmentRow from './AppointmentRow'
 import Card from '../../../shared/Card'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Header } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 class Appointments extends PureComponent {
@@ -15,9 +15,9 @@ class Appointments extends PureComponent {
       status: 'Regular',
       age: '25',
       previous: '12 Jul, 2018',
-      profile: '../../../static/images/avatar.png',
+      profile: '../../../static/images/woman-avatar.png',
     },
-    appointment_1: {
+    appointment1: {
       name: 'José Armando Domínguez Pérez',
       date: '20 Nov, 2018',
       time: '10:00 am',
@@ -25,17 +25,17 @@ class Appointments extends PureComponent {
       age: '30',
       treatment: 'En curso',
       previous: '22 Sept, 2018',
-      profile: '../../../static/images/avatar2.png',
+      profile: '../../../static/images/man-avatar.png',
     },
   }
 
   render() {
-    const { appointment, appointment_1 } = this.state
+    const { appointment, appointment1 } = this.state
 
     return (
       <React.Fragment>
         <Grid>
-          <Header
+          <PageHeader
             title="Citas Médicas"
             subtitle="Citas Pendientes"
           />
@@ -44,15 +44,15 @@ class Appointments extends PureComponent {
           </Card>
           <Grid.Row>
             <AppointmentContainer>
-              <AppointmentRow appointment={appointment_1}/>
+              <AppointmentRow appointment={appointment1}/>
             </AppointmentContainer>
           </Grid.Row>
-          <h1 className="ui header">
+          <Header as="h1">
             Citas Completadas
-          </h1>
+          </Header>
           <Grid.Row>
             <AppointmentContainer>
-              <AppointmentRow appointment={appointment_1}/>
+              <AppointmentRow appointment={appointment1}/>
             </AppointmentContainer>
           </Grid.Row>
         </Grid>

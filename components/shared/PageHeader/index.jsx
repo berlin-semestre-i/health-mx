@@ -1,15 +1,15 @@
 import React from 'react'
 import Moment from 'react-moment'
 import styled from 'styled-components'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Header } from 'semantic-ui-react'
 import media from 'styled-media-query'
 
-const Header = ({title, subtitle}) => (
+const PageHeader = ({title, subtitle}) => (
   <React.Fragment>
     <Grid.Row>
       <Grid.Column mobile={16} computer={12}>
-        <CustomHeader3 className="ui header">{title}</CustomHeader3>
-        <CustomHeader1 className="ui header">{subtitle}</CustomHeader1>
+        <CustomHeader as="h3">{title}</CustomHeader>
+        <CustomHeader as="h1">{subtitle}</CustomHeader>
       </Grid.Column>
       <Grid.Column mobile={16} computer={4}>
         <DateContainer>
@@ -21,7 +21,7 @@ const Header = ({title, subtitle}) => (
   </React.Fragment>
 )
 
-export default Header
+export default PageHeader
 
 const DateContainer = styled.div`
 
@@ -33,12 +33,7 @@ const DateContainer = styled.div`
   `}
   
 `
-const CustomHeader1 = styled.h1`
-  &&& {
-    margin: 0;
-  }
-`
-const CustomHeader3 = styled.h3`
+const CustomHeader = styled(Header)`
   &&& {
     margin: 0;
   }

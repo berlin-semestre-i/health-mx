@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Header from '../../../../../components/shared/Header/index'
+import Header from '../../../../../components/shared/PageHeader/index'
 
 describe('Header', () => {
   it('renders', () => {

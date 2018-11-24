@@ -7,31 +7,31 @@ exports[`Header renders 1`] = `
       computer={12}
       mobile={16}
     >
-      <Header__CustomHeader3
-        className="ui header"
+      <PageHeader__CustomHeader
+        as="h3"
       />
-      <Header__CustomHeader1
-        className="ui header"
+      <PageHeader__CustomHeader
+        as="h1"
       />
     </GridColumn>
     <GridColumn
       computer={4}
       mobile={16}
     >
-      <Header__DateContainer>
-        <Header__Date
+      <PageHeader__DateContainer>
+        <PageHeader__Date
           className="ui header"
           element="h3"
           format="LL"
           locale="es"
         />
-        <Header__Date
+        <PageHeader__Date
           element="h3"
           format="hh:mm a"
           interval={15000}
           locale="es"
         />
-      </Header__DateContainer>
+      </PageHeader__DateContainer>
     </GridColumn>
   </GridRow>
 </Fragment>

@@ -3,7 +3,7 @@
 exports[`Appointments renders 1`] = `
 <Fragment>
   <Grid>
-    <Header
+    <PageHeader
       subtitle="Citas Pendientes"
       title="Citas Médicas"
     />
@@ -17,7 +17,7 @@ exports[`Appointments renders 1`] = `
             "date": "20 Nov, 2018",
             "name": "María del Carmen Hinojosa Ramírez",
             "previous": "12 Jul, 2018",
-            "profile": "../../../static/images/avatar.png",
+            "profile": "../../../static/images/woman-avatar.png",
             "status": "Regular",
             "time": "08:30 am",
             "treatment": "N/A",
@@ -35,7 +35,7 @@ exports[`Appointments renders 1`] = `
               "date": "20 Nov, 2018",
               "name": "José Armando Domínguez Pérez",
               "previous": "22 Sept, 2018",
-              "profile": "../../../static/images/avatar2.png",
+              "profile": "../../../static/images/man-avatar.png",
               "status": "Regular",
               "time": "10:00 am",
               "treatment": "En curso",
@@ -44,11 +44,11 @@ exports[`Appointments renders 1`] = `
         />
       </Appointments__AppointmentContainer>
     </GridRow>
-    <h1
-      className="ui header"
+    <Header
+      as="h1"
     >
       Citas Completadas
-    </h1>
+    </Header>
     <GridRow>
       <Appointments__AppointmentContainer>
         <AppointmentRow
@@ -58,7 +58,7 @@ exports[`Appointments renders 1`] = `
               "date": "20 Nov, 2018",
               "name": "José Armando Domínguez Pérez",
               "previous": "22 Sept, 2018",
-              "profile": "../../../static/images/avatar2.png",
+              "profile": "../../../static/images/man-avatar.png",
               "status": "Regular",
               "time": "10:00 am",
               "treatment": "En curso",

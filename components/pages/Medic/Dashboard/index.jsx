@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react'
-import Header from '../../../shared/Header'
+import PageHeader from '../../../shared/PageHeader'
 import { Grid, Button, Loader, Dimmer, Image, Card } from 'semantic-ui-react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import NewsApi from '../../../../utils/NewsAPI'
 import Link from 'next/link'
-import Avatar from '../../../shared/AppointmentAvatar'
-import ConsultationInfo from '../../../shared/AppointmentInfo'
+import Avatar from '../../../shared/Avatar'
+import ConsultationInfo from '../../../pages/Medic/Appointments/AppointmentInfo'
 import ValueItem from '../../../shared/ValueItem'
 
 class DoctorDashboard extends PureComponent {
@@ -17,7 +17,7 @@ class DoctorDashboard extends PureComponent {
       date: '10 Oct, 2018',
       time: '08:30 am',
       previous: '12 Jul, 2048',
-      profile: '../../../static/images/avatar.png',
+      profile: '../../../static/images/woman-avatar.png',
     },
   }
 
@@ -36,7 +36,7 @@ class DoctorDashboard extends PureComponent {
     return (
       <React.Fragment>
         <Grid>
-          <Header
+          <PageHeader
             title="Inicio"
             subtitle="Buenos días, Dr. McDreamy"
           />
@@ -50,14 +50,14 @@ class DoctorDashboard extends PureComponent {
                   <Consultations>
                     <ConsultationRow>
                       <AvatarContainer mobile={16} tablet={3} computer={2}>
-                        <Avatar src={ appointment.profile }/>
+                        <Avatar src={appointment.profile}/>
                       </AvatarContainer>
                       <ConsultationInfoContainer mobile={16} tablet={13} computer={14}>
                         <Link as="" href=""><a>{ appointment.name }</a></Link>
                         <ConsultationInfo>
-                          <ValueItem keyName="Fecha" value={ appointment.date } />
-                          <ValueItem keyName="Hora" value={ appointment.time } />
-                          <ValueItem keyName="Última cita" value={ appointment.previous } />
+                          <ValueItem keyName="Fecha" value={appointment.date} />
+                          <ValueItem keyName="Hora" value={appointment.time} />
+                          <ValueItem keyName="Última cita" value={appointment.previous} />
                         </ConsultationInfo>
                       </ConsultationInfoContainer>
                     </ConsultationRow>
