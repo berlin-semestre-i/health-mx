@@ -20,17 +20,15 @@ exports[`Header renders 1`] = `
     >
       <PageHeader__DateContainer>
         <PageHeader__Date
-          className="ui header"
-          element="h3"
-          format="LL"
-          locale="es"
-        />
+          as="h3"
+        >
+          24 de noviembre de 2018
+        </PageHeader__Date>
         <PageHeader__Date
-          element="h3"
-          format="hh:mm a"
-          interval={15000}
-          locale="es"
-        />
+          as="h3"
+        >
+          12:11 am
+        </PageHeader__Date>
       </PageHeader__DateContainer>
     </GridColumn>
   </GridRow>

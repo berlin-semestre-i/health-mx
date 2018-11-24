@@ -1,107 +1,102 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DoctorDashboard renders 1`] = `
-<Fragment>
-  <Grid>
-    <PageHeader
-      subtitle="Buenos días, Dr. McDreamy"
-      title="Inicio"
-    />
-    <GridRow>
-      <GridColumn
-        className="dashboard-col"
-        computer={8}
-        mobile={16}
-        tablet={16}
-      >
-        <Dashboard__DashboardCard>
-          <CardContent>
-            <CardHeader>
-              Próximas Consultas
-            </CardHeader>
-            <Dashboard__Consultations>
-              <Dashboard__ConsultationRow>
-                <Dashboard__AvatarContainer
-                  computer={2}
-                  mobile={16}
-                  tablet={3}
-                >
-                  <Avatar
-                    src="../../../static/images/woman-avatar.png"
-                  />
-                </Dashboard__AvatarContainer>
-                <Dashboard__ConsultationInfoContainer
-                  computer={14}
-                  mobile={16}
-                  tablet={13}
-                >
-                  <Link
-                    as=""
-                    href=""
-                  >
-                    <a>
-                      María del Carmen Hinojosa Ramírez
-                    </a>
-                  </Link>
-                  <AppointmentInfo>
-                    <ValueItem
-                      keyName="Fecha"
-                      value="10 Oct, 2018"
-                    />
-                    <ValueItem
-                      keyName="Hora"
-                      value="08:30 am"
-                    />
-                    <ValueItem
-                      keyName="Última cita"
-                      value="12 Jul, 2048"
-                    />
-                  </AppointmentInfo>
-                </Dashboard__ConsultationInfoContainer>
-              </Dashboard__ConsultationRow>
-            </Dashboard__Consultations>
-            <Dashboard__CenteredButton>
-              <Dashboard__MoreButton
-                className="small"
-                secondary={true}
-              >
-                Ver más
-              </Dashboard__MoreButton>
-            </Dashboard__CenteredButton>
-          </CardContent>
-        </Dashboard__DashboardCard>
-        <Dashboard__DashboardCard>
-          <CardContent>
-            <CardHeader>
-              Información Importante
-            </CardHeader>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel sollicitudin est, at varius nunc. Morbi ac quam at est viverra posuere. In porttitor tortor vulputate dolor semper egestas. Curabitur sit amet ante sed erat tempor pellentesque. Pellentesque ipsum lectus, condimentum a volutpat id, tincidunt vitae nunc. Ut sed dapibus mi, eu finibus arcu. Nulla maximus posuere nunc id accumsan. Pellentesque tempor aliquam lectus, quis efficitur nisl suscipit vel. Pellentesque vitae dolor eros.
-          </CardContent>
-        </Dashboard__DashboardCard>
-      </GridColumn>
-      <GridColumn
-        computer={8}
-        mobile={16}
-        tablet={16}
-      >
-        <Dashboard__DashboardCard
-          className="loaderCard nth-col-first"
-        >
-          <CardContent>
-            <Dashboard__NewsCardHeader>
-              Últimas Noticias
-            </Dashboard__NewsCardHeader>
-            <Dashboard__NewsDimmer
-              active={true}
-            >
-              <Loader
-                indeterminate={true}
-              />
-            </Dashboard__NewsDimmer>
-          </CardContent>
-        </Dashboard__DashboardCard>
-      </GridColumn>
-    </GridRow>
-  </Grid>
-</Fragment>
+<ApolloProvider
+  client={
+    ApolloClient {
+      "cache": InMemoryCache {
+        "addTypename": true,
+        "cacheKeyRoot": CacheKeyNode {
+          "children": null,
+          "key": null,
+        },
+        "config": Object {
+          "addTypename": true,
+          "dataIdFromObject": [Function],
+          "fragmentMatcher": HeuristicFragmentMatcher {},
+        },
+        "data": DepTrackingCache {
+          "data": Object {},
+          "depend": [Function],
+        },
+        "maybeBroadcastWatch": [Function],
+        "optimistic": Array [],
+        "silenceBroadcast": false,
+        "storeReader": StoreReader {
+          "cacheKeyRoot": CacheKeyNode {
+            "children": null,
+            "key": null,
+          },
+          "executeSelectionSet": [Function],
+          "executeStoreQuery": [Function],
+          "keyMaker": QueryKeyMaker {
+            "cacheKeyRoot": CacheKeyNode {
+              "children": null,
+              "key": null,
+            },
+            "perQueryKeyMakers": Map {},
+          },
+        },
+        "storeWriter": StoreWriter {},
+        "typenameDocumentCache": Map {},
+        "watches": Set {},
+      },
+      "defaultOptions": Object {},
+      "disableNetworkFetches": false,
+      "link": ApolloLink {
+        "request": [Function],
+      },
+      "mutate": [Function],
+      "query": [Function],
+      "queryDeduplication": true,
+      "reFetchObservableQueries": [Function],
+      "resetStore": [Function],
+      "resetStoreCallbacks": Array [],
+      "ssrMode": false,
+      "store": DataStore {
+        "cache": InMemoryCache {
+          "addTypename": true,
+          "cacheKeyRoot": CacheKeyNode {
+            "children": null,
+            "key": null,
+          },
+          "config": Object {
+            "addTypename": true,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+          },
+          "data": DepTrackingCache {
+            "data": Object {},
+            "depend": [Function],
+          },
+          "maybeBroadcastWatch": [Function],
+          "optimistic": Array [],
+          "silenceBroadcast": false,
+          "storeReader": StoreReader {
+            "cacheKeyRoot": CacheKeyNode {
+              "children": null,
+              "key": null,
+            },
+            "executeSelectionSet": [Function],
+            "executeStoreQuery": [Function],
+            "keyMaker": QueryKeyMaker {
+              "cacheKeyRoot": CacheKeyNode {
+                "children": null,
+                "key": null,
+              },
+              "perQueryKeyMakers": Map {},
+            },
+          },
+          "storeWriter": StoreWriter {},
+          "typenameDocumentCache": Map {},
+          "watches": Set {},
+        },
+      },
+      "version": "2.4.2",
+      "watchQuery": [Function],
+    }
+  }
+>
+  <DoctorDashboard />
+</ApolloProvider>
 `;

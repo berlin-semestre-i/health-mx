@@ -1,17 +1,18 @@
 import React, { PureComponent } from 'react'
 import PageHeader from '../../../shared/PageHeader'
 import { Grid, Button, Loader, Dimmer, Image, Card } from 'semantic-ui-react'
+import { Query } from 'react-apollo'
+import { articles } from '../../../../dataHandlers/articles'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import NewsApi from '../../../../utils/NewsAPI'
 import Link from 'next/link'
 import Avatar from '../../../shared/Avatar'
 import ConsultationInfo from '../../../pages/Medic/Appointments/AppointmentInfo'
 import ValueItem from '../../../shared/ValueItem'
+import Error from '../../../shared/Error'
 
 class DoctorDashboard extends PureComponent {
   state = {
-    articles: [],
     appointment: {
       name: 'María del Carmen Hinojosa Ramírez',
       date: '10 Oct, 2018',
@@ -21,17 +22,8 @@ class DoctorDashboard extends PureComponent {
     },
   }
 
-
-  componentDidMount = () => {
-    NewsApi.getData().then( response => {
-      this.setState({
-        articles: response.articles,
-      })
-    })
-  }
-
   render() {
-    const { articles, appointment } = this.state
+    const { appointment } = this.state
 
     return (
       <React.Fragment>
@@ -90,22 +82,32 @@ class DoctorDashboard extends PureComponent {
                   <NewsCardHeader>
                     Últimas Noticias
                   </NewsCardHeader>
-                  <NewsDimmer active={articles.length === 0}>
-                    <Loader indeterminate />
-                  </NewsDimmer>
-                  {articles.map((article, index) => (
-                    <ArticleContainer name="article" key={index}>
-                      <ArticleImage src={article.urlToImage} />
-                      <ArticleInfo>
-                        <ArticleTitle>{article.title}</ArticleTitle>
-                        <Link href={article.url} >
-                          <a>
-                            <MoreButton secondary className="small">Ver más</MoreButton>
-                          </a>
-                        </Link>
-                      </ArticleInfo>
-                    </ArticleContainer>
-                  ))}
+                  <Query query={articles}>
+                    {({ loading, error, data }) => {
+                      if (loading) return (
+                        <NewsDimmer active={articles.length === 0}>
+                          <Loader indeterminate />
+                        </NewsDimmer>
+                      )
+                      if (error) return <Error error={error} />
+
+                      return (
+                        data.articles.map((article, index) => (
+                          <ArticleContainer name="article" key={index}>
+                            <ArticleImage src={article.urlToImage} />
+                            <ArticleInfo>
+                              <ArticleTitle>{ article.title }</ArticleTitle>
+                              <Link href={article.url} >
+                                <a>
+                                  <MoreButton secondary className="small">Ver más</MoreButton>
+                                </a>
+                              </Link>
+                            </ArticleInfo>
+                          </ArticleContainer>
+                        ))
+                      )
+                    }}
+                  </Query>
                 </Card.Content>
               </DashboardCard>
             </Grid.Column>
