@@ -22,13 +22,13 @@ exports[`PageHeader renders 1`] = `
         <PageHeader__Date
           as="h3"
         >
-          29 de junio de 2011
+          18 de julio de 2013
         </PageHeader__Date>
         <PageHeader__Date
           as="h3"
           name="dateTime"
         >
-          11:52 am
+          05:00 pm
         </PageHeader__Date>
       </PageHeader__DateContainer>
     </GridColumn>
