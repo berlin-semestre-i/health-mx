@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeader renders 1`] = `
+<Fragment>
+  <GridRow>
+    <GridColumn
+      computer={12}
+      mobile={16}
+    >
+      <PageHeader__CustomHeader
+        as="h3"
+        className="ui header"
+      >
+        <span>
+           
+        </span>
+      </PageHeader__CustomHeader>
+      <PageHeader__CustomHeader
+        as="h1"
+      />
+    </GridColumn>
+    <GridColumn
+      computer={4}
+      mobile={16}
+    >
+      <PageHeader__DateContainer>
+        <PageHeader__Date
+          as="h3"
+        >
+          18 de julio de 2013
+        </PageHeader__Date>
+        <PageHeader__Date
+          as="h3"
+          name="dateTime"
+        >
+          05:00 pm
+        </PageHeader__Date>
+      </PageHeader__DateContainer>
+    </GridColumn>
+  </GridRow>
+</Fragment>
+`;

@@ -3,7 +3,7 @@
 exports[`Consultation renders 1`] = `
 <Fragment>
   <Grid>
-    <Header
+    <PageHeader
       goBack="true"
       subtitle="Consulta - "
       title="Atrás"
@@ -15,8 +15,6 @@ exports[`Consultation renders 1`] = `
       >
         <CustomCard
           header="Somatometría Previa"
-          iconColor="blue"
-          iconName="pencil"
         >
           <Consultation__SomatometryData>
             <p>

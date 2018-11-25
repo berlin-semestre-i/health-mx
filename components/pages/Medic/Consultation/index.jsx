@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { Grid, Dropdown, Form, Button, Icon, List, Table } from 'semantic-ui-react'
-import Header from '../../../shared/Header'
+import Header from '../../../shared/PageHeader'
 import Card from '../../../shared/Card'
 import styled from 'styled-components'
 import media from 'styled-media-query'
@@ -123,7 +123,7 @@ class Consultation extends PureComponent {
           <Header title="Atrás" subtitle={`Consulta - ${date}`} goBack="true" />
           <Grid.Row>
             <Grid.Column mobile={16} computer={5}>
-              <Card header="Somatometría Previa" iconName="pencil" iconColor="blue">
+              <Card header="Somatometría Previa">
                 <SomatometryData>
                   <p><b>Enfermero(a): </b></p> { somatometry.nurse }
                 </SomatometryData>
