@@ -4,7 +4,7 @@ import Card from '../../../../../components/shared/Card/index'
 
 describe('Card', () => {
   it('renders', () => {
-    const component = shallow(<Card theader="" />)
+    const component = shallow(<Card header="" />)
     expect(component).toMatchSnapshot()
   })
 })

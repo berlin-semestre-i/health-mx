@@ -1,33 +1,27 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { Card, Icon } from 'semantic-ui-react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
-class CustomCard extends PureComponent {
-  render() {
-    const { header, children, className, iconName, label, iconColor } = this.props
-
-    return (
-      <FullWidthCard className={className}>
-        <Card.Content>
-          <Card.Header>
-            { header }
-            <Secondary>
-              {iconName && iconColor && (
-                <Icon color={iconColor} name={iconName} />
-              )}
-              {iconName && !iconColor && (
-                <Icon name={iconName} />
-              )}
-              <span> { label }</span>
-            </Secondary>
-          </Card.Header>
-          { children }
-        </Card.Content>
-      </FullWidthCard>
-    )
-  }
-}
+const CustomCard = ({ children, header, className, iconName, label, iconColor }) => (
+  <FullWidthCard className={className}>
+    <Card.Content>
+      <Card.Header>
+        { header }
+        <Secondary>
+          {iconName && iconColor && (
+            <Icon color={iconColor} name={iconName} />
+          )}
+          {iconName && !iconColor && (
+            <Icon name={iconName} />
+          )}
+          <span> { label }</span>
+        </Secondary>
+      </Card.Header>
+      { children }
+    </Card.Content>
+  </FullWidthCard>
+)
 
 export default CustomCard
 
