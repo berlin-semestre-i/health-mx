@@ -7,19 +7,19 @@ import media from 'styled-media-query'
 class Header extends PureComponent {
 
   render() {
-    
-    const { title, subtitle, goBack } = this.props
-    let icon
 
-    if(goBack) 
-      icon = <BackIcon name="chevron left" />
+    const { title, subtitle, goBack } = this.props
 
     return (
       <React.Fragment>
         <Grid.Row>
           <Grid.Column mobile={16} computer={12}>
             <CustomHeader3 active={goBack} className="ui header">
-            <span>{icon} {title}</span>
+              <span>{
+                goBack && (
+                  <BackIcon name="chevron left" />
+                )
+              } {title}</span>
             </CustomHeader3>
             <CustomHeader1 className="ui header">{subtitle}</CustomHeader1>
           </Grid.Column>

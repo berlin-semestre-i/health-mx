@@ -2,21 +2,17 @@ import React, { PureComponent } from 'react'
 import { Grid, Dropdown, Form, Button, Icon, List, Table } from 'semantic-ui-react'
 import Header from '../../../shared/Header'
 import Card from '../../../shared/Card'
-import moment from 'moment'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import Link from 'next/link'
 
-moment.locale('es')
-
-const date = moment().format('LL')
 const incompleteErrorMsg = 'Llena todos los campos.'
 const healthStatusOptions = [{
   text: 'Regular',
-  value: 0
+  value: 0,
 }, {
   text: 'Crítico',
-  value: 1
+  value: 1,
 }]
 const somatometry = {
   nurse: 'Rodrigo Fernández',
@@ -24,7 +20,7 @@ const somatometry = {
   weight: 63,
   pulse: 68,
   imc: 22.06,
-  temperature: 36
+  temperature: 36,
 }
 
 class Consultation extends PureComponent {
@@ -32,26 +28,21 @@ class Consultation extends PureComponent {
   state = {
     healthStatus: 0,
     indications: '',
-    treatment: [{
-      dose: '20ml',
-      medicine: 'Dramamine',
-      frequency: '8 hrs',
-      duration: '4 días'
-    }],
+    treatment: [],
     information: {
       motive: '',
       physicalExploration: '',
-      conclusion: ''
+      conclusion: '',
     },
     newMedication: {
       dose: '',
       medicine: '',
       frequency: '',
-      duration: ''
+      duration: '',
     },
     newMedicationError: '',
     labReports: ['Rayos X', 'Tomografía'],
-    isMouseOnRow: -1
+    isMouseOnRow: -1,
   }
 
   updatedObject = (object, key, value) => {
@@ -64,7 +55,7 @@ class Consultation extends PureComponent {
     e.preventDefault()
 
     this.setState({
-      [key]: e.target.value
+      [key]: e.target.value,
     })
   }
 
@@ -72,34 +63,34 @@ class Consultation extends PureComponent {
     e.preventDefault()
 
     this.setState({
-      [parent]: this.updatedObject(parent, key, e.target.value)
+      [parent]: this.updatedObject(parent, key, e.target.value),
     })
   }
 
   addNewMedication = () => {
-    let enabled = 
+    let enabled =
       this.state.newMedication.dose.length > 0 &&
       this.state.newMedication.medicine.length > 0 &&
       this.state.newMedication.frequency.length > 0 &&
       this.state.newMedication.duration.length > 0
-    
+
     if(enabled) {
       this.setState(prevState => ({
-        treatment: [...prevState.treatment, this.state.newMedication]
+        treatment: [...prevState.treatment, this.state.newMedication],
       }))
-  
+
       this.setState({
         newMedication: {
           dose: '',
           medicine: '',
           frequency: '',
-          duration: ''
+          duration: '',
         },
-        newMedicationError: ''
+        newMedicationError: '',
       })
     } else {
       this.setState({
-        newMedicationError: incompleteErrorMsg
+        newMedicationError: incompleteErrorMsg,
       })
     }
   }
@@ -108,21 +99,23 @@ class Consultation extends PureComponent {
     let treatmentArray = [...this.state.treatment]
     treatmentArray.splice(index, 1)
     this.setState({
-      treatment: treatmentArray
-    });
+      treatment: treatmentArray,
+    })
   }
 
   mouseEnter = (index) => {
-    this.setState({ isMouseOnRow: index });
+    this.setState({ isMouseOnRow: index })
   }
 
   mouseLeave = () => {
-    this.setState({ isMouseOnRow: -1 });
+    this.setState({ isMouseOnRow: -1 })
   }
 
   render() {
 
-    const { healthStatus, treatment, newMedication, information, labReports, indications, newMedicationError, isMouseOnRow } = this.state
+    const { healthStatus, treatment, newMedication, information,
+      labReports, indications, newMedicationError, isMouseOnRow } = this.state
+    const { date } = this.props
 
     return (
       <React.Fragment>
@@ -151,12 +144,13 @@ class Consultation extends PureComponent {
                 </SomatometryData>
               </Card>
               <Card header="Estado de Salud">
-                <Dropdown 
-                value={healthStatus}
-                placeholder='Seleccionar Estado' 
-                fluid selection 
-                options={healthStatusOptions} 
-                onChange={e => this.updateState(e, 'healthStatus')}
+                <Dropdown
+                  name="healthStatus"
+                  value={healthStatus}
+                  placeholder="Seleccionar Estado"
+                  fluid selection
+                  options={healthStatusOptions}
+                  onChange={e => this.updateState(e, 'healthStatus')}
                 />
               </Card>
               <Card header="Estudios Clínicos" iconName="pencil" iconColor="blue">
@@ -176,86 +170,105 @@ class Consultation extends PureComponent {
             </Grid.Column>
             <Grid.Column mobile={16} computer={11}>
               <Card header="Información de Consulta" className="nth-col-first">
-                <Form>
-                  <Form.TextArea 
-                  label="Motivo de la consulta:" 
-                  placeholder="Escribe aquí el motivo de la consulta."
-                  value={information.motive}
-                  onChange={e => this.updateStateObject(e, 'motive', 'information')}
+                <Form name="information">
+                  <Form.TextArea
+                    name="motive"
+                    label="Motivo de la consulta:"
+                    placeholder="Escribe aquí el motivo de la consulta."
+                    value={information.motive}
+                    onChange={e => this.updateStateObject(e, 'motive', 'information')}
                   />
-                  <Form.TextArea 
-                  label="Exploración física:" 
-                  placeholder="En caso de aplicar, ingresa las observaciones de la exploración física."
-                  value={information.physicalExploration}
-                  onChange={e => this.updateStateObject(e, 'physicalExploration', 'information')}
+                  <Form.TextArea
+                    name="physicalExploration"
+                    label="Exploración física:"
+                    placeholder="En caso de aplicar,
+                    ingresa las observaciones de la exploración física."
+                    value={information.physicalExploration}
+                    onChange={e => this.updateStateObject(e, 'physicalExploration', 'information')}
                   />
-                  <Form.TextArea 
-                  label="Observaciones y conclusiones de la consulta:" 
-                  placeholder="Escribe aquí las observaciones finales de la consulta."
-                  value={information.conclusion}
-                  onChange={e => this.updateStateObject(e, 'conclusion', 'information')}
+                  <Form.TextArea
+                    name="conclusion"
+                    label="Observaciones y conclusiones de la consulta:"
+                    placeholder="Escribe aquí las observaciones finales de la consulta."
+                    value={information.conclusion}
+                    onChange={e => this.updateStateObject(e, 'conclusion', 'information')}
                   />
                 </Form>
               </Card>
               <Card header="Tratamiento" iconName="print" label="Imprimir">
                 <Form>
                   <Form.Group>
-                    <Form.Input 
-                    label="Dosis" 
-                    placeholder="Dosis" 
-                    width={2}
-                    value={newMedication.dose} 
-                    onChange={e => this.updateStateObject(e, 'dose', 'newMedication')}
+                    <Form.Input
+                      name="dose"
+                      label="Dosis"
+                      placeholder="Dosis"
+                      width={2}
+                      value={newMedication.dose}
+                      onChange={e => this.updateStateObject(e, 'dose', 'newMedication')}
                     />
-                    <Form.Input 
-                    label="Medicamento" 
-                    placeholder="Medicamento" 
-                    width={6} 
-                    value={newMedication.medicine}
-                    onChange={e => this.updateStateObject(e, 'medicine', 'newMedication')}
+                    <Form.Input
+                      name="medicine"
+                      label="Medicamento"
+                      placeholder="Medicamento"
+                      width={6}
+                      value={newMedication.medicine}
+                      onChange={e => this.updateStateObject(e, 'medicine', 'newMedication')}
                     />
-                    <Form.Input 
-                    label="Frecuencia" 
-                    placeholder="Frecuencia" 
-                    width={4} 
-                    value={newMedication.frequency}
-                    onChange={e => this.updateStateObject(e, 'frequency', 'newMedication')}
+                    <Form.Input
+                      name="frequency"
+                      label="Frecuencia"
+                      placeholder="Frecuencia"
+                      width={4}
+                      value={newMedication.frequency}
+                      onChange={e => this.updateStateObject(e, 'frequency', 'newMedication')}
                     />
-                    <Form.Input 
-                    label="Duración" 
-                    placeholder="Duración" 
-                    width={3} 
-                    value={newMedication.duration}
-                    onChange={e => this.updateStateObject(e, 'duration', 'newMedication')}
+                    <Form.Input
+                      name="duration"
+                      label="Duración"
+                      placeholder="Duración"
+                      width={3}
+                      value={newMedication.duration}
+                      onChange={e => this.updateStateObject(e, 'duration', 'newMedication')}
                     />
                     <AddIconContainer>
-                      <AddIcon 
-                      name="plus" 
-                      onClick={() => this.addNewMedication()}
+                      <AddIcon
+                        name="plus"
+                        onClick={() => this.addNewMedication()}
                       />
                     </AddIconContainer>
                   </Form.Group>
-                  <ErrorMessage>{ newMedicationError }</ErrorMessage>
-                  <Table basic='very'>
+                  <ErrorMessage name="error">{ newMedicationError }</ErrorMessage>
+                  <Table basic="very">
                     <Table.Body>
                       {treatment.map((med, index) => (
-                        <Table.Row key={index} onMouseEnter={() => this.mouseEnter(index)} onMouseLeave={() => this.mouseLeave()}>
+                        <Table.Row
+                          name="medication"
+                          key={index}
+                          onMouseEnter={() => this.mouseEnter(index)}
+                          onMouseLeave={() => this.mouseLeave()}
+                        >
                           <Table.Cell width={2}>{med.dose}</Table.Cell>
                           <Table.Cell width={6}>{med.medicine}</Table.Cell>
                           <Table.Cell width={4}>{med.frequency}</Table.Cell>
                           <Table.Cell width={3}>{med.duration}</Table.Cell>
                           <Table.Cell width={1}>
-                            {isMouseOnRow == index ? <DeleteIcon name="trash" onClick={() => this.deleteMedication(index)} /> : null}
+                            {isMouseOnRow === index ?
+                              <DeleteIcon
+                                name="trash"
+                                onClick={() => this.deleteMedication(index)}
+                              /> : null
+                            }
                           </Table.Cell>
                         </Table.Row>
                       ))}
                     </Table.Body>
                   </Table>
-                  <Form.TextArea 
-                  label="Indicaciones del tratamiento:"
-                  placeholder="Escribe aquí las indicaciones del tratamiento."
-                  value={indications}
-                  onChange={e => this.updateStateObject(e, 'indications', 'treatment')}
+                  <Form.TextArea
+                    name="indications"
+                    label="Indicaciones del tratamiento:"
+                    placeholder="Escribe aquí las indicaciones del tratamiento."
+                    value={indications}
+                    onChange={e => this.updateState(e, 'indications')}
                   />
                 </Form>
               </Card>

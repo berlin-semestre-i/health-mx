@@ -5,7 +5,7 @@ exports[`Consultation renders 1`] = `
   <Grid>
     <Header
       goBack="true"
-      subtitle="Consulta - 22 de noviembre de 2018"
+      subtitle="Consulta - "
       title="Atrás"
     />
     <GridRow>
@@ -88,6 +88,7 @@ exports[`Consultation renders 1`] = `
             fluid={true}
             icon="dropdown"
             minCharacters={1}
+            name="healthStatus"
             noResultsMessage="No results found."
             onChange={[Function]}
             openOnFocus={true}
@@ -152,11 +153,13 @@ exports[`Consultation renders 1`] = `
         >
           <Form
             as="form"
+            name="information"
           >
             <FormTextArea
               as={[Function]}
               control={[Function]}
               label="Motivo de la consulta:"
+              name="motive"
               onChange={[Function]}
               placeholder="Escribe aquí el motivo de la consulta."
               value=""
@@ -165,6 +168,7 @@ exports[`Consultation renders 1`] = `
               as={[Function]}
               control={[Function]}
               label="Exploración física:"
+              name="physicalExploration"
               onChange={[Function]}
               placeholder="En caso de aplicar, ingresa las observaciones de la exploración física."
               value=""
@@ -173,6 +177,7 @@ exports[`Consultation renders 1`] = `
               as={[Function]}
               control={[Function]}
               label="Observaciones y conclusiones de la consulta:"
+              name="conclusion"
               onChange={[Function]}
               placeholder="Escribe aquí las observaciones finales de la consulta."
               value=""
@@ -192,6 +197,7 @@ exports[`Consultation renders 1`] = `
                 as={[Function]}
                 control={[Function]}
                 label="Dosis"
+                name="dose"
                 onChange={[Function]}
                 placeholder="Dosis"
                 value=""
@@ -201,6 +207,7 @@ exports[`Consultation renders 1`] = `
                 as={[Function]}
                 control={[Function]}
                 label="Medicamento"
+                name="medicine"
                 onChange={[Function]}
                 placeholder="Medicamento"
                 value=""
@@ -210,6 +217,7 @@ exports[`Consultation renders 1`] = `
                 as={[Function]}
                 control={[Function]}
                 label="Frecuencia"
+                name="frequency"
                 onChange={[Function]}
                 placeholder="Frecuencia"
                 value=""
@@ -219,6 +227,7 @@ exports[`Consultation renders 1`] = `
                 as={[Function]}
                 control={[Function]}
                 label="Duración"
+                name="duration"
                 onChange={[Function]}
                 placeholder="Duración"
                 value=""
@@ -231,56 +240,22 @@ exports[`Consultation renders 1`] = `
                 />
               </Consultation__AddIconContainer>
             </FormGroup>
-            <Consultation__ErrorMessage />
+            <Consultation__ErrorMessage
+              name="error"
+            />
             <Table
               as="table"
               basic="very"
             >
               <TableBody
                 as="tbody"
-              >
-                <TableRow
-                  as="tr"
-                  cellAs="td"
-                  key="0"
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                >
-                  <TableCell
-                    as="td"
-                    width={2}
-                  >
-                    20ml
-                  </TableCell>
-                  <TableCell
-                    as="td"
-                    width={6}
-                  >
-                    Dramamine
-                  </TableCell>
-                  <TableCell
-                    as="td"
-                    width={4}
-                  >
-                    8 hrs
-                  </TableCell>
-                  <TableCell
-                    as="td"
-                    width={3}
-                  >
-                    4 días
-                  </TableCell>
-                  <TableCell
-                    as="td"
-                    width={1}
-                  />
-                </TableRow>
-              </TableBody>
+              />
             </Table>
             <FormTextArea
               as={[Function]}
               control={[Function]}
               label="Indicaciones del tratamiento:"
+              name="indications"
               onChange={[Function]}
               placeholder="Escribe aquí las indicaciones del tratamiento."
               value=""

@@ -3,27 +3,23 @@ import { Card, Icon } from 'semantic-ui-react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
-let iconColor
-
 class CustomCard extends PureComponent {
   render() {
     const { header, children, className, iconName, label, iconColor } = this.props
-    let icon
 
-    if(iconName) {
-      if(iconColor)
-        icon = <Icon color={iconColor} name={iconName} />
-      else 
-        icon = <Icon name={iconName} />
-    }
-      
     return (
       <FullWidthCard className={className}>
         <Card.Content>
           <Card.Header>
             { header }
             <Secondary>
-              { icon } <span>{ label }</span>
+              {iconName && iconColor && (
+                <Icon color={iconColor} name={iconName} />
+              )}
+              {iconName && !iconColor && (
+                <Icon name={iconName} />
+              )}
+              <span> { label }</span>
             </Secondary>
           </Card.Header>
           { children }
