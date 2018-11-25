@@ -9,7 +9,7 @@ import media from 'styled-media-query'
 
 const AppointmentRow = ({ appointment, className }) => (
   <React.Fragment>
-    <Link href="">
+    <Link href="/medic/medicalReport">
       <a>
         <ConsultationRow>
           <AvatarContainer mobile={16} tablet={3} computer={1}>
