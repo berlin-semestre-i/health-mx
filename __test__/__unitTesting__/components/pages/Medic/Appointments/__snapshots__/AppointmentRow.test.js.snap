@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppointmentRow renders 1`] = `
+<Fragment>
+  <Link
+    href=""
+  >
+    <a>
+      <AppointmentRow__ConsultationRow>
+        <AppointmentRow__AvatarContainer
+          computer={1}
+          mobile={16}
+          tablet={3}
+        >
+          <Avatar
+            src="profile.png"
+          />
+        </AppointmentRow__AvatarContainer>
+        <AppointmentRow__ConsultationInfoContainer
+          computer={10}
+          mobile={16}
+          tablet={13}
+        >
+          <AppointmentRow__BeneficiaryName />
+          <AppointmentInfo>
+            <ValueItem
+              keyName="Edad"
+            />
+            <ValueItem
+              keyName="Estado"
+            />
+            <ValueItem
+              keyName="Tratamiento"
+            />
+            <ValueItem
+              keyName="Última cita"
+            />
+          </AppointmentInfo>
+        </AppointmentRow__ConsultationInfoContainer>
+        <AppointmentRow__ConsultationTime
+          computer={4}
+          mobile={16}
+          tablet={4}
+        >
+          <Header
+            as="h3"
+          >
+            Hora
+          </Header>
+          <Header
+            as="h1"
+          />
+        </AppointmentRow__ConsultationTime>
+        <AppointmentRow__ChevronContainer
+          computer={1}
+        >
+          <Icon
+            as="i"
+            name="chevron right"
+          />
+        </AppointmentRow__ChevronContainer>
+      </AppointmentRow__ConsultationRow>
+    </a>
+  </Link>
+</Fragment>
+`;
