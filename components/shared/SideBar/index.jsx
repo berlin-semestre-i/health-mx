@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { Menu, Image, Icon, Popup } from 'semantic-ui-react'
 import styled from 'styled-components'
-import { getPropertiesFromRole } from '../../../utils/auth'
+import { getPropertiesFromRole } from '../../../utils/authorization'
 import { defaultManAvatar, defaultWomanAvatar } from '../../../utils/constants'
 
 class SideBar extends PureComponent {

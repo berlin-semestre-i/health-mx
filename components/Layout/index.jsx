@@ -3,7 +3,7 @@ import { Container } from 'semantic-ui-react'
 import styled from 'styled-components'
 import SideBar from '../shared/SideBar'
 import SearchBar from '../shared/SearchBar'
-import { getPropertiesFromRole } from '../../utils/auth'
+import { getPropertiesFromRole } from '../../utils/authorization'
 
 const Layout = ({ children, userRole, userGender }) => {
   const layoutProperties = getPropertiesFromRole(userRole)
