@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react'
-import Header from '../../../shared/Header'
-import { Grid, Button, Image, Card, Dropdown, Icon, Input } from 'semantic-ui-react'
+import PageHeader from '../../../shared/PageHeader'
+import { Grid, Dropdown, Icon, Input } from 'semantic-ui-react'
 import VirtualDeskCard from './VirtualDeskCard'
 import DefaultTable from './Table'
 import TableBodyRow from './TableBodyRow'
 import styled from 'styled-components'
-import media from 'styled-media-query'
 
 class VirtualDesk extends PureComponent {
   state = {
@@ -31,17 +30,27 @@ class VirtualDesk extends PureComponent {
         situation: 'Vigente',
       },
     ],
+    options: [
+      {
+        value: 1,
+        text: 'Action 1',
+      },
+      {
+        value: 2,
+        text: 'Action 2',
+      },
+    ],
   }
 
   handleChange = (e, {value}) => this.setState({value})
 
   render() {
-    const { dependants, value } = this.state
+    const { dependants, options, value } = this.state
 
     return (
       <React.Fragment>
         <Grid>
-          <Header
+          <PageHeader
             title="Sección médica"
             subtitle={<label>Consulta o inicia trámites clínicos</label>}
           />
@@ -59,7 +68,7 @@ class VirtualDesk extends PureComponent {
                       <ActionsDropdown
                         onChange={this.handleChange}
                         placeholder="Acciones"
-                        fluid selection options=""
+                        fluid selection options={options}
                         value={value}
                       />
                     </Grid.Column>

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import Header from '../../../shared/Header'
+import PageHeader from '../../../shared/PageHeader'
 import { Grid, Card, List } from 'semantic-ui-react'
 import DefaultListItem from '../../../shared/DefaultListItem'
 import styled from 'styled-components'
@@ -63,7 +63,7 @@ class AdminMatters extends PureComponent {
     return (
       <React.Fragment>
         <Grid>
-          <Header
+          <PageHeader
             title="Sección administrativa"
             subtitle={<label>Consulta o inicia trámites administrativos</label>}
           />

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default table renders 1`] = `
+<Table__DeskTable
+  striped={true}
+>
+  <TableHeader
+    as="thead"
+  >
+    <TableRow
+      as="tr"
+      cellAs="td"
+    >
+      <Table__TableHeaderCell>
+        Parentesco
+      </Table__TableHeaderCell>
+      <Table__TableHeaderCell>
+        Nombre
+      </Table__TableHeaderCell>
+      <Table__TableHeaderCell>
+        CURP
+      </Table__TableHeaderCell>
+      <Table__TableHeaderCell>
+        Sexo
+      </Table__TableHeaderCell>
+      <Table__TableHeaderCell>
+        Edad
+      </Table__TableHeaderCell>
+      <Table__TableHeaderCell>
+        Situación
+      </Table__TableHeaderCell>
+    </TableRow>
+  </TableHeader>
+  <TableBody
+    as="tbody"
+  />
+</Table__DeskTable>
+`;

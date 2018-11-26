@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dependants past appointments renders 1`] = `
+<List>
+  <ListContent
+    floated="right"
+  >
+    <Link
+      href="#"
+    >
+      <Button
+        as="button"
+        role="button"
+        secondary={true}
+        size="tiny"
+      >
+        Ver detalles
+      </Button>
+    </Link>
+  </ListContent>
+  <AppointmentsList__AppointmentData>
+    <Grid>
+      <GridColumn
+        computer={5}
+        mobile={16}
+        tablet={5}
+      >
+        <ListContent>
+          10 Oct, 2018
+        </ListContent>
+      </GridColumn>
+      <GridColumn
+        computer={11}
+        mobile={16}
+        tablet={11}
+      >
+        <ListContent>
+          Medicina familiar
+        </ListContent>
+      </GridColumn>
+    </Grid>
+  </AppointmentsList__AppointmentData>
+</List>
+`;

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import Header from '../../../shared/Header'
+import PageHeader from '../../../shared/PageHeader'
 import ServicesItem from '../Dashboard/ServicesItem'
 import { Grid, Button, Image, Card, Dropdown, List } from 'semantic-ui-react'
 import AppointmentsList from './AppointmentsList'
@@ -110,7 +110,7 @@ class ClinicalMatters extends PureComponent {
     return (
       <React.Fragment>
         <Grid>
-          <Header
+          <PageHeader
             title="Sección médica"
             subtitle={<label>Consulta o inicia trámites clínicos</label>}
           />

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Table } from 'semantic-ui-react'
 import Link from 'next/link'
-import styled from 'styled-components'
-import media from 'styled-media-query'
 
 const TableBodyRow = ({ dependant }) => (
   <Table.Row>

@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react'
-import Header from '../../../shared/Header'
+import PageHeader from '../../../shared/PageHeader'
 import BeneficiaryAppointmentItem from './BeneficiaryAppointmentItem'
 import ServicesItem from './ServicesItem'
-import { Grid, Button, Loader, Dimmer, Image, Card } from 'semantic-ui-react'
+import { Grid, Button, Image, Card } from 'semantic-ui-react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import NewsApi from '../../../../utils/NewsAPI'
 
 class BeneficiaryDashboard extends PureComponent {
   state = {
@@ -42,22 +41,13 @@ class BeneficiaryDashboard extends PureComponent {
     ],
   }
 
-
-  componentDidMount = () => {
-    NewsApi.getData().then( response => {
-      this.setState({
-        articles: response.articles,
-      })
-    })
-  }
-
   render() {
     const { beneficiary, appointment, services } = this.state
 
     return (
       <React.Fragment>
         <Grid>
-          <Header
+          <PageHeader
             title="Inicio"
             subtitle={<label>Buen día, {beneficiary}.</label>}
           />
