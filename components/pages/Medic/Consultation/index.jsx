@@ -123,7 +123,7 @@ class Consultation extends PureComponent {
           <Header title="Atrás" subtitle={`Consulta - ${date}`} goBack="true" />
           <Grid.Row>
             <Grid.Column mobile={16} computer={5}>
-              <Card header="Somatometría Previa">
+              <Card header="Somatometría Previa" iconName="print" label="Imprimir">
                 <SomatometryData>
                   <p><b>Enfermero(a): </b></p> { somatometry.nurse }
                 </SomatometryData>
@@ -143,7 +143,7 @@ class Consultation extends PureComponent {
                   <p><b>Temperatura: </b></p> { somatometry.temperature } °C
                 </SomatometryData>
               </Card>
-              <Card header="Estado de Salud">
+              <Card header="Estado de Salud" iconName="pencil" iconColor="blue">
                 <Dropdown
                   name="healthStatus"
                   value={healthStatus}
@@ -171,14 +171,14 @@ class Consultation extends PureComponent {
             <Grid.Column mobile={16} computer={11}>
               <Card header="Información de Consulta" className="nth-col-first">
                 <Form name="information">
-                  <Form.TextArea
+                  <FormTextArea
                     name="motive"
                     label="Motivo de la consulta:"
                     placeholder="Escribe aquí el motivo de la consulta."
                     value={information.motive}
                     onChange={e => this.updateStateObject(e, 'motive', 'information')}
                   />
-                  <Form.TextArea
+                  <FormTextArea
                     name="physicalExploration"
                     label="Exploración física:"
                     placeholder="En caso de aplicar,
@@ -186,7 +186,7 @@ class Consultation extends PureComponent {
                     value={information.physicalExploration}
                     onChange={e => this.updateStateObject(e, 'physicalExploration', 'information')}
                   />
-                  <Form.TextArea
+                  <FormTextArea
                     name="conclusion"
                     label="Observaciones y conclusiones de la consulta:"
                     placeholder="Escribe aquí las observaciones finales de la consulta."
@@ -195,7 +195,7 @@ class Consultation extends PureComponent {
                   />
                 </Form>
               </Card>
-              <Card header="Tratamiento" iconName="print" label="Imprimir">
+              <Card header="Tratamiento">
                 <Form>
                   <Form.Group>
                     <Form.Input
@@ -263,7 +263,7 @@ class Consultation extends PureComponent {
                       ))}
                     </Table.Body>
                   </Table>
-                  <Form.TextArea
+                  <FormTextArea
                     name="indications"
                     label="Indicaciones del tratamiento:"
                     placeholder="Escribe aquí las indicaciones del tratamiento."
@@ -289,6 +289,12 @@ class Consultation extends PureComponent {
 
 export default Consultation
 
+const FormTextArea = styled(Form.TextArea)`
+   & textarea {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont, 
+    "Segoe UI",Roboto,'Helvetica Neue',Arial,Helvetica,sans-serif;
+   }
+`
 const SomatometryData = styled.div`
   margin-bottom: 1rem;
 `
