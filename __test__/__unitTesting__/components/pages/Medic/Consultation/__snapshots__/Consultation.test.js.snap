@@ -15,8 +15,8 @@ exports[`Consultation renders 1`] = `
       >
         <CustomCard
           header="Somatometría Previa"
-          iconName="print"
-          label="Imprimir"
+          iconColor="blue"
+          iconName="pencil"
         >
           <Consultation__SomatometryData>
             <p>
@@ -79,8 +79,6 @@ exports[`Consultation renders 1`] = `
         </CustomCard>
         <CustomCard
           header="Estado de Salud"
-          iconColor="blue"
-          iconName="pencil"
         >
           <Dropdown
             additionLabel="Add "

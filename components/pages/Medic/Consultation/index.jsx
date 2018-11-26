@@ -123,7 +123,7 @@ class Consultation extends PureComponent {
           <Header title="Atrás" subtitle={`Consulta - ${date}`} goBack="true" />
           <Grid.Row>
             <Grid.Column mobile={16} computer={5}>
-              <Card header="Somatometría Previa" iconName="print" label="Imprimir">
+              <Card header="Somatometría Previa" iconName="pencil" iconColor="blue">
                 <SomatometryData>
                   <p><b>Enfermero(a): </b></p> { somatometry.nurse }
                 </SomatometryData>
@@ -143,7 +143,7 @@ class Consultation extends PureComponent {
                   <p><b>Temperatura: </b></p> { somatometry.temperature } °C
                 </SomatometryData>
               </Card>
-              <Card header="Estado de Salud" iconName="pencil" iconColor="blue">
+              <Card header="Estado de Salud">
                 <Dropdown
                   name="healthStatus"
                   value={healthStatus}
