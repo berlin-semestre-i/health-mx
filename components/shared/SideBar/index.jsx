@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 import { Menu, Image, Icon, Popup } from 'semantic-ui-react'
@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { getPropertiesFromRole } from '../../../utils/auth'
 import { defaultManAvatar, defaultWomanAvatar } from '../../../utils/constants'
 
-class SideBar extends React.PureComponent {
+class SideBar extends PureComponent {
   render() {
     const { userRole, router, userAvatar, userGender } = this.props
     const roleProperties = getPropertiesFromRole(userRole)
