@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Grid, Dropdown, Form, Button, Icon, List, Table } from 'semantic-ui-react'
+import { Grid, Dropdown, Form, Button, Icon, List, Table, Modal } from 'semantic-ui-react'
 import Header from '../../../shared/PageHeader'
 import Card from '../../../shared/Card'
 import styled from 'styled-components'
@@ -8,11 +8,16 @@ import Link from 'next/link'
 
 const incompleteErrorMsg = 'Llena todos los campos.'
 const healthStatusOptions = [{
-  text: 'Regular',
-  value: 0,
+  text: 'Regular', value: 0,
 }, {
-  text: 'Crítico',
-  value: 1,
+  text: 'Crítico', value: 1,
+}]
+const priorityOptions = [{
+  text: 'Baja', value: 0,
+}, {
+  text: 'Regular', value: 1,
+}, {
+  text: 'Alta', value: 2,
 }]
 const somatometry = {
   nurse: 'Rodrigo Fernández',
@@ -41,8 +46,29 @@ class Consultation extends PureComponent {
       duration: '',
     },
     newMedicationError: '',
-    labReports: ['Rayos X', 'Tomografía'],
+    newStudyError: '',
+    labReports: [],
+    labReportsCopy: [],
     isMouseOnRow: -1,
+    open: false,
+    priority: '',
+    observations: '',
+    newStudy: {
+      study: '',
+      indications: '',
+    },
+  }
+
+  open = () => this.setState({ open: true })
+
+  close = () => {
+    this.setState({
+      open: false,
+      labReportsCopy: this.state.labReports,
+      newStudy: { study: '', indications: '' },
+      priority: '',
+      observations: '',
+    })
   }
 
   updatedObject = (object, key, value) => {
@@ -67,6 +93,17 @@ class Consultation extends PureComponent {
     })
   }
 
+  addItem = ({enabled, arrayKey, newItem, trueState, falseState}) => {
+    if(enabled) {
+      this.setState(prevState => ({
+        [arrayKey]: [...prevState[arrayKey], newItem],
+      }))
+      this.setState(trueState)
+    } else {
+      this.setState(falseState)
+    }
+  }
+
   addNewMedication = () => {
     let enabled =
       this.state.newMedication.dose.length > 0 &&
@@ -74,12 +111,11 @@ class Consultation extends PureComponent {
       this.state.newMedication.frequency.length > 0 &&
       this.state.newMedication.duration.length > 0
 
-    if(enabled) {
-      this.setState(prevState => ({
-        treatment: [...prevState.treatment, this.state.newMedication],
-      }))
-
-      this.setState({
+    this.addItem({
+      enabled,
+      arrayKey: 'treatment',
+      newItem: this.state.newMedication,
+      trueState: {
         newMedication: {
           dose: '',
           medicine: '',
@@ -87,20 +123,49 @@ class Consultation extends PureComponent {
           duration: '',
         },
         newMedicationError: '',
-      })
-    } else {
-      this.setState({
+      },
+      falseState: {
         newMedicationError: incompleteErrorMsg,
-      })
-    }
+      },
+    })
+  }
+
+  addStudy = () => {
+    let enabled =
+      this.state.newStudy.study.length > 0 &&
+      this.state.newStudy.indications.length > 0
+
+    this.addItem({
+      enabled,
+      arrayKey: 'labReportsCopy',
+      newItem: this.state.newStudy,
+      trueState: {
+        newStudy: {
+          study: '',
+          indications: '',
+        },
+        newStudyError: '',
+      },
+      falseState: {
+        newStudyError: incompleteErrorMsg,
+      },
+    })
+  }
+
+  deleteItem = (index, arrayKey) => {
+    let arrayCopy = [...this.state[arrayKey]]
+    arrayCopy.splice(index, 1)
+    this.setState({
+      [arrayKey]: arrayCopy,
+    })
   }
 
   deleteMedication = (index) => {
-    let treatmentArray = [...this.state.treatment]
-    treatmentArray.splice(index, 1)
-    this.setState({
-      treatment: treatmentArray,
-    })
+    this.deleteItem(index, 'treatment')
+  }
+
+  deleteStudy = (index) => {
+    this.deleteItem(index, 'labReportsCopy')
   }
 
   mouseEnter = (index) => {
@@ -111,10 +176,19 @@ class Consultation extends PureComponent {
     this.setState({ isMouseOnRow: -1 })
   }
 
+  saveLabReports() {
+    this.setState({
+      labReports: this.state.labReportsCopy,
+      open: false,
+      newStudy: { study: '', indications: '' },
+    })
+  }
+
   render() {
 
     const { healthStatus, treatment, newMedication, information,
-      labReports, indications, newMedicationError, isMouseOnRow } = this.state
+      labReports, labReportsCopy, indications, newMedicationError, isMouseOnRow,
+      priority, observations, newStudy, newStudyError } = this.state
     const { date } = this.props
 
     return (
@@ -153,13 +227,19 @@ class Consultation extends PureComponent {
                   onChange={e => this.updateState(e, 'healthStatus')}
                 />
               </Card>
-              <Card header="Estudios Clínicos" iconName="pencil" iconColor="blue">
+              <Card
+                className="lab-studies"
+                header="Estudios Clínicos"
+                iconName="pencil"
+                iconColor="blue"
+                callbackFn={this.open}
+              >
                 {labReports.length > 0 ? (
                   <List>
                     {labReports.map((report, index) => (
                       <List.Item key={index}>
                         <List.Icon name="eye" />
-                        <List.Content>{report}</List.Content>
+                        <List.Content>{report.study}</List.Content>
                       </List.Item>
                     ))}
                   </List>
@@ -197,7 +277,7 @@ class Consultation extends PureComponent {
               </Card>
               <Card header="Tratamiento">
                 <Form>
-                  <Form.Group>
+                  <Form.Group name="newMedication">
                     <Form.Input
                       name="dose"
                       label="Dosis"
@@ -282,6 +362,92 @@ class Consultation extends PureComponent {
             </FinalizeButtonContiainer>
           </Grid.Row>
         </Grid>
+        <LabReportModal open={this.state.open} onClose={this.close}>
+          <ModalHeader>
+            <h1 className="ui header">Nueva solicitud de estudios</h1>
+            <CloseModal name="times" onClick={this.close} />
+          </ModalHeader>
+          <Modal.Content>
+            <Form>
+              <Form.Group name="newStudy">
+                <Form.Input
+                  name="study"
+                  label="Estudio:"
+                  placeholder="Escribe y selecciona el estudio"
+                  width={6}
+                  value={newStudy.study}
+                  onChange={e => this.updateStateObject(e, 'study', 'newStudy')}
+                />
+                <Form.Input
+                  name="indications"
+                  label="Indicaciones del estudio:"
+                  placeholder="Escribe las indicaciones para el estudio"
+                  width={9}
+                  value={newStudy.indications}
+                  onChange={e => this.updateStateObject(e, 'indications', 'newStudy')}
+                />
+                <AddIconContainer>
+                  <AddIcon
+                    name="plus"
+                    onClick={() => this.addStudy()}
+                  />
+                </AddIconContainer>
+              </Form.Group>
+              <ErrorMessage name="error">{ newStudyError }</ErrorMessage>
+              <Table basic="very">
+                <Table.Body>
+                  {labReportsCopy.map((report, index) => (
+                    <Table.Row
+                      name="report"
+                      key={index}
+                      onMouseEnter={() => this.mouseEnter(index + treatment.length)}
+                      onMouseLeave={() => this.mouseLeave()}
+                    >
+                      <Table.Cell width={6}>{report.study}</Table.Cell>
+                      <Table.Cell width={9}>
+                        {report.indications.length > 0?
+                          report.indications : 'Sin indicaciones'
+                        }
+                      </Table.Cell>
+                      <Table.Cell width={1}>
+                        {isMouseOnRow === index + treatment.length ?
+                          <DeleteIcon
+                            name="trash"
+                            onClick={() => this.deleteStudy(index)}
+                          /> : null
+                        }
+                      </Table.Cell>
+                    </Table.Row>
+                  ))}
+                </Table.Body>
+              </Table>
+              <Form.Dropdown
+                name="priority"
+                value={priority}
+                label="Prioridad"
+                placeholder="Seleccionar Prioridad"
+                fluid selection
+                options={priorityOptions}
+                width={6}
+                onChange={e => this.updateState(e, 'priority')}
+              />
+              <Form.TextArea
+                name="observations"
+                label="Observaciones generales:"
+                placeholder="Observaciones para realización de estudio"
+                value={observations}
+                onChange={e => this.updateState(e, 'observations')}
+              />
+            </Form>
+          </Modal.Content>
+          <ModalFooter>
+            <Link href="">
+              <Print href="">Imprimir orden</Print>
+            </Link>
+            <Button basic color="blue" content="Cancelar" onClick={this.close} />
+            <Button name="save-study" content="Guardar" onClick={() => this.saveLabReports()} />
+          </ModalFooter>
+        </LabReportModal>
       </React.Fragment>
     )
   }
@@ -339,4 +505,33 @@ const FinalizeButtonContiainer = styled(Grid.Column)`
 `
 const ErrorMessage = styled.span`
   color: red;
+`
+const ModalHeader = styled(Modal.Header)`
+  &&.header {
+    border-bottom: none;
+    position: relative;
+  }
+`
+const ModalFooter = styled(Modal.Actions)`
+  &&.actions {
+    border-top: none;
+    background-color: #FFFF;
+  }
+`
+const LabReportModal = styled(Modal)`
+  & {
+    padding: 1em;
+  }
+`
+const Print = styled.a`
+  float: left;
+`
+const CloseModal = styled(Icon)`
+  & {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    color: #3d5170;
+  }
 `

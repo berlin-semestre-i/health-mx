@@ -3,17 +3,17 @@ import { Card, Icon } from 'semantic-ui-react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
-const CustomCard = ({ children, header, className, iconName, label, iconColor }) => (
+const CustomCard = ({ children, header, className, iconName, label, iconColor, callbackFn }) => (
   <FullWidthCard className={className}>
     <Card.Content>
       <Card.Header>
         { header }
         <Secondary>
           {iconName && iconColor && (
-            <Icon color={iconColor} name={iconName} />
+            <Icon color={iconColor} name={iconName} onClick={callbackFn} />
           )}
           {iconName && !iconColor && (
-            <Icon name={iconName} />
+            <Icon name={iconName} onClick={callbackFn} />
           )}
           <span> { label }</span>
         </Secondary>

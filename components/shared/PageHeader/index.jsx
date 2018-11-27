@@ -55,7 +55,7 @@ class PageHeader extends PureComponent {
           </Grid.Column>
           <Grid.Column mobile={16} computer={4}>
             <DateContainer>
-              <Date as="h3">
+              <Date as="h3" className="ui header">
                 { date }
               </Date>
               <Date as="h3" name="dateTime">

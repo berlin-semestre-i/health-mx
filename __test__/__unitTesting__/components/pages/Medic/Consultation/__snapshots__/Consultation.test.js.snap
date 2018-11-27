@@ -115,32 +115,15 @@ exports[`Consultation renders 1`] = `
           />
         </CustomCard>
         <CustomCard
+          callbackFn={[Function]}
+          className="lab-studies"
           header="Estudios Clínicos"
           iconColor="blue"
           iconName="pencil"
         >
-          <List>
-            <ListItem
-              key="0"
-            >
-              <ListIcon
-                name="eye"
-              />
-              <ListContent>
-                Rayos X
-              </ListContent>
-            </ListItem>
-            <ListItem
-              key="1"
-            >
-              <ListIcon
-                name="eye"
-              />
-              <ListContent>
-                Tomografía
-              </ListContent>
-            </ListItem>
-          </List>
+          <p>
+            No se ha añadido ninguna solicitud.
+          </p>
         </CustomCard>
       </GridColumn>
       <GridColumn
@@ -184,7 +167,9 @@ exports[`Consultation renders 1`] = `
           <Form
             as="form"
           >
-            <FormGroup>
+            <FormGroup
+              name="newMedication"
+            >
               <FormInput
                 as={[Function]}
                 control={[Function]}
@@ -268,5 +253,131 @@ exports[`Consultation renders 1`] = `
       </Consultation__FinalizeButtonContiainer>
     </GridRow>
   </Grid>
+  <Consultation__LabReportModal
+    onClose={[Function]}
+    open={false}
+  >
+    <Consultation__ModalHeader>
+      <h1
+        className="ui header"
+      >
+        Nueva solicitud de estudios
+      </h1>
+      <Consultation__CloseModal
+        name="times"
+        onClick={[Function]}
+      />
+    </Consultation__ModalHeader>
+    <ModalContent>
+      <Form
+        as="form"
+      >
+        <FormGroup
+          name="newStudy"
+        >
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            label="Estudio:"
+            name="study"
+            onChange={[Function]}
+            placeholder="Escribe y selecciona el estudio"
+            value=""
+            width={6}
+          />
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            label="Indicaciones del estudio:"
+            name="indications"
+            onChange={[Function]}
+            placeholder="Escribe las indicaciones para el estudio"
+            value=""
+            width={9}
+          />
+          <Consultation__AddIconContainer>
+            <Consultation__AddIcon
+              name="plus"
+              onClick={[Function]}
+            />
+          </Consultation__AddIconContainer>
+        </FormGroup>
+        <Consultation__ErrorMessage
+          name="error"
+        />
+        <Table
+          as="table"
+          basic="very"
+        >
+          <TableBody
+            as="tbody"
+          />
+        </Table>
+        <FormDropdown
+          as={[Function]}
+          control={[Function]}
+          fluid={true}
+          label="Prioridad"
+          name="priority"
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "text": "Baja",
+                "value": 0,
+              },
+              Object {
+                "text": "Regular",
+                "value": 1,
+              },
+              Object {
+                "text": "Alta",
+                "value": 2,
+              },
+            ]
+          }
+          placeholder="Seleccionar Prioridad"
+          selection={true}
+          value=""
+          width={6}
+        />
+        <FormTextArea
+          as={[Function]}
+          control={[Function]}
+          label="Observaciones generales:"
+          name="observations"
+          onChange={[Function]}
+          placeholder="Observaciones para realización de estudio"
+          value=""
+        />
+      </Form>
+    </ModalContent>
+    <Consultation__ModalFooter>
+      <Link
+        href=""
+      >
+        <Consultation__Print
+          href=""
+        >
+          Imprimir orden
+        </Consultation__Print>
+      </Link>
+      <Button
+        as="button"
+        basic={true}
+        color="blue"
+        content="Cancelar"
+        onClick={[Function]}
+        role="button"
+      />
+      <Button
+        as="button"
+        content="Guardar"
+        name="save-study"
+        onClick={[Function]}
+        role="button"
+      />
+    </Consultation__ModalFooter>
+  </Consultation__LabReportModal>
 </Fragment>
 `;
