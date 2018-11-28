@@ -4,7 +4,7 @@ import MedicalReport from '../../components/pages/Medic/MedicalReport'
 
 const medicalReport = () => (
   <Layout userRole="medic" userGender="male">
-    <MedicalReport />
+    <MedicalReport userRole="medic"/>
   </Layout>
 )
 

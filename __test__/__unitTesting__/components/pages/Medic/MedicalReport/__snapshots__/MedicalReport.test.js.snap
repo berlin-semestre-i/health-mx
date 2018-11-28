@@ -108,8 +108,6 @@ exports[`MedicalReport renders 1`] = `
                   >
                     <MedicalReport__StartButton
                       content="Iniciar Consulta"
-                      icon="play"
-                      labelPosition="left"
                       positive={true}
                     />
                   </Link>

@@ -62,6 +62,10 @@ const treatments = [{
   endDate: '11 Nov 2017',
   medication: ['Paracetamol', 'Diclofenaco sódico', 'Celebrex'],
 }]
+const buttonContent = {
+  medic: {content:'Iniciar Consulta'},
+  nurse: {content: 'Nueva Somatometría'},
+}
 
 class MedicalReport extends PureComponent {
 
@@ -78,6 +82,7 @@ class MedicalReport extends PureComponent {
 
   render() {
     const { open, consultationIndex } = this.state
+    const { userRole } = this.props
 
     return (
       <React.Fragment>
@@ -131,8 +136,7 @@ class MedicalReport extends PureComponent {
                         <Link href="medic/consultation">
                           <StartButton
                             positive
-                            content="Iniciar Consulta"
-                            icon="play" labelPosition="left"
+                            content={buttonContent[userRole].content}
                           />
                         </Link>
                       </SomatometryValue>
@@ -304,9 +308,7 @@ const StartButtonColumn = styled(Grid.Column)`
   }
 `
 const StartButton = styled(Button)`
-  &.ui.labeled.icon.button {
-    padding-left: 3.5em;
-    padding-right: 1em;
+  &.ui.positive.button {
     font-size: 12px;
     height: 30px;
   }
