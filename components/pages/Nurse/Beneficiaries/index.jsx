@@ -50,16 +50,16 @@ class Beneficiaries extends PureComponent {
           <Grid.Row>
             <Grid.Column>
               <Form>
+                <h4>Búsqueda de derechohabientes</h4>
                 <NurseFormGroup>
                   <Form.Input
-                    label="Búsqueda de derechohabientes"
                     width={7}
                     placeholder="Nombre"
                     value={beneficiaryName}
                     onChange={this.handleChange}
                     name="beneficiaryName"
                   />
-                  <Form.Field width={4} className="no-label">
+                  <Form.Field width={4}>
                     <DateInput
                       placeholder="Fecha de cita"
                       iconPosition="left"
@@ -74,12 +74,11 @@ class Beneficiaries extends PureComponent {
                     width={3}
                     options={specialtiesOptions}
                     placeholder="Especialidad"
-                    className="no-label"
                     value={specialty}
                     name="specialty"
                     onChange={this.handleChange}
                   />
-                  <Form.Field width={2} className="no-label">
+                  <Form.Field width={2}>
                     <Button content="Buscar" />
                   </Form.Field>
                 </NurseFormGroup>
@@ -125,17 +124,15 @@ class Beneficiaries extends PureComponent {
 export default Beneficiaries
 
 const NurseFormGroup = styled(Form.Group)`
-  & div.field.no-label {
-    padding-top: 23px;
-  }
-
-  && div.field>label {
-    font-size: 1em;
-  }
-
-  & div.field.no-label .ui.button {
+  & div.field .ui.button {
     width: 100%;
   }
+
+  ${media.lessThan('small')`
+    &&&.fields>div.field {
+      margin-bottom: 1rem;
+    }
+  `}
 
   ${media.between('small', 'medium')`
     &.fields .seven.wide.field {

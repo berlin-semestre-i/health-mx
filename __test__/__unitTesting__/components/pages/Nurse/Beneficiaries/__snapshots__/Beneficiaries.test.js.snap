@@ -12,11 +12,13 @@ exports[`Beneficiaries renders 1`] = `
         <Form
           as="form"
         >
+          <h4>
+            Búsqueda de derechohabientes
+          </h4>
           <Beneficiaries__NurseFormGroup>
             <FormInput
               as={[Function]}
               control={[Function]}
-              label="Búsqueda de derechohabientes"
               name="beneficiaryName"
               onChange={[Function]}
               placeholder="Nombre"
@@ -24,7 +26,6 @@ exports[`Beneficiaries renders 1`] = `
               width={7}
             />
             <FormField
-              className="no-label"
               width={4}
             >
               <DateInput
@@ -40,7 +41,6 @@ exports[`Beneficiaries renders 1`] = `
             </FormField>
             <FormDropdown
               as={[Function]}
-              className="no-label"
               control={[Function]}
               fluid={true}
               name="specialty"
@@ -63,7 +63,6 @@ exports[`Beneficiaries renders 1`] = `
               width={3}
             />
             <FormField
-              className="no-label"
               width={2}
             >
               <Button
