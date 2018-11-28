@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Beneficiaries renders 1`] = `
+<Fragment>
+  <Grid>
+    <PageHeader
+      subtitle="Toma de somatometrías previas"
+      title="Derechohabientes"
+    />
+    <GridRow>
+      <GridColumn>
+        <Form
+          as="form"
+        >
+          <Beneficiaries__NurseFormGroup>
+            <FormInput
+              as={[Function]}
+              control={[Function]}
+              label="Búsqueda de derechohabientes"
+              name="beneficiaryName"
+              onChange={[Function]}
+              placeholder="Nombre"
+              value=""
+              width={7}
+            />
+            <FormField
+              className="no-label"
+              width={4}
+            >
+              <DateInput
+                dateFormat="DD-MM-YYYY"
+                iconPosition="left"
+                name="date"
+                onChange={[Function]}
+                placeholder="Fecha de cita"
+                preserveViewMode={true}
+                startMode="day"
+                value=""
+              />
+            </FormField>
+            <FormDropdown
+              as={[Function]}
+              className="no-label"
+              control={[Function]}
+              fluid={true}
+              name="specialty"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "text": "Especialidad 1",
+                    "value": 0,
+                  },
+                  Object {
+                    "text": "Especialidad 2",
+                    "value": 1,
+                  },
+                ]
+              }
+              placeholder="Especialidad"
+              selection={true}
+              value=""
+              width={3}
+            />
+            <FormField
+              className="no-label"
+              width={2}
+            >
+              <Button
+                as="button"
+                content="Buscar"
+                role="button"
+              />
+            </FormField>
+          </Beneficiaries__NurseFormGroup>
+        </Form>
+      </GridColumn>
+    </GridRow>
+    <GridRow>
+      <GridColumn>
+        <Table
+          as="table"
+          striped={true}
+        >
+          <Beneficiaries__TableHeader>
+            <TableRow
+              as="tr"
+              cellAs="td"
+            >
+              <TableHeaderCell
+                as="th"
+              >
+                Derechohabiente
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Próxima Cita
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Área de especialidad
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Estado
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+                className="empty"
+              />
+            </TableRow>
+          </Beneficiaries__TableHeader>
+          <TableBody
+            as="tbody"
+          >
+            <TableRow
+              as="tr"
+              cellAs="td"
+              key="0"
+            >
+              <Beneficiaries__TableCell>
+                Orduño Ahumada, Julia Paola
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                10 oct, 2018 - 8:00 a.m.
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                Medicina familiar
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                Regular
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                <Link
+                  href="/nurse/consultation"
+                >
+                  <b>
+                    <a
+                      href=""
+                    >
+                      Ver detalles
+                    </a>
+                  </b>
+                </Link>
+              </Beneficiaries__TableCell>
+            </TableRow>
+            <TableRow
+              as="tr"
+              cellAs="td"
+              key="1"
+            >
+              <Beneficiaries__TableCell>
+                Orduño Ahumada, Julia Paola
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                10 oct, 2018 - 8:00 a.m.
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                Medicina familiar
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                Regular
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                <Link
+                  href="/nurse/consultation"
+                >
+                  <b>
+                    <a
+                      href=""
+                    >
+                      Ver detalles
+                    </a>
+                  </b>
+                </Link>
+              </Beneficiaries__TableCell>
+            </TableRow>
+            <TableRow
+              as="tr"
+              cellAs="td"
+              key="2"
+            >
+              <Beneficiaries__TableCell>
+                Orduño Ahumada, Julia Paola
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                10 oct, 2018 - 8:00 a.m.
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                Medicina familiar
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                Regular
+              </Beneficiaries__TableCell>
+              <Beneficiaries__TableCell>
+                <Link
+                  href="/nurse/consultation"
+                >
+                  <b>
+                    <a
+                      href=""
+                    >
+                      Ver detalles
+                    </a>
+                  </b>
+                </Link>
+              </Beneficiaries__TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </GridColumn>
+    </GridRow>
+  </Grid>
+</Fragment>
+`;
