@@ -3,7 +3,7 @@
 exports[`AppointmentRow renders 1`] = `
 <Fragment>
   <Link
-    href="/medic/medicalReport"
+    href="/medic/patient-profile"
   >
     <a>
       <AppointmentRow__ConsultationRow>
