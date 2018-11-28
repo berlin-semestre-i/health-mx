@@ -5,169 +5,162 @@ import media from 'styled-media-query'
 import ValueItem from '../../../shared/ValueItem'
 import CsvList from './CsvList'
 
-const panes = [
-  {
-    menuItem: 'Información del paciente',
-    render: props => {
-      const { beneficiary } = props
+const TabMedicalReport = ({ beneficiary, consultations, studies, treatments, callbackfn }) => {
 
-      return (
-        <TabPane attached={false} name="information">
-          <TabHeader className="ui header">Información del paciente</TabHeader>
-          <Grid>
-            <Grid.Column mobile={16} computer={5}>
-              <ValueItem keyName="Nombre(s)" value={beneficiary.firstName} />
-              <ValueItem keyName="Apellido paterno" value={beneficiary.fatherLastName} />
-              <ValueItem keyName="Apellido materno" value={beneficiary.motherLastName} />
-              <ValueItem keyName="NSS" value={beneficiary.nss} />
-              <ValueItem keyName="CURP" value={beneficiary.curp} />
-              <ValueItem keyName="Clínica" value={beneficiary.clinic} />
-              <ValueItem keyName="UMF" value={beneficiary.umf} />
-              <ValueItem keyName="Dependientes" value={beneficiary.dependents} />
-              <ValueItem keyName="Médico familiar" value={beneficiary.doctor} />
-            </Grid.Column>
-            <Grid.Column mobile={16} computer={6}>
-              <ValueItem keyName="Antecedentes Quirúrgicos" value="Ver más" />
-              <div><b>Alergias: </b> <CsvList array={beneficiary.allergies} /></div>
-              <div><b>Padecimientos: </b> <CsvList array={beneficiary.ailment} /></div>
-            </Grid.Column>
-            <Grid.Column mobile={16} computer={5}>
-              <ValueItem keyName="AHD (Antecedentes Heredo Familiares)" value="" />
-              <List bulleted items={['Diabetes tipo 2 (padre)', 'Cáncer de colon (abuelo)']} />
-            </Grid.Column>
-          </Grid>
-        </TabPane>
-      )
+  const panes = [
+    {
+      menuItem: 'Información del paciente',
+      render: () => {
+
+        return (
+          <TabPane attached={false} name="information">
+            <TabHeader className="ui header">Información del paciente</TabHeader>
+            <Grid>
+              <Grid.Column mobile={16} computer={5}>
+                <ValueItem keyName="Nombre(s)" value={beneficiary.firstName} />
+                <ValueItem keyName="Apellido paterno" value={beneficiary.fatherLastName} />
+                <ValueItem keyName="Apellido materno" value={beneficiary.motherLastName} />
+                <ValueItem keyName="NSS" value={beneficiary.nss} />
+                <ValueItem keyName="CURP" value={beneficiary.curp} />
+                <ValueItem keyName="Clínica" value={beneficiary.clinic} />
+                <ValueItem keyName="UMF" value={beneficiary.umf} />
+                <ValueItem keyName="Dependientes" value={beneficiary.dependents} />
+                <ValueItem keyName="Médico familiar" value={beneficiary.doctor} />
+              </Grid.Column>
+              <Grid.Column mobile={16} computer={6}>
+                <ValueItem keyName="Antecedentes Quirúrgicos" value={<a href="#">Ver más</a>} />
+                <div><b>Alergias: </b> <CsvList array={beneficiary.allergies} /></div>
+                <div><b>Padecimientos: </b> <CsvList array={beneficiary.ailment} /></div>
+              </Grid.Column>
+              <Grid.Column mobile={16} computer={5}>
+                <ValueItem keyName="AHD (Antecedentes Heredo Familiares)" value="" />
+                <List bulleted items={['Diabetes tipo 2 (padre)', 'Cáncer de colon (abuelo)']} />
+              </Grid.Column>
+            </Grid>
+          </TabPane>
+        )
+      },
     },
-  },
-  {
-    menuItem: 'Consultas médicas previas',
-    render: props => {
-      const { consultations } = props
+    {
+      menuItem: 'Consultas médicas previas',
+      render: () => {
 
-      return (
-        <TabPaneTable attached={false} name="prev-constultations">
-          <Table striped>
-            <TableHeader>
-              <Table.Row>
-                <Table.HeaderCell>Fecha</Table.HeaderCell>
-                <Table.HeaderCell>Área de Especialidad</Table.HeaderCell>
-                <Table.HeaderCell>Médico</Table.HeaderCell>
-                <Table.HeaderCell>Estatus</Table.HeaderCell>
-                <Table.HeaderCell className="empty"></Table.HeaderCell>
-              </Table.Row>
-            </TableHeader>
-
-            <Table.Body>
-              {consultations.map((consultation, index) => (
-                <Table.Row key={index}>
-                  <TableCell>{consultation.date}</TableCell>
-                  <TableCell>{consultation.area}</TableCell>
-                  <TableCell>{consultation.doctor}</TableCell>
-                  <TableCell>
-                    <b>{consultation.status}</b>
-                  </TableCell>
-                  <TableCell>
-                    <b><a href="">Ver detalles</a></b>
-                  </TableCell>
+        return (
+          <TabPaneTable attached={false} name="prev-consultations">
+            <Table striped>
+              <TableHeader>
+                <Table.Row>
+                  <Table.HeaderCell>Fecha</Table.HeaderCell>
+                  <Table.HeaderCell>Área de Especialidad</Table.HeaderCell>
+                  <Table.HeaderCell>Médico</Table.HeaderCell>
+                  <Table.HeaderCell>Estatus</Table.HeaderCell>
+                  <Table.HeaderCell className="empty"></Table.HeaderCell>
                 </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
-        </TabPaneTable>
-      )
+              </TableHeader>
+              <Table.Body>
+                {consultations.map((consultation, index) => (
+                  <Table.Row key={index}>
+                    <TableCell>{consultation.date}</TableCell>
+                    <TableCell>{consultation.area}</TableCell>
+                    <TableCell>{consultation.doctor}</TableCell>
+                    <TableCell>
+                      <b>{consultation.status}</b>
+                    </TableCell>
+                    <TableCell>
+                      <b><a href="#" onClick={() => callbackfn(index)}>Ver detalles</a></b>
+                    </TableCell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </TabPaneTable>
+        )
+      },
     },
-  },
-  {
-    menuItem: 'Estudios de laboratorio',
-    render: props => {
-      const { studies } = props
+    {
+      menuItem: 'Estudios de laboratorio',
+      render: () => {
 
-      return (
-        <TabPaneTable attached={false} name="prev-constultations">
-          <Table striped>
-            <TableHeader>
-              <Table.Row>
-                <Table.HeaderCell>Fecha</Table.HeaderCell>
-                <Table.HeaderCell>Área de Estudio</Table.HeaderCell>
-                <Table.HeaderCell>Tipo de Estudio</Table.HeaderCell>
-                <Table.HeaderCell>Indicaciones</Table.HeaderCell>
-                <Table.HeaderCell className="empty"></Table.HeaderCell>
-              </Table.Row>
-            </TableHeader>
-
-            <Table.Body>
-              {studies.map((study, index) => (
-                <Table.Row key={index}>
-                  <TableCell>{study.date}</TableCell>
-                  <TableCell>{study.area}</TableCell>
-                  <TableCell>{study.type}</TableCell>
-                  <TableCell>
-                    <b>{study.indications}</b>
-                  </TableCell>
-                  <TableCell>
-                    <b><a href="">Ver detalles</a></b>
-                  </TableCell>
+        return (
+          <TabPaneTable attached={false} name="lab-studies">
+            <Table striped>
+              <TableHeader>
+                <Table.Row>
+                  <Table.HeaderCell>Fecha</Table.HeaderCell>
+                  <Table.HeaderCell>Área de Estudio</Table.HeaderCell>
+                  <Table.HeaderCell>Tipo de Estudio</Table.HeaderCell>
+                  <Table.HeaderCell>Indicaciones</Table.HeaderCell>
+                  <Table.HeaderCell className="empty"></Table.HeaderCell>
                 </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
-        </TabPaneTable>
-      )
+              </TableHeader>
+              <Table.Body>
+                {studies.map((study, index) => (
+                  <Table.Row key={index}>
+                    <TableCell>{study.date}</TableCell>
+                    <TableCell>{study.area}</TableCell>
+                    <TableCell>{study.type}</TableCell>
+                    <TableCell>
+                      <b>{study.indications}</b>
+                    </TableCell>
+                    <TableCell>
+                      <b><a href="">Ver detalles</a></b>
+                    </TableCell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </TabPaneTable>
+        )
+      },
     },
-  },
-  {
-    menuItem: 'Tratamientos',
-    render: props => {
-      const { treatments } = props
+    {
+      menuItem: 'Tratamientos',
+      render: () => {
 
-      return (
-        <TabPaneTable attached={false} name="prev-constultations">
-          <Table striped>
-            <TableHeader>
-              <Table.Row>
-                <Table.HeaderCell>Consulta</Table.HeaderCell>
-                <Table.HeaderCell>Fecha de Inicio</Table.HeaderCell>
-                <Table.HeaderCell>Finalización</Table.HeaderCell>
-                <Table.HeaderCell>Medicamentos</Table.HeaderCell>
-                <Table.HeaderCell className="empty"></Table.HeaderCell>
-              </Table.Row>
-            </TableHeader>
-
-            <Table.Body>
-              {treatments.map((treatment, index) => (
-                <Table.Row key={index}>
-                  <TableCell>
-                    <b><a href="">{treatment.consultation}</a></b>
-                  </TableCell>
-                  <TableCell>{treatment.startDate}</TableCell>
-                  <TableCell>{treatment.endDate}</TableCell>
-                  <TableCell>
-                    <b><CsvList array={treatment.medication}/></b>
-                  </TableCell>
-                  <TableCell>
-                    <b><a href="">Ver detalles</a></b>
-                  </TableCell>
+        return (
+          <TabPaneTable attached={false} name="treatments">
+            <Table striped>
+              <TableHeader>
+                <Table.Row>
+                  <Table.HeaderCell>Consulta</Table.HeaderCell>
+                  <Table.HeaderCell>Fecha de Inicio</Table.HeaderCell>
+                  <Table.HeaderCell>Finalización</Table.HeaderCell>
+                  <Table.HeaderCell>Medicamentos</Table.HeaderCell>
+                  <Table.HeaderCell className="empty"></Table.HeaderCell>
                 </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
-        </TabPaneTable>
-      )
-    },
-  },
-]
+              </TableHeader>
 
-const TabMedicalReport = ({ beneficiary, consultations, studies, treatments }) => (
-  <TabMedical
-    beneficiary={beneficiary}
-    consultations={consultations}
-    studies={studies}
-    treatments={treatments}
-    menu={{ secondary: true, className: 'wrapped' }}
-    panes={panes}
-  />
-)
+              <Table.Body>
+                {treatments.map((treatment, index) => (
+                  <Table.Row key={index}>
+                    <TableCell>
+                      <b><a href="">{treatment.consultation}</a></b>
+                    </TableCell>
+                    <TableCell>{treatment.startDate}</TableCell>
+                    <TableCell>{treatment.endDate}</TableCell>
+                    <TableCell>
+                      <b><CsvList array={treatment.medication}/></b>
+                    </TableCell>
+                    <TableCell>
+                      <b><a href="">Ver detalles</a></b>
+                    </TableCell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </TabPaneTable>
+        )
+      },
+    },
+  ]
+
+  return (
+    <TabMedical
+      menu={{ secondary: true, className: 'wrapped' }}
+      panes={panes}
+    />
+  )
+}
 
 export default TabMedicalReport
 
