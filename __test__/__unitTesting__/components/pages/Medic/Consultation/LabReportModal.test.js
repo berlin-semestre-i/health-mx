@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import LabReportModal from '../../../../../../components/pages/Medic/Consultation/LabReportModal'
-import { testsConstants } from '../../../../../../utils/constants'
+import { errorMessage, newStudy } from '../../../../testData/Consultation'
 
 describe('LabReportModal', () => {
   it('renders', () => {
@@ -12,12 +12,12 @@ describe('LabReportModal', () => {
   it('shows error message', () => {
     const wrapper = mount(<LabReportModal open />)
     wrapper.find('i.plus').simulate('click')
-    expect(wrapper.state('error')).toBe(testsConstants.errorMessage)
+    expect(wrapper.state('error')).toBe(errorMessage)
   })
 
   it('toggle delete button', () => {
     const wrapper = mount(<LabReportModal open />)
-    wrapper.setState(testsConstants.newStudy)
+    wrapper.setState(newStudy)
     wrapper.find('i.plus').simulate('click')
     const tableRow = wrapper.find('tr')
     tableRow.simulate('mouseenter')
@@ -29,7 +29,7 @@ describe('LabReportModal', () => {
 
   it('deletes study', () => {
     const wrapper = mount(<LabReportModal open />)
-    wrapper.setState(testsConstants.newStudy)
+    wrapper.setState(newStudy)
     wrapper.find('i.plus').simulate('click')
     const tableRow = wrapper.find('tr')
     tableRow.simulate('mouseenter')

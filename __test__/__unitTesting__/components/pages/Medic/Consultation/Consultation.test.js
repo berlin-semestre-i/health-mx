@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import Consultation from '../../../../../../components/pages/Medic/Consultation/index'
-import { testsConstants } from '../../../../../../utils/constants'
+import { newMedication } from '../../../../testData/Consultation'
 
 describe('Consultation', () => {
   it('renders', () => {
@@ -11,13 +11,13 @@ describe('Consultation', () => {
 
   it('adds medication', () => {
     const wrapper = mount(<Consultation date=""/>)
-    wrapper.instance().addMedication(testsConstants.newMedication)
+    wrapper.instance().addMedication(newMedication)
     expect(wrapper.state('treatment')).toHaveLength(1)
   })
 
   it('deletes medication', () => {
     const wrapper = mount(<Consultation date=""/>)
-    wrapper.setState({treatment: [testsConstants.newMedication]})
+    wrapper.setState({treatment: [newMedication]})
     wrapper.instance().deleteMedication(0)
     expect(wrapper.state('treatment')).toHaveLength(0)
   })

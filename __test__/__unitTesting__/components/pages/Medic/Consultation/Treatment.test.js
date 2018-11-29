@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import Treatment from '../../../../../../components/pages/Medic/Consultation/Treatment'
-import { testsConstants } from '../../../../../../utils/constants'
+import { newMedication, errorMessage } from '../../../../testData/Consultation'
 
 describe('Treatment', () => {
   it('renders', () => {
@@ -12,7 +12,7 @@ describe('Treatment', () => {
   it('toggle delete button', () => {
     const add = jest.fn()
     const wrapper = mount(<Treatment
-      treatment={[testsConstants.newMedication]}
+      treatment={[newMedication]}
       addMedication={add} />)
     const tableRow = wrapper.find('tr')
     tableRow.simulate('mouseenter')
@@ -27,7 +27,7 @@ describe('Treatment', () => {
     const wrapper = mount(<Treatment
       treatment={[]}
       addMedication={add} />)
-    wrapper.setState(testsConstants.newMedication)
+    wrapper.setState(newMedication)
     wrapper.find('i.plus').simulate('click')
     expect(add).toHaveBeenCalled
   })
@@ -42,7 +42,7 @@ describe('Treatment', () => {
   it('deletes medication', () => {
     const deleteMed = jest.fn()
     const wrapper = mount(<Treatment
-      treatment={[testsConstants.newMedication]}
+      treatment={[newMedication]}
       deleteMedication={deleteMed} />)
     wrapper.setState({isMouseOnRow: 0})
     wrapper.find('i.trash').simulate('click')
@@ -52,6 +52,6 @@ describe('Treatment', () => {
   it('shows error message', () => {
     const wrapper = mount(<Treatment treatment={[]} />)
     wrapper.find('i.plus').simulate('click')
-    expect(wrapper.state('error')).toBe(testsConstants.errorMessage)
+    expect(wrapper.state('error')).toBe(errorMessage)
   })
 })
