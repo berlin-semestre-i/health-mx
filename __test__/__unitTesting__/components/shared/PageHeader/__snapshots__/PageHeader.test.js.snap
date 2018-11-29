@@ -26,7 +26,6 @@ exports[`PageHeader renders 1`] = `
       <PageHeader__DateContainer>
         <PageHeader__Date
           as="h3"
-          className="ui header"
         >
           18 de julio de 2013
         </PageHeader__Date>

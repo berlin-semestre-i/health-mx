@@ -55,7 +55,7 @@ class PageHeader extends PureComponent {
           </Grid.Column>
           <Grid.Column mobile={16} computer={4}>
             <DateContainer>
-              <Date as="h3" className="ui header">
+              <Date as="h3">
                 { date }
               </Date>
               <Date as="h3" name="dateTime">
@@ -99,6 +99,10 @@ const Date = styled(Header)`
     text-transform: inherit;
     font-size: 17px;
     margin: 0;
+  }
+
+  &&&:first-child {
+    color: #818ea3;
   }
 `
 const BackIcon = styled(Icon)`

@@ -13,107 +13,22 @@ exports[`Consultation renders 1`] = `
         computer={5}
         mobile={16}
       >
-        <CustomCard
-          header="Somatometría Previa"
-          iconColor="blue"
-          iconName="pencil"
-        >
-          <Consultation__SomatometryData>
-            <p>
-              <b>
-                Enfermero(a): 
-              </b>
-            </p>
-             
-            Rodrigo Fernández
-          </Consultation__SomatometryData>
-          <Consultation__SomatometryData>
-            <p>
-              <b>
-                Estatura: 
-              </b>
-            </p>
-             
-            169
-             cm
-          </Consultation__SomatometryData>
-          <Consultation__SomatometryData>
-            <p>
-              <b>
-                Peso: 
-              </b>
-            </p>
-             
-            63
-             Kg
-          </Consultation__SomatometryData>
-          <Consultation__SomatometryData>
-            <p>
-              <b>
-                Presión y pulso: 
-              </b>
-            </p>
-             
-            68
-             p/m
-          </Consultation__SomatometryData>
-          <Consultation__SomatometryData>
-            <p>
-              <b>
-                IMC: 
-              </b>
-            </p>
-             
-            22.06
-          </Consultation__SomatometryData>
-          <Consultation__SomatometryData>
-            <p>
-              <b>
-                Temperatura: 
-              </b>
-            </p>
-             
-            36
-             °C
-          </Consultation__SomatometryData>
-        </CustomCard>
-        <CustomCard
-          header="Estado de Salud"
-        >
-          <Dropdown
-            additionLabel="Add "
-            additionPosition="top"
-            closeOnBlur={true}
-            deburr={false}
-            fluid={true}
-            icon="dropdown"
-            minCharacters={1}
-            name="healthStatus"
-            noResultsMessage="No results found."
-            onChange={[Function]}
-            openOnFocus={true}
-            options={
-              Array [
-                Object {
-                  "text": "Regular",
-                  "value": 0,
-                },
-                Object {
-                  "text": "Crítico",
-                  "value": 1,
-                },
-              ]
+        <Somatometry
+          somatometry={
+            Object {
+              "height": 169,
+              "imc": 22.06,
+              "nurse": "Rodrigo Fernández",
+              "pulse": 68,
+              "temperature": 36,
+              "weight": 63,
             }
-            placeholder="Seleccionar Estado"
-            renderLabel={[Function]}
-            searchInput="text"
-            selectOnBlur={true}
-            selectOnNavigation={true}
-            selection={true}
-            value={0}
-            wrapSelection={true}
-          />
-        </CustomCard>
+          }
+        />
+        <HealthStatus
+          healthStatus={0}
+          onChange={[Function]}
+        />
         <CustomCard
           callbackFn={[Function]}
           className="lab-studies"
@@ -130,113 +45,18 @@ exports[`Consultation renders 1`] = `
         computer={11}
         mobile={16}
       >
-        <CustomCard
-          className="nth-col-first"
-          header="Información de Consulta"
-        >
-          <Form
-            as="form"
-            name="information"
-          >
-            <Consultation__FormTextArea
-              label="Motivo de la consulta:"
-              name="motive"
-              onChange={[Function]}
-              placeholder="Escribe aquí el motivo de la consulta."
-              value=""
-            />
-            <Consultation__FormTextArea
-              label="Exploración física:"
-              name="physicalExploration"
-              onChange={[Function]}
-              placeholder="En caso de aplicar, ingresa las observaciones de la exploración física."
-              value=""
-            />
-            <Consultation__FormTextArea
-              label="Observaciones y conclusiones de la consulta:"
-              name="conclusion"
-              onChange={[Function]}
-              placeholder="Escribe aquí las observaciones finales de la consulta."
-              value=""
-            />
-          </Form>
-        </CustomCard>
-        <CustomCard
-          header="Tratamiento"
-        >
-          <Form
-            as="form"
-          >
-            <FormGroup
-              name="newMedication"
-            >
-              <FormInput
-                as={[Function]}
-                control={[Function]}
-                label="Dosis"
-                name="dose"
-                onChange={[Function]}
-                placeholder="Dosis"
-                value=""
-                width={2}
-              />
-              <FormInput
-                as={[Function]}
-                control={[Function]}
-                label="Medicamento"
-                name="medicine"
-                onChange={[Function]}
-                placeholder="Medicamento"
-                value=""
-                width={6}
-              />
-              <FormInput
-                as={[Function]}
-                control={[Function]}
-                label="Frecuencia"
-                name="frequency"
-                onChange={[Function]}
-                placeholder="Frecuencia"
-                value=""
-                width={4}
-              />
-              <FormInput
-                as={[Function]}
-                control={[Function]}
-                label="Duración"
-                name="duration"
-                onChange={[Function]}
-                placeholder="Duración"
-                value=""
-                width={3}
-              />
-              <Consultation__AddIconContainer>
-                <Consultation__AddIcon
-                  name="plus"
-                  onClick={[Function]}
-                />
-              </Consultation__AddIconContainer>
-            </FormGroup>
-            <Consultation__ErrorMessage
-              name="error"
-            />
-            <Table
-              as="table"
-              basic="very"
-            >
-              <TableBody
-                as="tbody"
-              />
-            </Table>
-            <Consultation__FormTextArea
-              label="Indicaciones del tratamiento:"
-              name="indications"
-              onChange={[Function]}
-              placeholder="Escribe aquí las indicaciones del tratamiento."
-              value=""
-            />
-          </Form>
-        </CustomCard>
+        <Information
+          conclusion=""
+          motive=""
+          onChange={[Function]}
+          physicalExploration=""
+        />
+        <Treatment
+          addMedication={[Function]}
+          deleteMedication={[Function]}
+          onChange={[Function]}
+          treatment={Array []}
+        />
       </GridColumn>
     </GridRow>
     <GridRow>
@@ -253,131 +73,10 @@ exports[`Consultation renders 1`] = `
       </Consultation__FinalizeButtonContiainer>
     </GridRow>
   </Grid>
-  <Consultation__LabReportModal
-    onClose={[Function]}
+  <LabReportModal
+    close={[Function]}
     open={false}
-  >
-    <Consultation__ModalHeader>
-      <h1
-        className="ui header"
-      >
-        Nueva solicitud de estudios
-      </h1>
-      <Consultation__CloseModal
-        name="times"
-        onClick={[Function]}
-      />
-    </Consultation__ModalHeader>
-    <ModalContent>
-      <Form
-        as="form"
-      >
-        <FormGroup
-          name="newStudy"
-        >
-          <FormInput
-            as={[Function]}
-            control={[Function]}
-            label="Estudio:"
-            name="study"
-            onChange={[Function]}
-            placeholder="Escribe y selecciona el estudio"
-            value=""
-            width={6}
-          />
-          <FormInput
-            as={[Function]}
-            control={[Function]}
-            label="Indicaciones del estudio:"
-            name="indications"
-            onChange={[Function]}
-            placeholder="Escribe las indicaciones para el estudio"
-            value=""
-            width={9}
-          />
-          <Consultation__AddIconContainer>
-            <Consultation__AddIcon
-              name="plus"
-              onClick={[Function]}
-            />
-          </Consultation__AddIconContainer>
-        </FormGroup>
-        <Consultation__ErrorMessage
-          name="error"
-        />
-        <Table
-          as="table"
-          basic="very"
-        >
-          <TableBody
-            as="tbody"
-          />
-        </Table>
-        <FormDropdown
-          as={[Function]}
-          control={[Function]}
-          fluid={true}
-          label="Prioridad"
-          name="priority"
-          onChange={[Function]}
-          options={
-            Array [
-              Object {
-                "text": "Baja",
-                "value": 0,
-              },
-              Object {
-                "text": "Regular",
-                "value": 1,
-              },
-              Object {
-                "text": "Alta",
-                "value": 2,
-              },
-            ]
-          }
-          placeholder="Seleccionar Prioridad"
-          selection={true}
-          value=""
-          width={6}
-        />
-        <FormTextArea
-          as={[Function]}
-          control={[Function]}
-          label="Observaciones generales:"
-          name="observations"
-          onChange={[Function]}
-          placeholder="Observaciones para realización de estudio"
-          value=""
-        />
-      </Form>
-    </ModalContent>
-    <Consultation__ModalFooter>
-      <Link
-        href=""
-      >
-        <Consultation__Print
-          href=""
-        >
-          Imprimir orden
-        </Consultation__Print>
-      </Link>
-      <Button
-        as="button"
-        basic={true}
-        color="blue"
-        content="Cancelar"
-        onClick={[Function]}
-        role="button"
-      />
-      <Button
-        as="button"
-        content="Guardar"
-        name="save-study"
-        onClick={[Function]}
-        role="button"
-      />
-    </Consultation__ModalFooter>
-  </Consultation__LabReportModal>
+    save={[Function]}
+  />
 </Fragment>
 `;
