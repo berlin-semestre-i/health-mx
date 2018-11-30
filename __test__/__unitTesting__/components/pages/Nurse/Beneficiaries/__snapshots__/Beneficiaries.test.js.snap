@@ -4,7 +4,7 @@ exports[`Beneficiaries renders 1`] = `
 <Fragment>
   <Grid>
     <PageHeader
-      subtitle="Toma de somatometrías previas"
+      subtitle="Listado de pacientes"
       title="Derechohabientes"
     />
     <GridRow>
@@ -133,9 +133,7 @@ exports[`Beneficiaries renders 1`] = `
                 Regular
               </Beneficiaries__TableCell>
               <Beneficiaries__TableCell>
-                <Link
-                  href="/nurse/patient-profile"
-                >
+                <Link>
                   <b>
                     <a
                       href=""
@@ -164,9 +162,7 @@ exports[`Beneficiaries renders 1`] = `
                 Regular
               </Beneficiaries__TableCell>
               <Beneficiaries__TableCell>
-                <Link
-                  href="/nurse/patient-profile"
-                >
+                <Link>
                   <b>
                     <a
                       href=""
@@ -195,9 +191,7 @@ exports[`Beneficiaries renders 1`] = `
                 Regular
               </Beneficiaries__TableCell>
               <Beneficiaries__TableCell>
-                <Link
-                  href="/nurse/patient-profile"
-                >
+                <Link>
                   <b>
                     <a
                       href=""

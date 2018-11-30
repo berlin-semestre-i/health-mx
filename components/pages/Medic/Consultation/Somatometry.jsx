@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react'
 import styled from 'styled-components'
 import Card from '../../../shared/Card'
 import ValueItem from '../../../shared/ValueItem'
-import NewSomatometryModal from '../../../shared/SomatometryModal'
+import SomatometryModal from './SomatometryModal'
 
 class Somatometry extends PureComponent {
 
@@ -12,6 +12,10 @@ class Somatometry extends PureComponent {
 
   open = () => this.setState({open: true})
   close = () => this.setState({open: false})
+  save = ({ pulse, weight, height, temperature, imc}) => {
+    this.props.update({ pulse, weight, height, temperature, imc})
+    this.close()
+  }
 
   render () {
     const {somatometry} = this.props
@@ -44,9 +48,11 @@ class Somatometry extends PureComponent {
             <ValueItem keyName="Temperatura" value={`${somatometry.temperature} °C`} />
           </SomatometryData>
         </Card>
-        <NewSomatometryModal
+        <SomatometryModal
           open={open}
           close={this.close}
+          save={this.save}
+          somatometry={somatometry}
         />
       </React.Fragment>
     )

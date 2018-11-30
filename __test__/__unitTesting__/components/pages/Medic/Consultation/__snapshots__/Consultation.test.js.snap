@@ -25,6 +25,7 @@ exports[`Consultation renders 1`] = `
               "weight": 63,
             }
           }
+          update={[Function]}
         />
         <HealthStatus
           healthStatus={0}

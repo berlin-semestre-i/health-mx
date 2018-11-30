@@ -21,7 +21,7 @@ describe('DoctorDashboard', () => {
   it('has three cards', () => {
     const component = mount(
       <MockedProvider mocks={graphQLMocks} >
-        <DoctorDashboard />
+        <DoctorDashboard userRole="medic"/>
       </MockedProvider>
     )
     expect(component.find('div.card').length).toBe(3)

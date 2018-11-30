@@ -8,7 +8,7 @@ import Tab from './Tabs'
 import ValueItem from '../../../shared/ValueItem'
 import Avatar from '../../../shared/Avatar'
 import ConsultationModal from '../../../shared/ConsultationModal'
-import NewSomatometryModal from '../../../shared/SomatometryModal'
+import NewSomatometryModal from './NewSomatometryModal'
 import Link from 'next/link'
 
 const somatometry = {

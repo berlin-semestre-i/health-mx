@@ -48,6 +48,17 @@ exports[`Somatometry renders 1`] = `
   <NewSomatometry
     close={[Function]}
     open={false}
+    save={[Function]}
+    somatometry={
+      Object {
+        "height": 169,
+        "imc": 22.06,
+        "nurse": "Rodrigo Fernández",
+        "pulse": 68,
+        "temperature": 36,
+        "weight": 63,
+      }
+    }
   />
 </Fragment>
 `;
