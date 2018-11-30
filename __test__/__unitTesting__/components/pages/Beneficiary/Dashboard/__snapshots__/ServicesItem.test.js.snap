@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Beneficiary Services renders 1`] = `
+<ServicesItem__ServiceRow>
+  <ServicesItem__IconContainer
+    computer={4}
+    mobile={16}
+    tablet={3}
+  >
+    <Link
+      as=""
+      href="http://bit.ly/imssNSS"
+    >
+      <a
+        target="_blank"
+      >
+        <ServicesItem__Icon
+          src="../../../../../../static/images/NSSIcon.png"
+        />
+      </a>
+    </Link>
+  </ServicesItem__IconContainer>
+  <ServicesItem__ServiceInfoContainer
+    computer={12}
+    mobile={16}
+    tablet={13}
+  >
+    <Link
+      as=""
+      href="http://bit.ly/imssNSS"
+    >
+      <a
+        target="_blank"
+      >
+        Número de Seguro Social
+      </a>
+    </Link>
+  </ServicesItem__ServiceInfoContainer>
+</ServicesItem__ServiceRow>
+`;
