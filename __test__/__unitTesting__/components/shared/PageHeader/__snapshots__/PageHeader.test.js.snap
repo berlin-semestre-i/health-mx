@@ -11,9 +11,7 @@ exports[`PageHeader renders 1`] = `
         as="h3"
         className="ui header"
       >
-        <span>
-           
-        </span>
+        <span />
       </PageHeader__CustomHeader>
       <PageHeader__CustomHeader
         as="h1"

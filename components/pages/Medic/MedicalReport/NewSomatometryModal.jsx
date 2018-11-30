@@ -2,6 +2,10 @@ import React, { PureComponent } from 'react'
 import { Modal, Icon, Form, Button, Input } from 'semantic-ui-react'
 import styled from 'styled-components'
 
+function getIMC(weight, height) {
+  return weight/(height*height)
+}
+
 class NewSomatometry extends PureComponent {
 
   state = {
@@ -10,24 +14,64 @@ class NewSomatometry extends PureComponent {
     height: '',
     temperature: '',
     imc: 'N/A',
+    error: '',
   }
 
   updateState = (e, {name, value}) => {
     this.setState({
       [name]: value,
     })
+
+    if(name === 'weight' || name === 'height'){
+      this.updateIMC(name, value)
+    }
+  }
+
+  updateIMC = (name, value) => {
+    let imc = 0
+    if(name === 'weight')
+      imc = getIMC(value, this.height/100)
+    else
+      imc = getIMC(this.state.weight, value/100)
+
+    this.setState({imc: imc? imc.toFixed(1): 'N/A'})
+  }
+
+  save = () => {
+    const { pulse, weight, height, temperature } = this.state
+    let enabled = pulse.length>0 && weight.length>0 && height.length>0
+    && temperature.length>0
+
+    if(enabled) {
+      //save data
+      this.close()
+    } else {
+      this.setState({ error: 'Llena todos los campos.'})
+    }
+  }
+
+  close = () => {
+    this.setState({
+      pulse: '',
+      weight: '',
+      height: '',
+      temperature: '',
+      imc: 'N/A',
+      error: '',
+    })
+    this.props.close()
   }
 
   render() {
-    const { open, close } = this.props
-    const { pulse, weight, height, temperature, imc } = this.state
+    const { open } = this.props
+    const { pulse, weight, height, temperature, imc, error } = this.state
 
     return (
       <React.Fragment>
-        <NewSomatometryModal open={open} onClose={close}>
+        <NewSomatometryModal open={open} onClose={this.close}>
           <ModalHeader>
             <h1>Nueva somatometría</h1>
-            <CloseModal name="times" onClick={close} />
+            <CloseModal name="times" onClick={this.close} />
           </ModalHeader>
           <Modal.Content>
             <Form>
@@ -62,11 +106,12 @@ class NewSomatometry extends PureComponent {
                   <p>{imc}</p>
                 </Form.Field>
               </Form.Group>
+              <ErrorMsg>{error}</ErrorMsg>
             </Form>
           </Modal.Content>
           <ModalFooter>
-            <Button content="Cerrar" basic color="blue" onClick={close} />
-            <Button content="Guardar" />
+            <Button content="Cerrar" basic color="blue" onClick={this.close} />
+            <Button content="Guardar" onClick={this.save} name="save-somatometry" />
           </ModalFooter>
         </NewSomatometryModal>
       </React.Fragment>
@@ -106,6 +151,10 @@ const NewSomatometryModal = styled(Modal)`
       display: none;
       margin: 0;
   }
+
+  & .ui.form .field .ui.input {
+    width: 70%;
+  }
 `
 const CloseModal = styled(Icon)`
   & {
@@ -115,4 +164,7 @@ const CloseModal = styled(Icon)`
     cursor: pointer;
     color: #3d5170;
   }
+`
+const ErrorMsg = styled.span`
+  color: red;
 `

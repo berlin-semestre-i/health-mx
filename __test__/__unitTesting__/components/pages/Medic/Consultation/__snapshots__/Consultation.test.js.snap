@@ -4,6 +4,7 @@ exports[`Consultation renders 1`] = `
 <Fragment>
   <Grid>
     <PageHeader
+      address="/medic/patient-profile"
       goBack="true"
       subtitle="Consulta - "
       title="Atrás"
@@ -24,6 +25,7 @@ exports[`Consultation renders 1`] = `
               "weight": 63,
             }
           }
+          update={[Function]}
         />
         <HealthStatus
           healthStatus={0}

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Grid, Form, Button, Table } from 'semantic-ui-react'
 import { DateInput } from 'semantic-ui-calendar-react'
-import Header from '../../../shared/PageHeader'
+import Header from '../PageHeader'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import Link from 'next/link'
@@ -27,6 +27,10 @@ const searchResults = [{
   specialty: 'Medicina familiar',
   status: 'Regular',
 }]
+const address = {
+  medic: '/medic/patient-profile',
+  nurse: '/nurse/patient-profile',
+}
 
 class Beneficiaries extends PureComponent {
 
@@ -42,11 +46,17 @@ class Beneficiaries extends PureComponent {
 
   render() {
     const { date, beneficiaryName, specialty } = this.state
+    const { userRole } = this.props
 
     return (
       <React.Fragment>
         <Grid>
-          <Header subtitle="Toma de somatometrías previas" title="Derechohabientes" />
+          <Header
+            subtitle={userRole === 'nurse'?
+              'Toma de somatometrías previas':
+              'Listado de pacientes'}
+            title="Derechohabientes"
+          />
           <Grid.Row>
             <Grid.Column>
               <Form>
@@ -105,7 +115,7 @@ class Beneficiaries extends PureComponent {
                       <TableCell>{result.specialty}</TableCell>
                       <TableCell>{result.status}</TableCell>
                       <TableCell>
-                        <Link href="/nurse/consultation">
+                        <Link href={address[userRole]}>
                           <b><a href="">Ver detalles</a></b>
                         </Link>
                       </TableCell>
