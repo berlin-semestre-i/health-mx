@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MedicalReport renders 1`] = `
+<Fragment>
+  <Grid>
+    <PageHeader
+      subtitle="Expediente de derechohabiente"
+      title="Atrás"
+    />
+    <MedicalReport__CardsRow>
+      <GridColumn
+        computer={6}
+        mobile={16}
+      >
+        <CustomCard
+          header="Derechohabiente"
+        >
+          <MedicalReport__ConsultationRow>
+            <MedicalReport__AvatarContainer
+              computer={3}
+              mobile={16}
+              tablet={3}
+            >
+              <Avatar
+                src="../../../static/images/woman-avatar.png"
+              />
+            </MedicalReport__AvatarContainer>
+            <MedicalReport__ConsultationInfoContainer
+              computer={13}
+              mobile={16}
+              tablet={13}
+            >
+              <MedicalReport__BeneficiaryName>
+                María del Carmen 
+                      Hinojosa 
+                      Ramírez
+              </MedicalReport__BeneficiaryName>
+              <MedicalReport__ConsultationInfo>
+                <ValueItem
+                  keyName="NSS"
+                  value="8454321878"
+                />
+              </MedicalReport__ConsultationInfo>
+            </MedicalReport__ConsultationInfoContainer>
+          </MedicalReport__ConsultationRow>
+        </CustomCard>
+      </GridColumn>
+      <GridColumn
+        computer={7}
+        mobile={16}
+      >
+        <CustomCard
+          className="nth-col-first"
+          header="Somatometría - 10 de Octubre de 2018"
+        >
+          <Grid>
+            <GridRow>
+              <GridColumn
+                computer={5}
+                mobile={16}
+                tablet={8}
+              >
+                <MedicalReport__SomatometryValue>
+                  <ValueItem
+                    keyName="Enfermero(a)"
+                    value="Rodrigo Fernández"
+                  />
+                </MedicalReport__SomatometryValue>
+                <MedicalReport__SomatometryValue>
+                  <ValueItem
+                    keyName="Estatura"
+                    value="169 cm"
+                  />
+                </MedicalReport__SomatometryValue>
+              </GridColumn>
+              <GridColumn
+                computer={5}
+                mobile={16}
+                tablet={8}
+              >
+                <MedicalReport__SomatometryValue>
+                  <ValueItem
+                    keyName="Presión y pulso"
+                    value="68 p/m"
+                  />
+                </MedicalReport__SomatometryValue>
+                <MedicalReport__SomatometryValue>
+                  <ValueItem
+                    keyName="IMC"
+                    value={22.06}
+                  />
+                </MedicalReport__SomatometryValue>
+              </GridColumn>
+              <MedicalReport__StartButtonColumn
+                computer={6}
+                mobile={16}
+                tablet={8}
+              >
+                <MedicalReport__SomatometryValue>
+                  <ValueItem
+                    keyName="Peso"
+                    value="63 Kg"
+                  />
+                </MedicalReport__SomatometryValue>
+                <MedicalReport__SomatometryValue>
+                  <Link
+                    href="medic/consultation"
+                  >
+                    <MedicalReport__StartButton
+                      content="Iniciar Consulta"
+                      icon="play"
+                      labelPosition="left"
+                      positive={true}
+                    />
+                  </Link>
+                </MedicalReport__SomatometryValue>
+              </MedicalReport__StartButtonColumn>
+            </GridRow>
+          </Grid>
+        </CustomCard>
+      </GridColumn>
+      <GridColumn
+        computer={3}
+        mobile={16}
+      >
+        <CustomCard
+          className="nth-col-first last-constultation"
+          header="Última Cita"
+        >
+          <h3>
+            12 Jul, 2018
+          </h3>
+          <p>
+            Estado:
+          </p>
+          <MedicalReport__LabelStatus>
+            Regular
+          </MedicalReport__LabelStatus>
+        </CustomCard>
+      </GridColumn>
+    </MedicalReport__CardsRow>
+    <GridRow>
+      <GridColumn
+        computer={16}
+      >
+        <TabMedicalReport
+          beneficiary={
+            Object {
+              "ahd": Array [
+                "Diabetes tipo 2 (padre)",
+                "Cáncer de colon (abuelo)",
+              ],
+              "ailment": Array [],
+              "allergies": Array [
+                "Penicilina",
+              ],
+              "clinic": "Zapopan 36",
+              "curp": "JP0A170297SLMRH00",
+              "dependents": 0,
+              "doctor": "César Rengiffo Pérez",
+              "fatherLastName": "Hinojosa",
+              "firstName": "María del Carmen",
+              "motherLastName": "Ramírez",
+              "nss": "8454321878",
+              "profile": "../../../static/images/woman-avatar.png",
+              "umf": "Zapopan UMF2",
+            }
+          }
+          callbackfn={[Function]}
+          consultations={
+            Array [
+              Object {
+                "area": "Medicina familiar",
+                "date": "12 Jul, 2018",
+                "doctor": "Luis Alfredo Ramírez",
+                "status": "Regular",
+              },
+              Object {
+                "area": "Medicina familiar",
+                "date": "13 Jul, 2018",
+                "doctor": "Luis Alfredo Ramírez",
+                "status": "Regular",
+              },
+              Object {
+                "area": "Medicina familiar",
+                "date": "12 Jul, 2018",
+                "doctor": "Luis Alfredo Ramírez",
+                "status": "Regular",
+              },
+            ]
+          }
+          studies={
+            Array [
+              Object {
+                "area": "Radiología",
+                "date": "12 Jul, 2018",
+                "indications": "Bla bla bla",
+                "type": "Rayos X",
+              },
+            ]
+          }
+          treatments={
+            Array [
+              Object {
+                "consultation": "03 Nov, 2017",
+                "endDate": "11 Nov 2017",
+                "medication": Array [
+                  "Paracetamol",
+                  "Diclofenaco sódico",
+                  "Celebrex",
+                ],
+                "startDate": "03 Nov, 2017",
+              },
+            ]
+          }
+        />
+      </GridColumn>
+    </GridRow>
+    <GridRow>
+      <MedicalReport__BackButtonContainer>
+        <Link
+          href="/medic/appointments"
+        >
+          <Button
+            as="button"
+            content="Regresar"
+            role="button"
+          />
+        </Link>
+      </MedicalReport__BackButtonContainer>
+    </GridRow>
+  </Grid>
+  <ConsultationModal
+    close={[Function]}
+    consultation={
+      Object {
+        "area": "Medicina familiar",
+        "date": "12 Jul, 2018",
+        "doctor": "Luis Alfredo Ramírez",
+        "status": "Regular",
+      }
+    }
+    open={false}
+    somatometry={
+      Object {
+        "doctor": "Mónica Dessiré López Trejo",
+        "height": 169,
+        "imc": 22.06,
+        "nurse": "Rodrigo Fernández",
+        "pulse": 68,
+        "status": "En tratamiento",
+        "temperature": 36,
+        "weight": 63,
+      }
+    }
+  />
+  <NewSomatometry
+    close={[Function]}
+    open={false}
+  />
+</Fragment>
+`;

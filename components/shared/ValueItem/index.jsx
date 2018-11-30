@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const ValueItem = ({ keyName, value }) => (
-  <React.Fragment>
+  <div>
     <Bold>{ keyName }: </Bold> { value }
-  </React.Fragment>
+  </div>
 )
 
 export default ValueItem

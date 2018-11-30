@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabsMedicalReport renders 1`] = `
+<Tabs__TabMedical
+  menu={
+    Object {
+      "className": "wrapped",
+      "secondary": true,
+    }
+  }
+  panes={
+    Array [
+      Object {
+        "menuItem": "Información del paciente",
+        "render": [Function],
+      },
+      Object {
+        "menuItem": "Consultas médicas previas",
+        "render": [Function],
+      },
+      Object {
+        "menuItem": "Estudios de laboratorio",
+        "render": [Function],
+      },
+      Object {
+        "menuItem": "Tratamientos",
+        "render": [Function],
+      },
+    ]
+  }
+/>
+`;

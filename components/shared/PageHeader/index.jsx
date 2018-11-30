@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
-import { Grid, Header } from 'semantic-ui-react'
+import { Grid, Header, Icon } from 'semantic-ui-react'
 import media from 'styled-media-query'
 import moment from 'moment'
 import 'moment/locale/es'
@@ -38,13 +38,19 @@ class PageHeader extends PureComponent {
 
   render() {
     const { date, time } = this.state
-    const { title, subtitle } = this.props
+    const { title, subtitle, goBack } = this.props
 
     return (
       <React.Fragment>
         <Grid.Row>
           <Grid.Column mobile={16} computer={12}>
-            <CustomHeader as="h3">{title}</CustomHeader>
+            <CustomHeader active={goBack} as="h3" className="ui header">
+              <span>{
+                goBack && (
+                  <BackIcon name="chevron left" />
+                )
+              } {title}</span>
+            </CustomHeader>
             <CustomHeader as="h1">{subtitle}</CustomHeader>
           </Grid.Column>
           <Grid.Column mobile={16} computer={4}>
@@ -79,6 +85,12 @@ const CustomHeader = styled(Header)`
   &&& {
     margin: 0;
   }
+
+  ${({ active }) => active && `
+    >span {
+      cursor: pointer;
+    }
+  `}
 `
 
 const Date = styled(Header)`
@@ -88,4 +100,17 @@ const Date = styled(Header)`
     font-size: 17px;
     margin: 0;
   }
+
+  &&&:first-child {
+    color: #818ea3;
+  }
+`
+const BackIcon = styled(Icon)`
+  &&&.icon {
+    margin-right: 0;
+    font-size: 1.28571429rem;
+    vertical-align: top;
+    font-weight: 700;
+  }
+  
 `
