@@ -4,6 +4,8 @@ exports[`MedicalReport renders 1`] = `
 <Fragment>
   <Grid>
     <PageHeader
+      address="/medic/appointments"
+      goBack="true"
       subtitle="Expediente de derechohabiente"
       title="Atrás"
     />
@@ -104,7 +106,7 @@ exports[`MedicalReport renders 1`] = `
                 </MedicalReport__SomatometryValue>
                 <MedicalReport__SomatometryValue>
                   <Link
-                    href="medic/consultation"
+                    href="/medic/consultation"
                   >
                     <MedicalReport__StartButton
                       content="Iniciar Consulta"

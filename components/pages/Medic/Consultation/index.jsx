@@ -69,7 +69,11 @@ class Consultation extends PureComponent {
     return (
       <React.Fragment>
         <Grid>
-          <Header title="Atrás" subtitle={`Consulta - ${date}`} goBack="true" />
+          <Header
+            title="Atrás"
+            subtitle={`Consulta - ${date}`}
+            goBack="true" address="/medic/patient-profile"
+          />
           <Grid.Row>
             <Grid.Column mobile={16} computer={5}>
               <SomatometryCard somatometry={somatometry} />

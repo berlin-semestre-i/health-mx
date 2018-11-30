@@ -3,6 +3,7 @@
 exports[`Somatometry renders 1`] = `
 <Fragment>
   <CustomCard
+    callbackFn={[Function]}
     header="Somatometría Previa"
     iconColor="blue"
     iconName="pencil"
@@ -16,7 +17,7 @@ exports[`Somatometry renders 1`] = `
     <Somatometry__SomatometryData>
       <ValueItem
         keyName="Estatura"
-        value="undefined cm"
+        value="169 cm"
       />
     </Somatometry__SomatometryData>
     <Somatometry__SomatometryData>
@@ -44,5 +45,9 @@ exports[`Somatometry renders 1`] = `
       />
     </Somatometry__SomatometryData>
   </CustomCard>
+  <NewSomatometry
+    close={[Function]}
+    open={false}
+  />
 </Fragment>
 `;
