@@ -7,7 +7,7 @@ import media from 'styled-media-query'
 import Tab from './Tabs'
 import ValueItem from '../../../shared/ValueItem'
 import Avatar from '../../../shared/Avatar'
-import ConsultationModal from './ConsultationModal'
+import ConsultationModal from '../../../shared/ConsultationModal'
 import NewSomatometryModal from '../../../shared/SomatometryModal'
 import Link from 'next/link'
 
@@ -65,8 +65,8 @@ const treatments = [{
   medication: ['Paracetamol', 'Diclofenaco sódico', 'Celebrex'],
 }]
 const buttonContent = {
-  medic: {content:'Iniciar Consulta'},
-  nurse: {content: 'Nueva Somatometría'},
+  medic: {content:'Iniciar Consulta', address:'/medic/appointments'},
+  nurse: {content: 'Nueva Somatometría', address: '/nurse/beneficiaries'},
 }
 
 class MedicalReport extends PureComponent {
@@ -96,7 +96,7 @@ class MedicalReport extends PureComponent {
             title="Atrás"
             subtitle="Expediente de derechohabiente"
             goBack="true"
-            address="/medic/appointments"
+            address={buttonContent[userRole].address}
           />
           <CardsRow>
             <Grid.Column mobile={16} computer={6}>

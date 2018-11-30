@@ -134,7 +134,7 @@ exports[`Beneficiaries renders 1`] = `
               </Beneficiaries__TableCell>
               <Beneficiaries__TableCell>
                 <Link
-                  href="/nurse/consultation"
+                  href="/nurse/patient-profile"
                 >
                   <b>
                     <a
@@ -165,7 +165,7 @@ exports[`Beneficiaries renders 1`] = `
               </Beneficiaries__TableCell>
               <Beneficiaries__TableCell>
                 <Link
-                  href="/nurse/consultation"
+                  href="/nurse/patient-profile"
                 >
                   <b>
                     <a
@@ -196,7 +196,7 @@ exports[`Beneficiaries renders 1`] = `
               </Beneficiaries__TableCell>
               <Beneficiaries__TableCell>
                 <Link
-                  href="/nurse/consultation"
+                  href="/nurse/patient-profile"
                 >
                   <b>
                     <a

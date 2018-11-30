@@ -1,44 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dependants past appointments renders 1`] = `
-<List>
-  <ListContent
-    floated="right"
-  >
-    <Link
-      href="#"
+<Fragment>
+  <List>
+    <ListContent
+      floated="right"
     >
       <Button
         as="button"
+        onClick={[Function]}
         role="button"
         secondary={true}
         size="tiny"
       >
         Ver detalles
       </Button>
-    </Link>
-  </ListContent>
-  <AppointmentsList__AppointmentData>
-    <Grid>
-      <GridColumn
-        computer={5}
-        mobile={16}
-        tablet={5}
-      >
-        <ListContent>
-          10 Oct, 2018
-        </ListContent>
-      </GridColumn>
-      <GridColumn
-        computer={11}
-        mobile={16}
-        tablet={11}
-      >
-        <ListContent>
-          Medicina familiar
-        </ListContent>
-      </GridColumn>
-    </Grid>
-  </AppointmentsList__AppointmentData>
-</List>
+    </ListContent>
+    <AppointmentsList__AppointmentData>
+      <Grid>
+        <GridColumn
+          computer={5}
+          mobile={16}
+          tablet={5}
+        >
+          <ListContent>
+            10 Oct, 2018
+          </ListContent>
+        </GridColumn>
+        <GridColumn
+          computer={11}
+          mobile={16}
+          tablet={11}
+        >
+          <ListContent>
+            Medicina familiar
+          </ListContent>
+        </GridColumn>
+      </Grid>
+    </AppointmentsList__AppointmentData>
+  </List>
+  <ConsultationModal
+    close={[Function]}
+    consultation={
+      Object {
+        "clinic": "General 2",
+        "date": "10 Oct, 2018",
+        "nss": "1",
+        "specialty": "Medicina familiar",
+      }
+    }
+    open={false}
+    somatometry={
+      Object {
+        "doctor": "Mónica Dessiré López Trejo",
+        "height": 169,
+        "imc": 22.06,
+        "nurse": "Rodrigo Fernández",
+        "pulse": 68,
+        "status": "En tratamiento",
+        "temperature": 36,
+        "weight": 63,
+      }
+    }
+  />
+</Fragment>
 `;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Grid, Label, Icon, Button } from 'semantic-ui-react'
 import styled from 'styled-components'
-import ValueItem from '../../../shared/ValueItem'
+import ValueItem from '../ValueItem'
 
 const ConsultationModal = ({ open, consultation, somatometry, close }) => (
   <React.Fragment>

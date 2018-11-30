@@ -105,7 +105,7 @@ class Beneficiaries extends PureComponent {
                       <TableCell>{result.specialty}</TableCell>
                       <TableCell>{result.status}</TableCell>
                       <TableCell>
-                        <Link href="/nurse/consultation">
+                        <Link href="/nurse/patient-profile">
                           <b><a href="">Ver detalles</a></b>
                         </Link>
                       </TableCell>
