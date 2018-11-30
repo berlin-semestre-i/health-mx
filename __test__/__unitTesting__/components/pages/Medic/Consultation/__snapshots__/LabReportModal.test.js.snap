@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabReportModal renders 1`] = `
+<Fragment>
+  <LabReportModal__StudiesModal
+    onClose={[Function]}
+  >
+    <LabReportModal__ModalHeader>
+      <h1
+        className="ui header"
+      >
+        Nueva solicitud de estudios
+      </h1>
+      <LabReportModal__CloseModal
+        name="times"
+        onClick={[Function]}
+      />
+    </LabReportModal__ModalHeader>
+    <ModalContent>
+      <Form
+        as="form"
+      >
+        <FormGroup
+          name="newStudy"
+        >
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            label="Estudio:"
+            name="study"
+            onChange={[Function]}
+            placeholder="Escribe y selecciona el estudio"
+            value=""
+            width={6}
+          />
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            label="Indicaciones del estudio:"
+            name="indications"
+            onChange={[Function]}
+            placeholder="Escribe las indicaciones para el estudio"
+            value=""
+            width={9}
+          />
+          <LabReportModal__AddIconContainer>
+            <LabReportModal__AddIcon
+              name="plus"
+              onClick={[Function]}
+            />
+          </LabReportModal__AddIconContainer>
+        </FormGroup>
+        <LabReportModal__ErrorMessage
+          name="error"
+        />
+        <Table
+          as="table"
+          basic="very"
+        >
+          <TableBody
+            as="tbody"
+          />
+        </Table>
+        <FormDropdown
+          as={[Function]}
+          control={[Function]}
+          fluid={true}
+          label="Prioridad"
+          name="priority"
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "text": "Baja",
+                "value": 0,
+              },
+              Object {
+                "text": "Regular",
+                "value": 1,
+              },
+              Object {
+                "text": "Alta",
+                "value": 2,
+              },
+            ]
+          }
+          placeholder="Seleccionar Prioridad"
+          selection={true}
+          value=""
+          width={6}
+        />
+        <FormTextArea
+          as={[Function]}
+          control={[Function]}
+          label="Observaciones generales:"
+          name="observations"
+          onChange={[Function]}
+          placeholder="Observaciones para realización de estudio"
+          value=""
+        />
+      </Form>
+    </ModalContent>
+    <LabReportModal__ModalFooter>
+      <Link
+        href=""
+      >
+        <LabReportModal__Print
+          href=""
+        >
+          Imprimir orden
+        </LabReportModal__Print>
+      </Link>
+      <Button
+        as="button"
+        basic={true}
+        color="blue"
+        content="Cancelar"
+        onClick={[Function]}
+        role="button"
+      />
+      <Button
+        as="button"
+        content="Guardar"
+        name="save-study"
+        onClick={[Function]}
+        role="button"
+      />
+    </LabReportModal__ModalFooter>
+  </LabReportModal__StudiesModal>
+</Fragment>
+`;

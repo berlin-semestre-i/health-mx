@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Consultation renders 1`] = `
+<Fragment>
+  <Grid>
+    <PageHeader
+      goBack="true"
+      subtitle="Consulta - "
+      title="Atrás"
+    />
+    <GridRow>
+      <GridColumn
+        computer={5}
+        mobile={16}
+      >
+        <Somatometry
+          somatometry={
+            Object {
+              "height": 169,
+              "imc": 22.06,
+              "nurse": "Rodrigo Fernández",
+              "pulse": 68,
+              "temperature": 36,
+              "weight": 63,
+            }
+          }
+        />
+        <HealthStatus
+          healthStatus={0}
+          onChange={[Function]}
+        />
+        <CustomCard
+          callbackFn={[Function]}
+          className="lab-studies"
+          header="Estudios Clínicos"
+          iconColor="blue"
+          iconName="pencil"
+        >
+          <p>
+            No se ha añadido ninguna solicitud.
+          </p>
+        </CustomCard>
+      </GridColumn>
+      <GridColumn
+        computer={11}
+        mobile={16}
+      >
+        <Information
+          conclusion=""
+          motive=""
+          onChange={[Function]}
+          physicalExploration=""
+        />
+        <Treatment
+          addMedication={[Function]}
+          deleteMedication={[Function]}
+          onChange={[Function]}
+          treatment={Array []}
+        />
+      </GridColumn>
+    </GridRow>
+    <GridRow>
+      <Consultation__FinalizeButtonContiainer>
+        <Link
+          href="/medic/profile"
+        >
+          <Button
+            as="button"
+            content="Finalizar Consulta"
+            role="button"
+          />
+        </Link>
+      </Consultation__FinalizeButtonContiainer>
+    </GridRow>
+  </Grid>
+  <LabReportModal
+    close={[Function]}
+    open={false}
+    save={[Function]}
+  />
+</Fragment>
+`;
