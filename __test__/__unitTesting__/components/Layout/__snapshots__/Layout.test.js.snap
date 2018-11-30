@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout renders 1`] = `
+<Fragment>
+  <withRouter(SideBar)
+    userRole="medic"
+  />
+  <Layout__GlobalContainer>
+    <SearchBar
+      placeholder="Buscar derechohabiente o tarea"
+    />
+    <Layout__MainContainer />
+  </Layout__GlobalContainer>
+</Fragment>
+`;

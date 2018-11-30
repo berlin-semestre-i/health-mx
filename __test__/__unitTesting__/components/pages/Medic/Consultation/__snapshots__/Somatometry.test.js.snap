@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Somatometry renders 1`] = `
+<Fragment>
+  <CustomCard
+    callbackFn={[Function]}
+    header="Somatometría Previa"
+    iconColor="blue"
+    iconName="pencil"
+  >
+    <Somatometry__SomatometryData>
+      <ValueItem
+        keyName="Enfermero(a)"
+        value="Rodrigo Fernández"
+      />
+    </Somatometry__SomatometryData>
+    <Somatometry__SomatometryData>
+      <ValueItem
+        keyName="Estatura"
+        value="169 cm"
+      />
+    </Somatometry__SomatometryData>
+    <Somatometry__SomatometryData>
+      <ValueItem
+        keyName="Peso"
+        value="63 Kg"
+      />
+    </Somatometry__SomatometryData>
+    <Somatometry__SomatometryData>
+      <ValueItem
+        keyName="Presión y pulso"
+        value="68 p/m"
+      />
+    </Somatometry__SomatometryData>
+    <Somatometry__SomatometryData>
+      <ValueItem
+        keyName="IMC"
+        value={22.06}
+      />
+    </Somatometry__SomatometryData>
+    <Somatometry__SomatometryData>
+      <ValueItem
+        keyName="Temperatura"
+        value="36 °C"
+      />
+    </Somatometry__SomatometryData>
+  </CustomCard>
+  <NewSomatometry
+    close={[Function]}
+    open={false}
+    save={[Function]}
+    somatometry={
+      Object {
+        "height": 169,
+        "imc": 22.06,
+        "nurse": "Rodrigo Fernández",
+        "pulse": 68,
+        "temperature": 36,
+        "weight": 63,
+      }
+    }
+  />
+</Fragment>
+`;

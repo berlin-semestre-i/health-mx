@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "health-mx",
+      "script": "server/index.js",
+      "args": "--port 8000",
+      "instances": "1",
+      "cwd": "",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Treatment renders 1`] = `
+<Fragment>
+  <CustomCard
+    header="Tratamiento"
+  >
+    <Form
+      as="form"
+    >
+      <FormGroup
+        name="newMedication"
+      >
+        <FormInput
+          as={[Function]}
+          control={[Function]}
+          label="Dosis"
+          name="dose"
+          onChange={[Function]}
+          placeholder="Dosis"
+          value=""
+          width={2}
+        />
+        <FormInput
+          as={[Function]}
+          control={[Function]}
+          label="Medicamento"
+          name="medicine"
+          onChange={[Function]}
+          placeholder="Medicamento"
+          value=""
+          width={6}
+        />
+        <FormInput
+          as={[Function]}
+          control={[Function]}
+          label="Frecuencia"
+          name="frequency"
+          onChange={[Function]}
+          placeholder="Frecuencia"
+          value=""
+          width={4}
+        />
+        <FormInput
+          as={[Function]}
+          control={[Function]}
+          label="Duración"
+          name="duration"
+          onChange={[Function]}
+          placeholder="Duración"
+          value=""
+          width={3}
+        />
+        <Treatment__AddIconContainer>
+          <Treatment__AddIcon
+            name="plus"
+            onClick={[Function]}
+          />
+        </Treatment__AddIconContainer>
+      </FormGroup>
+      <Treatment__ErrorMessage
+        name="error"
+      />
+      <Table
+        as="table"
+        basic="very"
+      >
+        <TableBody
+          as="tbody"
+        />
+      </Table>
+      <Treatment__FormTextArea
+        label="Indicaciones del tratamiento:"
+        name="indications"
+        placeholder="Escribe aquí las indicaciones del tratamiento."
+      />
+    </Form>
+  </CustomCard>
+</Fragment>
+`;

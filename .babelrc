@@ -1,0 +1,20 @@
+{
+  "env": {
+    "development": {
+      "presets": ["next/babel"],
+      "plugins": ["styled-components"]
+    },
+    "production": {
+      "presets": ["next/babel"]
+    },
+    "test": {
+      "presets": ["@babel/preset-react"],
+      "plugins": [
+        "@babel/plugin-transform-modules-commonjs",
+        "transform-class-properties",
+        "@babel/plugin-syntax-dynamic-import",
+        "styled-components"
+      ]
+    }
+  }
+}
