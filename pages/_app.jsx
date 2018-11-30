@@ -3,6 +3,10 @@ import React from 'react'
 import withApolloClient from '../lib/withApolloClient'
 import { ApolloProvider } from 'react-apollo'
 import Header from 'next/head'
+import Amplify from 'aws-amplify'
+import { amplifyConfig } from '../utils/auth'
+
+Amplify.configure(amplifyConfig)
 
 class MyApp extends App {
   render () {

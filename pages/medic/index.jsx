@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import Layout from '../../components/Layout'
 import DoctorDashboard from '../../components/pages/Medic/Dashboard'
+import { redirectIfNotAuthenticated } from '../../utils/auth'
 
-const home = () => (
-  <Layout userRole="medic" userGender="male">
-    <DoctorDashboard />
-  </Layout>
-)
+class Home extends PureComponent {
 
-export default home
+  componentDidMount() {
+    redirectIfNotAuthenticated()
+  }
+
+  render() {
+    return (
+      <Layout userRole="medic" userGender="male">
+        <DoctorDashboard />
+      </Layout>
+    )
+  }
+}
+
+export default Home

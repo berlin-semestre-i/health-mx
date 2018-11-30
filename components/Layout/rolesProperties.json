@@ -27,10 +27,11 @@
       },
       {
         "id": 4,
-        "description": "No tengo idea",
+        "description": "Recursos",
         "icon": "book",
         "name": "book",
-        "address": "/book"
+        "address": "http://www.imss.gob.mx/guias_practicaclinica?field_categoria_gs_value=All",
+        "newTab": true
       }
     ]
   },

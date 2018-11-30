@@ -5,8 +5,20 @@ import { Menu, Image, Icon, Popup } from 'semantic-ui-react'
 import styled from 'styled-components'
 import { getPropertiesFromRole } from '../../../utils/authorization'
 import { defaultManAvatar, defaultWomanAvatar } from '../../../utils/constants'
+import { Auth } from 'aws-amplify'
+import { signOut } from '../../../utils/auth'
 
 class SideBar extends PureComponent {
+
+  handleSignOut = async () => {
+    try{
+      await Auth.signOut()
+      signOut()
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   render() {
     const { userRole, router, userAvatar, userGender } = this.props
     const roleProperties = getPropertiesFromRole(userRole)
@@ -25,7 +37,7 @@ class SideBar extends PureComponent {
           <HealthImage src="../../../static/images/Health-Bar-Logo.png"/>
         </Link>
         <Link href={`/${userRole}`}>
-          <Menu.Item
+          <DynamicElement
             name="home"
             active={`/${userRole}` === route}
           >
@@ -40,53 +52,60 @@ class SideBar extends PureComponent {
               }
               content="Inicio"
             />
-          </Menu.Item>
+          </DynamicElement>
         </Link>
         { roleProperties.menuItems.map(item => (
-          <Link href={`/${userRole}${item.address}`} key={item.id}>
-            <Menu.Item
-              name={item.name}
-              active={`/${userRole}${item.address}` === route}
-            >
-              <Popup
-                flowing
-                inverted
-                size="tiny"
-                position="top right"
-                horizontalOffset={12}
-                trigger = {
-                  <Icon name={item.icon} size="large"/>
-                }
-                content={item.description}
-              />
-            </Menu.Item>
+          <Link href={item.newTab ? item.address : `/${userRole}${item.address}`} key={item.id}>
+            <a target={item.newTab ? '_blank' : ''}>
+              <DynamicElement
+                name={item.name}
+                active={`/${userRole}${item.address}` === route}
+              >
+                <Popup
+                  flowing
+                  inverted
+                  size="tiny"
+                  position="top right"
+                  horizontalOffset={12}
+                  trigger = {
+                    <Icon name={item.icon} size="large"/>
+                  }
+                  content={item.description}
+                />
+              </DynamicElement>
+            </a>
           </Link>
         ))}
         <Notifications name="notifications">
-          <Popup
-            flowing
-            inverted
-            size="tiny"
-            position="top right"
-            horizontalOffset={12}
-            trigger = {
-              <Icon name="bell" size="large"/>
-            }
-            content="Notificaciones"
-          />
+          <MenuItem>
+            <Popup
+              flowing
+              inverted
+              size="tiny"
+              position="top right"
+              horizontalOffset={12}
+              trigger = {
+                <Icon name="bell" size="large"/>
+              }
+              content="Notificaciones"
+            />
+          </MenuItem>
         </Notifications>
         <Tips name="tips">
-          <Popup
-            flowing
-            inverted
-            size="tiny"
-            position="top right"
-            horizontalOffset={12}
-            trigger = {
-              <Icon name="question circle" size="large"/>
-            }
-            content="Ayuda"
-          />
+          <MenuItem onClick={this.handleSignOut}>
+            <Popup
+              flowing
+              inverted
+              onClick={this.handleSignOut}
+              size="tiny"
+              position="top right"
+              horizontalOffset={12}
+              trigger = {
+                <Icon name="sign out" size="large"/>
+              }
+              content="Cerrar sesión"
+            />
+          </MenuItem>
         </Tips>
         <Avatar
           name="userAvatar"
@@ -106,6 +125,18 @@ const HealthImage = styled(Image)`
     width: 42px;
     height: 40px;
     cursor: pointer;
+  }
+`
+
+const DynamicElement = styled(Menu.Item)`
+  &&&& {
+    margin-left: 18px;
+  }
+`
+
+const MenuItem = styled.div`
+  && {
+    padding: 0 20px 0 10px;
   }
 `
 
@@ -132,6 +163,7 @@ const Avatar = styled(Image)`
 
 const Notifications = styled(Menu.Item)`
   &&&& {
+    cursor: pointer;
     margin-top: auto;
     align-self: flex-end;
   }
@@ -139,6 +171,7 @@ const Notifications = styled(Menu.Item)`
 
 const Tips = styled(Menu.Item)`
   &&&& {
+    cursor: pointer;
     margin-bottom: 0;
     align-self: flex-end;
   }

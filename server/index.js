@@ -1,7 +1,6 @@
 const express = require('express')
 const next = require('next')
 const proxy = require('http-proxy-middleware')
-const cookie = require('cookie')
 const cookieParser = require('cookie-parser')
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -25,14 +24,7 @@ app.prepare()
       changeOrigin: true,
       pathRewrite: {'^/graphql': '/'},
       onProxyReq: function(proxyReq, req) {
-        var authToken = ''
-
-        const cookies = cookie.parse(req.headers.cookie || '')
-        if (cookies['cognito-access-token']) {
-          authToken = cookies['cognito-access-token']
-        } else if (req.headers.authorization) {
-          authToken = req.headers.authorization
-        }
+        const authToken = req.cookies['cognito-access-token'] || ''
 
         proxyReq.setHeader('Content-Type', 'application/json')
         proxyReq.setHeader('x-api-key', process.env.GRAPHQL_API_KEY)
