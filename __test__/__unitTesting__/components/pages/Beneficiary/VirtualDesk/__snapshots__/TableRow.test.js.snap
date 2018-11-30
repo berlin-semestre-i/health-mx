@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Row renders 1`] = `
+<TableRow
+  as="tr"
+  cellAs="td"
+>
+  <TableCell
+    as="td"
+  >
+    CÓNYUGUE
+  </TableCell>
+  <TableCell
+    as="td"
+  >
+    <Link
+      href="#"
+    >
+      <a>
+        Maria Antonieta
+      </a>
+    </Link>
+  </TableCell>
+  <TableCell
+    as="td"
+  >
+    JHSA21092109201
+  </TableCell>
+  <TableCell
+    as="td"
+  >
+    M
+  </TableCell>
+  <TableCell
+    as="td"
+  >
+    23
+  </TableCell>
+  <TableCell
+    as="td"
+  >
+    Vigente
+  </TableCell>
+</TableRow>
+`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Beneficiary Appointments renders 1`] = `
+<BeneficiaryAppointmentItem__ConsultationRow>
+  <BeneficiaryAppointmentItem__AvatarContainer
+    computer={2}
+    mobile={16}
+    tablet={3}
+  >
+    <BeneficiaryAppointmentItem__Avatar
+      src="../../../static/images/AppointmentIcon.png"
+    />
+  </BeneficiaryAppointmentItem__AvatarContainer>
+  <BeneficiaryAppointmentItem__ConsultationInfoContainer
+    computer={14}
+    mobile={16}
+    tablet={13}
+  >
+    <BeneficiaryAppointmentItem__Bold>
+      Yulia
+    </BeneficiaryAppointmentItem__Bold>
+    <BeneficiaryAppointmentItem__ConsultationInfo>
+      <label>
+        10 Oct, 2018
+        , 
+        10:32am
+         - 
+        General 2
+      </label>
+    </BeneficiaryAppointmentItem__ConsultationInfo>
+  </BeneficiaryAppointmentItem__ConsultationInfoContainer>
+</BeneficiaryAppointmentItem__ConsultationRow>
+`;

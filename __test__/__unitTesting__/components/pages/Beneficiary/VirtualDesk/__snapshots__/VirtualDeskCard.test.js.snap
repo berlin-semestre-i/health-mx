@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default table renders 1`] = `
+<VirtualDeskCard__DeskCard>
+  <CardContent>
+    <CardHeader>
+      <VirtualDeskCard__AddIcon>
+        <Icon
+          as="i"
+          color="blue"
+          name="plus"
+        />
+      </VirtualDeskCard__AddIcon>
+      <VirtualDeskCard__Secondary />
+    </CardHeader>
+  </CardContent>
+</VirtualDeskCard__DeskCard>
+`;
