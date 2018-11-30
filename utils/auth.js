@@ -1,21 +1,62 @@
-import { medic, beneficiary, nurse, error, admin } from '../components/Layout/rolesProperties.json'
+import getConfig from 'next/config'
+import redirect from './redirect'
+import { getCookie, removeCookie } from './session'
+import { Auth } from 'aws-amplify'
 
-const getPropertiesFromRole = (userRole) => {
-  if ( userRole === 'medic' ) {
-    return medic
-  }
-  else if ( userRole === 'beneficiary' ) {
-    return beneficiary
-  }
-  else if ( userRole === 'nurse' ) {
-    return nurse
-  }
-  else if ( userRole === 'admin' ) {
-    return admin
-  }
-  else {
-    return error
+const config = getConfig()
+const {
+  AWS_REGION,
+  USER_POOL_ID,
+  USER_POOL_CLIENT_ID,
+} = (config) ? config.publicRuntimeConfig : {}
+
+const getCookieSessionName = () => {
+  const cookieName = 'cognito-access-token'
+
+  return cookieName
+}
+
+export const amplifyConfig = {
+  region: AWS_REGION,
+  userPoolId: USER_POOL_ID,
+  userPoolWebClientId: USER_POOL_CLIENT_ID,
+  authenticationFlowType: 'USER_SRP_AUTH',
+}
+
+export const signOut = (ctx = {}) => {
+  if (process.browser) {
+    removeCookie(getCookieSessionName())
+    redirect('/', ctx)
   }
 }
 
-export { getPropertiesFromRole }
+export const getAuthToken = () => getCookie(getCookieSessionName())
+
+export const isAuthenticated = async ctx => {
+  let hasAuthedUser
+  try {
+    hasAuthedUser = !!(await Auth.currentAuthenticatedUser())
+  } catch (err) {
+    hasAuthedUser = false
+  }
+  if (!!getAuthToken(ctx) && hasAuthedUser) return true
+  else return false
+}
+
+export const redirectIfAuthenticated = async ctx => {
+  const isLoggedIn = await isAuthenticated(ctx)
+  if (process.browser && isLoggedIn) {
+    redirect('/medic', ctx)
+    return true
+  }
+  return false
+}
+
+export const redirectIfNotAuthenticated = async ctx => {
+  const isLoggedIn = await isAuthenticated(ctx)
+  if (process.browser && !isLoggedIn) {
+    redirect('/', ctx)
+    return true
+  }
+  return false
+}

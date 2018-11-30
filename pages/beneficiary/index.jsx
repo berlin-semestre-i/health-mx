@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import Layout from '../../components/Layout'
+import { Header } from 'semantic-ui-react'
+import { redirectIfNotAuthenticated } from '../../utils/auth'
 import BeneficiaryDashboard from '../../components/pages/Beneficiary/Dashboard'
 
-const home = () => (
-  <Layout userRole="beneficiary" userGender="male">
-    <BeneficiaryDashboard/>
-  </Layout>
-)
+  componentDidMount() {
+    redirectIfNotAuthenticated()
+  }
 
-export default home
+  render() {
+    return (
+      <Layout userRole="beneficiary" userGender="male">
+        <BeneficiaryDashboard/>
+      </Layout>
+    )
+  }
+}
+
+export default Home

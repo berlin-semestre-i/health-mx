@@ -1,118 +1,100 @@
-import React from 'react'
-import { Grid, Form, Button, Container, Image } from 'semantic-ui-react'
+import React, { PureComponent } from 'react'
+import { Form, Button, Image } from 'semantic-ui-react'
+import AuthenticationLayout from '../../Layout/AuthenticationLayout'
 import Link from 'next/link'
 import styled from 'styled-components'
-import media from 'styled-media-query'
+import { Auth } from 'aws-amplify'
+import redirect from '../../../utils/redirect'
+import { setCookie, removeCookie } from '../../../utils/session'
+import { redirectIfAuthenticated } from '../../../utils/auth'
 
-const Login = () => (
-  <React.Fragment>
-    <LoginGrid>
-      <ImageColumn className="image-container" width={9}/>
-      <LoginColumn mobile={16} tablet={7} computer={7}>
-        <LoginContainer>
-          <Image src="../../static/images/login-logo.png" />
-          <Form>
-            <Form.Input
-              label="NSS o correo electrónico"
-              icon="user"
-              iconPosition="left"
-              placeholder="NSS o jorge@ejemplo.com"
-              required
-            />
-            <Form.Input
-              label="Contraseña"
-              icon="lock"
-              iconPosition="left"
-              placeholder="••••••••••"
-              autoComplete="off"
-              type="password"
-              required
-            />
-            <Link href="/medic">
-              <LoginButton small="true" primary type="submit">Ingresar</LoginButton>
-            </Link>
-          </Form>
-          <InfoContent>
-                ¿Aún no tienes tu cuenta?
-            <Link href="/register">
-              <a> Regístrate</a>
-            </Link>
-          </InfoContent>
-          <InfoContent>
-            <Link href="/recovery">
-              <a>Olvidé mi contraseña</a>
-            </Link>
-          </InfoContent>
-          <InfoContent className="footer">
-                © Instituto Mexicano del Seguro Social. Todos los derechos reservados.
-          </InfoContent>
-        </LoginContainer>
-      </LoginColumn>
-    </LoginGrid>
-  </React.Fragment>
-)
+class Login extends PureComponent {
+
+  state = {
+    username: '',
+    password: '',
+  }
+
+  onChange = (e, { name, value }) => {
+    this.setState({ [[name]]: value })
+  }
+
+  signIn = async () => {
+    try {
+      const user = await Auth.signIn(this.state.username, this.state.password)
+      if (user.challengeName === 'NEW_PASSWORD_REQUIRED') {
+        setCookie('cognito-username', this.state.username)
+        redirect('/auth/complete-password')
+      }
+      else {
+        removeCookie('cognito-username')
+        const session = await Auth.currentSession()
+        setCookie('cognito-access-token', session.getAccessToken().getJwtToken())
+        redirectIfAuthenticated()
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  render() {
+    const { username, password } = this.state
+    return (
+      <AuthenticationLayout>
+        <Image src="../../static/images/login-logo.png" />
+        <Form>
+          <Form.Input
+            label="NSS o correo electrónico"
+            icon="user"
+            value={username}
+            name="username"
+            onChange={this.onChange}
+            iconPosition="left"
+            placeholder="NSS o jorge@ejemplo.com"
+            required
+          />
+          <Form.Input
+            label="Contraseña"
+            icon="lock"
+            value={password}
+            onChange={this.onChange}
+            iconPosition="left"
+            placeholder="••••••••••"
+            autoComplete="off"
+            name="password"
+            type="password"
+            required
+          />
+          <LoginButton
+            small="true"
+            primary
+            type="submit"
+            onClick={this.signIn}
+          >
+            Ingresar
+          </LoginButton>
+        </Form>
+        <InfoContent>
+          ¿Aún no tienes tu cuenta?
+          <Link href="/register">
+            <a> Regístrate</a>
+          </Link>
+        </InfoContent>
+        <InfoContent>
+          <Link href="/recovery">
+            <a>Olvidé mi contraseña</a>
+          </Link>
+        </InfoContent>
+        <InfoContent className="footer">
+                    © Instituto Mexicano del Seguro Social. Todos los derechos reservados.
+        </InfoContent>
+      </AuthenticationLayout>
+    )
+  }
+}
 
 export default Login
 
-const LoginGrid = styled(Grid)`
-  && {
-    height: 100vh;
-    margin: 0;
-    margin-left: -84px;
-  }
-`
-const ImageColumn = styled(Grid.Column)`
-  ${media.greaterThan('large')`
-    &&&.image-container {
-      padding: 0;
-      background-image: url("../../static/images/enfermera.png");
-      background-repeat: no-repeat;
-      background-size: 100%;
-    }
-  `}
-
-  ${media.lessThan('large')`
-    &&&.image-container {
-      display: none;
-    }
-  `}
-`
-const LoginColumn = styled(Grid.Column)`
-  & {
-    margin: auto;
-  }
-`
-const LoginContainer = styled(Container)`
-  ${media.lessThan('large')`
-    & {
-      padding: 0 1rem;
-    }
-  `}
-
-  ${media.greaterThan('large')`
-    & {
-      padding: 0 4.5rem;
-    }
-  `}
-
-  &&& .field, &&& .button {
-    margin-bottom: 2em;
-  }
-
-  &&& .field label {
-    font-size: 16px;
-    font-weight: normal;
-  }
-
-  &&& .field label:after {
-    display: none;
-  }
-
-  &&& img {
-    max-width: 65%;
-    margin-bottom: 3rem;
-  }
-`
 const InfoContent = styled.div`
   & {
     text-align: center;
@@ -128,6 +110,7 @@ const InfoContent = styled.div`
     font-weight: 500;
   }
 `
+
 const LoginButton = styled(Button)`
   & {
     width: 100%;

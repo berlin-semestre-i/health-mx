@@ -41,6 +41,7 @@ exports[`DoctorDashboard renders 1`] = `
         "typenameDocumentCache": Map {},
         "watches": Set {},
       },
+      "clientAwareness": Object {},
       "defaultOptions": Object {},
       "disableNetworkFetches": false,
       "link": ApolloLink {
@@ -92,7 +93,7 @@ exports[`DoctorDashboard renders 1`] = `
           "watches": Set {},
         },
       },
-      "version": "2.4.2",
+      "version": "2.4.7",
       "watchQuery": [Function],
     }
   }
