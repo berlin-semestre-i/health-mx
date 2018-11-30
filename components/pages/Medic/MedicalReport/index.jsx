@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Grid, Button, Label, Modal, Icon } from 'semantic-ui-react'
+import { Grid, Button, Label } from 'semantic-ui-react'
 import Header from './../../../shared/PageHeader'
 import Card from './../../../shared/Card'
 import styled from 'styled-components'
@@ -7,6 +7,8 @@ import media from 'styled-media-query'
 import Tab from './Tabs'
 import ValueItem from '../../../shared/ValueItem'
 import Avatar from '../../../shared/Avatar'
+import ConsultationModal from './ConsultationModal'
+import NewSomatometryModal from './SomatometryModal'
 import Link from 'next/link'
 
 const somatometry = {
@@ -70,18 +72,21 @@ const buttonContent = {
 class MedicalReport extends PureComponent {
 
   state = {
-    open: false,
+    openConsultation: false,
+    openSomatometry: false,
     consultationIndex: 0,
   }
 
-  open = (index) => this.setState({
-    open: true, consultationIndex: index,
+  openConsultationModal = (index) => this.setState({
+    openConsultation: true, consultationIndex: index,
   })
 
-  close = () => this.setState({ open: false })
+  openSomatometryModal = () => this.setState({ openSomatometry: true })
+
+  close = () => this.setState({ openConsultation: false, openSomatometry: false })
 
   render() {
-    const { open, consultationIndex } = this.state
+    const { openConsultation, openSomatometry, consultationIndex } = this.state
     const { userRole } = this.props
 
     return (
@@ -133,12 +138,23 @@ class MedicalReport extends PureComponent {
                         <ValueItem keyName="Peso" value={`${somatometry.weight} Kg`}/>
                       </SomatometryValue>
                       <SomatometryValue>
+                        {userRole === 'medic' &&
                         <Link href="medic/consultation">
                           <StartButton
                             positive
+                            icon="play"
+                            labelPosition="left"
                             content={buttonContent[userRole].content}
                           />
-                        </Link>
+                        </Link>}
+                        {userRole === 'nurse' &&
+                        <StartButton
+                          positive
+                          icon="play"
+                          labelPosition="left"
+                          content={buttonContent[userRole].content}
+                          onClick={this.openSomatometryModal}
+                        />}
                       </SomatometryValue>
                     </StartButtonColumn>
                   </Grid.Row>
@@ -160,7 +176,7 @@ class MedicalReport extends PureComponent {
                 studies={studies}
                 consultations={consultations}
                 treatments={treatments}
-                callbackfn={this.open}
+                callbackfn={this.openConsultationModal}
               />
             </Grid.Column>
           </Grid.Row>
@@ -172,125 +188,16 @@ class MedicalReport extends PureComponent {
             </BackButtonContainer>
           </Grid.Row>
         </Grid>
-        <ConsultationReportModal size="large" open={open} onClose={this.close}>
-          <ModalHeader>
-            <h1 className="ui header">Consulta médica - {consultations[consultationIndex].date}</h1>
-            <CloseModal name="times" onClick={this.close} />
-          </ModalHeader>
-          <Modal.Content>
-            <h3 className="ui header">Somatometría Previa</h3>
-            <Grid>
-              <Grid.Column mobile={16} tablet={3} computer={3}>
-                <SomatometryValue>
-                  <ValueItem keyName="Enfermero(a)" value={somatometry.nurse}/>
-                </SomatometryValue>
-                <SomatometryValue>
-                  <ValueItem keyName="Temperatura" value={`${somatometry.temperature}°C`}/>
-                </SomatometryValue>
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={3} computer={3}>
-                <SomatometryValue>
-                  <ValueItem keyName="Estatura" value={`${somatometry.height} cm`}/>
-                </SomatometryValue>
-                <SomatometryValue>
-                  <ValueItem keyName="Médico" value={somatometry.doctor}/>
-                </SomatometryValue>
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={3} computer={3}>
-                <SomatometryValue>
-                  <ValueItem keyName="Peso" value={`${somatometry.weight} Kg`}/>
-                </SomatometryValue>
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={3} computer={3}>
-                <SomatometryValue>
-                  <ValueItem keyName="Presión y pulso" value={`${somatometry.pulse} p/m`}/>
-                </SomatometryValue>
-                <SomatometryValue>
-                  <ValueItem keyName="Estado" value={somatometry.status}/>
-                </SomatometryValue>
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={3} computer={3}>
-                <SomatometryValue>
-                  <ValueItem keyName="IMC" value={somatometry.imc}/>
-                </SomatometryValue>
-              </Grid.Column>
-            </Grid>
-            <h3 className="ui header">Información de Consulta</h3>
-            <p>
-              <b>Motivo de la consulta: </b>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Mauris vel sollicitudin est, at varius nunc.
-                Morbi ac quam at est viverra posuere. In porttitor
-                tortor vulputate dolor semper egestas. Curabitur sit
-                amet ante sed erat tempor pellentesque. Pellentesque ipsum
-                lectus, condimentum a volutpat id, tincidunt
-                vitae nunc. Ut sed dapibus mi, eu finibus arcu.
-            </p>
-            <p>
-              <b>Exploración física: </b>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Mauris vel sollicitudin est, at varius nunc.
-                Morbi ac quam at est viverra posuere. In porttitor
-                tortor vulputate dolor semper egestas. Curabitur sit
-                amet ante sed erat tempor pellentesque. Pellentesque ipsum
-                lectus, condimentum a volutpat id, tincidunt
-                vitae nunc. Ut sed dapibus mi, eu finibus arcu.
-            </p>
-            <p>
-              <b>Observaciones y conclusiones de la consulta: </b>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Mauris vel sollicitudin est, at varius nunc.
-                Morbi ac quam at est viverra posuere. In porttitor
-                tortor vulputate dolor semper egestas. Curabitur sit
-                amet ante sed erat tempor pellentesque. Pellentesque ipsum
-                lectus, condimentum a volutpat id, tincidunt
-                vitae nunc. Ut sed dapibus mi, eu finibus arcu.
-            </p>
-            <h3 className="ui header">Estudios</h3>
-            <Grid>
-              <Grid.Column mobile={16} tablet={3} computer={3}>
-                <b>- Rayos X</b>
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={5} computer={5}>
-                <b>Gilberto González Becerra</b>
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={5} computer={5}>
-                  Radiografía columna vertebral baja
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={3} computer={3}>
-                <ResultsLabel>Ver resultados</ResultsLabel>
-              </Grid.Column>
-            </Grid>
-            <h3 className="ui header">Tratamiento</h3>
-            <Grid>
-              <Grid.Column mobile={16} computer={9}>
-                <Grid columns={3}>
-                  <Grid.Row>
-                    <Grid.Column>
-                      <b>- Paracetamol 100mg</b>
-                    </Grid.Column>
-                    <Grid.Column>
-                      <b>1 cada 8hrs.</b>
-                    </Grid.Column>
-                    <Grid.Column>
-                      <b>10 días</b>
-                    </Grid.Column>
-                  </Grid.Row>
-                </Grid>
-              </Grid.Column>
-              <Grid.Column mobile={16} computer={7}>
-                <b>Observaciones:</b>
-                <p>
-                    Curabitur sit
-                    amet ante sed erat tempor pellentesque. Pellentesque ipsum.
-                </p>
-              </Grid.Column>
-            </Grid>
-          </Modal.Content>
-          <ModalFooter>
-            <Button content="Cerrar" onClick={this.close} />
-          </ModalFooter>
-        </ConsultationReportModal>
+        <ConsultationModal
+          open={openConsultation}
+          consultation={consultations[consultationIndex]}
+          somatometry={somatometry}
+          close={this.close}
+        />
+        <NewSomatometryModal
+          open={openSomatometry}
+          close={this.close}
+        />
       </React.Fragment>
     )
   }
@@ -308,9 +215,15 @@ const StartButtonColumn = styled(Grid.Column)`
   }
 `
 const StartButton = styled(Button)`
-  &.ui.positive.button {
+  &.ui.labeled.icon.button.positive.left {
     font-size: 12px;
     height: 30px;
+    padding-left: 2.75em !important;
+    padding-right: 0.75em !important;
+  }
+
+  &.ui.labeled.icon.button>.icon.play {
+    width: 2.25em;
   }
 
   ${media.between('medium','1025px')`
@@ -398,40 +311,4 @@ const ConsultationInfo = styled.div`
 const BeneficiaryName = styled.span`
   font-weight: 600;
   color: #007bff;
-`
-const ModalHeader = styled(Modal.Header)`
-  &&.header {
-    border-bottom: none;
-    position: relative;
-  }
-`
-const ModalFooter = styled(Modal.Actions)`
-  &&.actions {
-    border-top: none;
-    background-color: #FFFF;
-  }
-`
-const ConsultationReportModal = styled(Modal)`
-  & {
-    padding: 1em;
-  }
-
-  & h3.ui.header {
-    font-size: 12px;
-  }
-`
-const CloseModal = styled(Icon)`
-  & {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    cursor: pointer;
-    color: #3d5170;
-  }
-`
-const ResultsLabel = styled(Label)`
-  &.ui.label {
-    color: #006fe6;
-    cursor: pointer;
-  }
 `

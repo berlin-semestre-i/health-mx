@@ -10,13 +10,13 @@ describe('MedicalReport', () => {
 
   it('opens modal', () => {
     const wrapper = mount(<MedicalReport userRole="medic"/>)
-    wrapper.instance().open(0)
-    expect(wrapper.state('open')).toEqual(true)
+    wrapper.instance().openConsultationModal(0)
+    expect(wrapper.state('openConsultation')).toEqual(true)
   })
 
   it('closes modal', () => {
     const wrapper = mount(<MedicalReport userRole="medic"/>)
     wrapper.instance().close()
-    expect(wrapper.state('open')).toEqual(false)
+    expect(wrapper.state('openConsultation')).toEqual(false)
   })
 })
