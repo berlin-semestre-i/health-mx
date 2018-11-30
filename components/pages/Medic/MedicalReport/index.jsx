@@ -7,8 +7,8 @@ import media from 'styled-media-query'
 import Tab from './Tabs'
 import ValueItem from '../../../shared/ValueItem'
 import Avatar from '../../../shared/Avatar'
-import ConsultationModal from './ConsultationModal'
-import NewSomatometryModal from './SomatometryModal'
+import ConsultationModal from '../../../shared/ConsultationModal'
+import NewSomatometryModal from './NewSomatometryModal'
 import Link from 'next/link'
 
 const somatometry = {
@@ -65,8 +65,8 @@ const treatments = [{
   medication: ['Paracetamol', 'Diclofenaco sódico', 'Celebrex'],
 }]
 const buttonContent = {
-  medic: {content:'Iniciar Consulta'},
-  nurse: {content: 'Nueva Somatometría'},
+  medic: {content:'Iniciar Consulta', address:'/medic/appointments'},
+  nurse: {content: 'Nueva Somatometría', address: '/nurse/beneficiaries'},
 }
 
 class MedicalReport extends PureComponent {
@@ -92,7 +92,12 @@ class MedicalReport extends PureComponent {
     return (
       <React.Fragment>
         <Grid>
-          <Header title="Atrás" subtitle="Expediente de derechohabiente" />
+          <Header
+            title="Atrás"
+            subtitle="Expediente de derechohabiente"
+            goBack="true"
+            address={buttonContent[userRole].address}
+          />
           <CardsRow>
             <Grid.Column mobile={16} computer={6}>
               <Card header="Derechohabiente">
@@ -139,7 +144,7 @@ class MedicalReport extends PureComponent {
                       </SomatometryValue>
                       <SomatometryValue>
                         {userRole === 'medic' &&
-                        <Link href="medic/consultation">
+                        <Link href="/medic/consultation">
                           <StartButton
                             positive
                             icon="play"

@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../../components/Layout'
-import Beneficiaries from '../../components/pages/Nurse/Beneficiaries'
+import Beneficiaries from '../../components/shared/Beneficiaries'
 
 const home = () => (
   <Layout userRole="nurse" userGender="female">
-    <Beneficiaries />
+    <Beneficiaries userRole="nurse" />
   </Layout>
 )
 

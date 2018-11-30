@@ -7,6 +7,7 @@ module.exports = withCss({
     AWS_REGION: process.env.AWS_REGION,
     USER_POOL_ID: process.env.USER_POOL_ID,
     USER_POOL_CLIENT_ID: process.env.USER_POOL_CLIENT_ID,
+    UPLOADCARE_PUBLIC_KEY: process.env.UPLOADCARE_PUBLIC_KEY,
   },
   webpack (config) {
     config.module.rules.push({

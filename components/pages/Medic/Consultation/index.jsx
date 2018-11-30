@@ -10,15 +10,6 @@ import HealthStatusCard from './HealthStatus'
 import LabReportsModal from './LabReportModal'
 import Link from 'next/link'
 
-const somatometry = {
-  nurse: 'Rodrigo Fernández',
-  height: 169,
-  weight: 63,
-  pulse: 68,
-  imc: 22.06,
-  temperature: 36,
-}
-
 class Consultation extends PureComponent {
 
   state = {
@@ -32,6 +23,14 @@ class Consultation extends PureComponent {
     motive: '',
     physicalExploration: '',
     conclusion: '',
+    somatometry: {
+      nurse: 'Rodrigo Fernández',
+      height: 169,
+      weight: 63,
+      pulse: 68,
+      imc: 22.06,
+      temperature: 36,
+    },
   }
 
   open = () => this.setState({ open: true })
@@ -61,18 +60,35 @@ class Consultation extends PureComponent {
     })
   }
 
+  updateSomatometry = ({ pulse, weight, height, temperature, imc}) => {
+    let newSomatometry = JSON.stringify(this.state.somatometry)
+    newSomatometry = JSON.parse(newSomatometry)
+    newSomatometry.pulse = pulse
+    newSomatometry.weight = weight
+    newSomatometry.height = height
+    newSomatometry.temperature = temperature
+    newSomatometry.imc = imc
+    this.setState({
+      somatometry: newSomatometry,
+    })
+  }
+
   render() {
     const { healthStatus, motive, physicalExploration,
-      conclusion, labReports, open, treatment } = this.state
+      conclusion, labReports, open, treatment, somatometry } = this.state
     const { date } = this.props
 
     return (
       <React.Fragment>
         <Grid>
-          <Header title="Atrás" subtitle={`Consulta - ${date}`} goBack="true" />
+          <Header
+            title="Atrás"
+            subtitle={`Consulta - ${date}`}
+            goBack="true" address="/medic/patient-profile"
+          />
           <Grid.Row>
             <Grid.Column mobile={16} computer={5}>
-              <SomatometryCard somatometry={somatometry} />
+              <SomatometryCard update={this.updateSomatometry} somatometry={somatometry} />
               <HealthStatusCard healthStatus={healthStatus} onChange={this.updateState} />
               <Card
                 className="lab-studies"

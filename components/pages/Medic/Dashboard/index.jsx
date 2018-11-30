@@ -24,41 +24,46 @@ class DoctorDashboard extends PureComponent {
 
   render() {
     const { appointment } = this.state
+    const { userRole } = this.props
 
     return (
       <React.Fragment>
         <Grid>
           <PageHeader
             title="Inicio"
-            subtitle="Buenos días, Dr. McDreamy"
+            subtitle={userRole === 'medic' ?
+              'Buenos días, Dr. Rodríguez':
+              'Bienvenida, Srta. Summer Smith'}
           />
           <Grid.Row>
             <Grid.Column mobile={16} tablet={16} computer={8} className="dashboard-col">
-              <DashboardCard>
-                <Card.Content>
-                  <Card.Header>
+              { userRole === 'medic' && (
+                <DashboardCard>
+                  <Card.Content>
+                    <Card.Header>
                     Próximas Consultas
-                  </Card.Header>
-                  <Consultations>
-                    <ConsultationRow>
-                      <AvatarContainer mobile={16} tablet={3} computer={2}>
-                        <Avatar src={appointment.profile}/>
-                      </AvatarContainer>
-                      <ConsultationInfoContainer mobile={16} tablet={13} computer={14}>
-                        <Link as="" href=""><a>{ appointment.name }</a></Link>
-                        <ConsultationInfo>
-                          <ValueItem keyName="Fecha" value={appointment.date} />
-                          <ValueItem keyName="Hora" value={appointment.time} />
-                          <ValueItem keyName="Última cita" value={appointment.previous} />
-                        </ConsultationInfo>
-                      </ConsultationInfoContainer>
-                    </ConsultationRow>
-                  </Consultations>
-                  <CenteredButton>
-                    <MoreButton secondary className="small">Ver más</MoreButton>
-                  </CenteredButton>
-                </Card.Content>
-              </DashboardCard>
+                    </Card.Header>
+                    <Consultations>
+                      <ConsultationRow>
+                        <AvatarContainer mobile={16} tablet={3} computer={2}>
+                          <Avatar src={appointment.profile}/>
+                        </AvatarContainer>
+                        <ConsultationInfoContainer mobile={16} tablet={13} computer={14}>
+                          <Link as="" href=""><a>{ appointment.name }</a></Link>
+                          <ConsultationInfo>
+                            <ValueItem keyName="Fecha" value={appointment.date} />
+                            <ValueItem keyName="Hora" value={appointment.time} />
+                            <ValueItem keyName="Última cita" value={appointment.previous} />
+                          </ConsultationInfo>
+                        </ConsultationInfoContainer>
+                      </ConsultationRow>
+                    </Consultations>
+                    <CenteredButton>
+                      <MoreButton secondary className="small">Ver más</MoreButton>
+                    </CenteredButton>
+                  </Card.Content>
+                </DashboardCard>
+              )}
               <DashboardCard>
                 <Card.Content>
                   <Card.Header>

@@ -4,6 +4,7 @@ import { Grid, Header, Icon } from 'semantic-ui-react'
 import media from 'styled-media-query'
 import moment from 'moment'
 import 'moment/locale/es'
+import Link from 'next/link'
 
 class PageHeader extends PureComponent {
   state = {
@@ -38,18 +39,27 @@ class PageHeader extends PureComponent {
 
   render() {
     const { date, time } = this.state
-    const { title, subtitle, goBack } = this.props
+    const { title, subtitle, goBack,address } = this.props
 
     return (
       <React.Fragment>
         <Grid.Row>
           <Grid.Column mobile={16} computer={12}>
             <CustomHeader active={goBack} as="h3" className="ui header">
-              <span>{
+              {
                 goBack && (
-                  <BackIcon name="chevron left" />
+                  <Link href={address}>
+                    <span>
+                      <BackIcon name="chevron left" />
+                      {title}</span>
+                  </Link>
                 )
-              } {title}</span>
+              }
+              {
+                !goBack && (
+                  <span>{title}</span>
+                )
+              }
             </CustomHeader>
             <CustomHeader as="h1">{subtitle}</CustomHeader>
           </Grid.Column>

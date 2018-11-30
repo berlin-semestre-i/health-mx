@@ -12,7 +12,7 @@ class Home extends PureComponent {
   render() {
     return (
       <Layout userRole="medic" userGender="male">
-        <DoctorDashboard />
+        <DoctorDashboard userRole="medic"/>
       </Layout>
     )
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import Beneficiaries from '../../../../../../components/pages/Nurse/Beneficiaries/index'
+import Beneficiaries from '../../../../../../components/shared/Beneficiaries'
 
 describe('Beneficiaries', () => {
   it('renders', () => {
