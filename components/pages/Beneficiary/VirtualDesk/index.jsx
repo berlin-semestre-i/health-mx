@@ -9,21 +9,12 @@ import styled from 'styled-components'
 class VirtualDesk extends PureComponent {
   state = {
     articles: [],
-    beneficiary: 'Alfonso Iraí Contreras Chávez',
+    beneficiary: 'Michelle Sagnelli',
     dependants: [
       {
         nss: 2,
-        name: 'Silvia Naela Chávez Covarrubias',
-        relationship: 'PADRES',
-        curp: 'CACS238928HE2BEN3',
-        sex: 'M',
-        age: '51',
-        situation: 'Vigente',
-      },
-      {
-        nss: 3,
-        name: 'Alfonso Contreras Rodriguez',
-        relationship: 'PADRES',
+        name: 'Alfonso Contreras',
+        relationship: 'HIJO',
         curp: 'CORA284983491DSA',
         sex: 'H',
         age: '59',

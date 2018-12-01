@@ -32,8 +32,8 @@ class DoctorDashboard extends PureComponent {
           <PageHeader
             title="Inicio"
             subtitle={userRole === 'medic' ?
-              'Buenos días, Dr. Rodríguez':
-              'Bienvenida, Srta. Summer Smith'}
+              'Buenos días, Dr. Sagnelli':
+              'Bienvenida, Sr. Sagnelli'}
           />
           <Grid.Row>
             <Grid.Column mobile={16} tablet={16} computer={8} className="dashboard-col">
