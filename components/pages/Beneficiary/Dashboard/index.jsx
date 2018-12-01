@@ -9,7 +9,7 @@ import media from 'styled-media-query'
 class BeneficiaryDashboard extends PureComponent {
   state = {
     articles: [],
-    beneficiary: 'Alfonso Iraí Contreras Chávez',
+    beneficiary: 'Michelle Sagnelli',
     appointment: {
       name: 'Alfonso Iraí Contreras Chávez',
       date: '02 de diciembre de 2018',

@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import Layout from '../../components/Layout'
-import { Header } from 'semantic-ui-react'
 import { redirectIfNotAuthenticated } from '../../utils/auth'
 import BeneficiaryDashboard from '../../components/pages/Beneficiary/Dashboard'
 
+class Home extends PureComponent {
   componentDidMount() {
     redirectIfNotAuthenticated()
   }

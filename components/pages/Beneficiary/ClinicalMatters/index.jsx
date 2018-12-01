@@ -10,55 +10,42 @@ import media from 'styled-media-query'
 class ClinicalMatters extends PureComponent {
   state = {
     articles: [],
-    beneficiary: 'Alfonso Iraí Contreras Chávez',
+    beneficiary: 'Michelle Sagnelli',
     dependants: [
       {
-        name: 'Alfonso Iraí Contreras Chávez',
-        text: 'Alfonso Iraí Contreras Chávez',
+        name: 'Michelle Sagnelli',
+        text: 'Michelle Sagnelli',
         nss: 1,
         value: 1,
       },
       {
-        name: 'Silvia Naela Chávez Covarrubias',
-        text: 'Silvia Naela Chávez Covarrubias',
+        name: 'Alfonso Contreras',
+        text: 'Alfonso Contreras',
         nss: 2,
         value: 2,
-      },
-      {
-        name: 'Alfonso Contreras Rodríguez',
-        text: 'Alfonso Contreras Rodríguez',
-        nss: 3,
-        value: 3,
       },
     ],
     appointments: [
       {
         nss: 1,
-        beneficiary: 'Alfonso Iraí Contreras Chávez',
+        beneficiary: 'Michelle Sagnelli',
         date: '10 Oct, 2018',
         time: '08:30 am',
         specialty: 'Medicina Familiar',
       },
       {
         nss: 1,
-        beneficiary: 'Alfonso Iraí Contreras Chávez',
+        beneficiary: 'Michelle Sagnelli',
         date: '02 Jul, 2017',
         time: '11:00 am',
         specialty: 'Medicina Familiar',
       },
       {
         nss: 2,
-        beneficiary: 'Silvia Naela Chávez Covarrubias',
+        beneficiary: 'Alfonso Contreras',
         date: '25 Jul, 2018',
         time: '08:00 am',
         specialty: 'Traumatología',
-      },
-      {
-        nss: 3,
-        beneficiary: 'Alfonso Contreras Rodríguez',
-        date: '06 Nov, 2018',
-        time: '09:30 am',
-        specialty: 'Cardiología',
       },
     ],
     procedures : [
